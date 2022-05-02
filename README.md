@@ -174,9 +174,9 @@ If you would like to track files with Git LFS follow the below steps. These step
 
 ## Developers
 
-- Muhamed Ahmed
+- Muhamad Ahmed
 - Vanessa Liu
-- 
+- Vedaant Varshney
 
 ---
 
