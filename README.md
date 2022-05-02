@@ -23,6 +23,7 @@
 - [Usage](#usage)
 - [Release](#release)
 - [Set up Git LFS](#setupgitlfs)
+- [Developers](#developers)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -170,6 +171,15 @@ If you would like to track files with Git LFS follow the below steps. These step
 4. Enable ssh config `encrypted_env_file: .env.codeship.ssh.encrypted` in `codeship-services.yml`
 
 ---
+
+## Developers
+
+- Muhamed Ahmed
+- Vanessa Liu
+- 
+
+---
+
 
 ## Contributing
 
