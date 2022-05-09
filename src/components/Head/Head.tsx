@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import NextHead from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -12,11 +12,6 @@ type Props = {
 };
 
 const TITLE_SEPARATOR = '|';
-
-const FeaturePolicy = dynamic(() => import(/* webpackChunkName: "FeaturePolicy" */ './FeaturePolicy'));
-const ContentSecurityPolicy = dynamic(
-  () => import(/* webpackChunkName: "ContentSecurityPolicy" */ './ContentSecurityPolicy')
-);
 
 function Head({ title, description = siteDescription, keywords = siteKeywords }: Props) {
   const router = useRouter();
@@ -64,12 +59,7 @@ function Head({ title, description = siteDescription, keywords = siteKeywords }:
         </>
       )}
 
-      {process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' && (
-        <>
-          <FeaturePolicy />
-          <ContentSecurityPolicy />
-        </>
-      )}
+      {process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' && <></>}
     </NextHead>
   );
 }
