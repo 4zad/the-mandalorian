@@ -58,8 +58,6 @@ function Head({ title, description = siteDescription, keywords = siteKeywords }:
           <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_DNS_PREFETCH} />
         </>
       )}
-
-      {process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' && <></>}
     </NextHead>
   );
 }
