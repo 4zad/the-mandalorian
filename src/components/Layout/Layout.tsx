@@ -2,6 +2,7 @@ import { memo, PropsWithChildren, useCallback, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { device } from '@jam3/detect';
+
 import Nav from '@/components/Nav/Nav';
 
 import { checkWebpSupport } from '@/utils/basic-functions';
