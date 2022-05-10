@@ -4,6 +4,36 @@
 // http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins
 // Add comment to every function
 
+/*
+
+--- Name/Desc (font-size, line-height) ---
+
+Mobile:
+- h2 - Mandalorian: 50px, 50px
+- h6 - Gray Text: 14px, 16px
+- p - Body Big (Disney+, Paragraphs): 24px, 27px
+- caption - Body Small: 16px, 18px
+- dropdown - Award: 18px, 21px
+- h1 - 500k: 80px, 96px
+
+Tablet
+- h2 - Mandalorian: 66px, 79px
+- h6 - Gray Text: 14px, 17px
+- p - Body Big (Disney+, Paragraphs): 24px, 32px
+- caption - Body Small: 16px, 24px
+- dropdown - Award: 14px, 16px
+- h1 - 500k: 80px, 120px
+
+Desktop Small
+- h2 - Mandalorian: 90px, 108px
+- h6 - Gray Text: 15px, 17px
+- p - Body Big (Disney+, Paragraphs): 28px, 32px
+- caption - Body Small: 21px, 24px
+- dropdown - Award: 14px, 16px
+- h1 - 500k: 145px, 120px
+
+*/
+
 @use 'sass:math';
 @import 'vars';
 
@@ -38,7 +68,7 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
 ///     @include font-body;
 ///   }
 @mixin font-body {
-  @include font-family('NeueHaasGroteskDisp', 400);
+  @include font-family($main-font, 400);
 }
 
 /// Set Header Font as font family. This mixin's name is generic to abstract the font weight of header typography
@@ -48,7 +78,7 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
 ///     @include font-header;
 ///   }
 @mixin font-header {
-  @include font-family('NeueHaasGroteskDisp', 700);
+  @include font-family($main-font, 700);
 }
 
 /// Set Header Font as font family. This mixin's name is generic to abstract the font weight of header typography
@@ -58,7 +88,7 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
 ///     @include font-header;
 ///   }
 @mixin font-black {
-  @include font-family('NeueHaasGroteskDisp', 900);
+  @include font-family($main-font, 900);
 }
 
 // Use two pixel values to convert line-height into a unitless number
@@ -130,110 +160,80 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
 // Also update .storybook/intro/3.Typography.stories.mdx
 
 @mixin typography-title {
-  @include font-family('NeueHaasGroteskDisp', 700);
+  @include font-family($main-font, 700);
   @include font-size(50, 50, -0.05);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(66, 79);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(90, 108);
   }
 }
 
 @mixin typography-subtitle {
-  @include font-family('NeueHaasGroteskDisp', 400);
+  @include font-family($main-font, 400);
   @include font-size(14, 16, -0.05);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(15, 17);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(15, 17);
   }
 }
 
 @mixin typography-caption {
-  @include font-family('NeueHaasGroteskDisp', 400);
+  @include font-family($main-font, 400);
   @include font-size(16, 18);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(16, 24);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(21, 24);
   }
 }
 
 @mixin typography-paragraph {
-  @include font-family('NeueHaasGroteskDisp', 400);
+  @include font-family($main-font, 400);
   @include font-size(24, 27);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(24, 32);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(28, 32);
   }
 }
 
 @mixin typography-award-detail {
-  @include font-family('NeueHaasGroteskDisp', 400);
+  @include font-family($main-font, 400);
   @include font-size(18, 21, -0.05);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(14, 16);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(14, 16);
   }
 }
 
 // $font-size, $line-height: null, $letter-spacing: null
 @mixin typography-number {
-  @include font-family('NeueHaasGroteskDisp', 900);
+  @include font-family($main-font, 900);
   @include font-size(80, 96, -0.05);
 
-  @include breakpoint(tablet) {
+  @include media-tablet {
     @include font-size(80, 120);
   }
 
-  @include breakpoint(desktopSm) {
+  @include media-desktopSm {
     @include font-size(145, 120);
   }
 }
-
-/*
-
-(font-size, line-height)
-
-Mobile:
-- h2 - Mandalorian: 50px, 50px
-- h6 - Gray Text: 14px, 16px
-- p - Body Big (Disney+, Paragraphs): 24px, 27px
-- caption - Body Small: 16px, 18px
-- dropdown - Award: 18px, 21px
-- h1 - 500k: 80px, 96px
-
-Tablet
-- h2 - Mandalorian: 66px, 79px
-- h6 - Gray Text: 14px, 17px
-- p - Body Big (Disney+, Paragraphs): 24px, 32px
-- caption - Body Small: 16px, 24px
-- dropdown - Award: 14px, 16px
-- h1 - 500k: 80px, 120px
-
-Desktop Small
-- h2 - Mandalorian: 90px, 108px
-- h6 - Gray Text: 15px, 17px
-- p - Body Big (Disney+, Paragraphs): 28px, 32px
-- caption - Body Small: 21px, 24px
-- dropdown - Award: 14px, 16px
-- h1 - 500k: 145px, 120px
-
-*/

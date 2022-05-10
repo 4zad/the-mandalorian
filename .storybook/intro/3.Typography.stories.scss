@@ -1,15 +1,36 @@
 @import 'shared';
+@import 'typography';
 
 .root {
   text-align: left;
 
-  .h1 {
-    @include typography-h1;
+  .title {
+    @include typography-title;
+    margin: 0 0 20px;
+  }
+
+  .subtitle {
+    @include typography-subtitle;
+    margin: 0 0 20px;
+  }
+
+  .caption {
+    @include typography-caption;
     margin: 0 0 20px;
   }
 
   .paragraph {
     @include typography-paragraph;
+    margin: 0 0 20px;
+  }
+
+  .award {
+    @include typography-award-detail;
+    margin: 0 0 20px;
+  }
+
+  .number {
+    @include typography-number;
     margin: 0 0 20px;
   }
 }
