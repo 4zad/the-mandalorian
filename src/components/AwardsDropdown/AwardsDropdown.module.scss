@@ -6,16 +6,13 @@
   width: 100%;
   text-align: left;
   padding-left: 50px;
-
   background-color: $white;
+
   .subtitle {
     @include typography-subtitle;
     color: $dark-gray;
   }
-  // .award-body {
-  //     @include typography-award-detail;
-  //     color: $black;
-  // }
+
   .body {
     @include typography-paragraph;
     margin-top: 20px;
