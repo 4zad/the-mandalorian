@@ -21,7 +21,7 @@ function Banner({ className }: Props) {
           <img className={styles.bannerimg} src={bannerImage} alt="Mandalorian Billboard" />
         </div>
         <div className={styles.tags}>
-          <div className={styles.caption}>Tags</div>
+          <div className={styles.subtitle}>Tags</div>
           <div className={styles.tagscontent}>
             Trailer, Social Media Content, Disney, Disney+, Series, Drama, SCI FI, Featured
           </div>
