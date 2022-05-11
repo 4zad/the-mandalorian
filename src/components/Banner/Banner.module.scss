@@ -3,11 +3,7 @@
 .Banner {
   background-color: white;
 
-  h1 {
-    padding: 10px;
-  }
-
-  .imgwrapper {
+  .imgWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +39,7 @@
       @include typography-subtitle;
     }
 
-    .tagscontent {
+    .tagsContent {
       @include typography-caption;
       color: black;
       padding-top: 10px;
