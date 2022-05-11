@@ -5,7 +5,8 @@
 .AwardsDropdown {
   width: 100%;
   text-align: left;
-  padding-left: 50px;
+  // padding is temporary until global styling is resolved
+  padding-left: px(50);
   background-color: $white;
 
   .subtitle {
@@ -13,22 +14,20 @@
     color: $dark-gray;
   }
 
-  .body {
+  .description {
     @include typography-paragraph;
-    margin-top: 20px;
+    margin-top: px(20);
     color: $black;
   }
 
   .awardWinnerText {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding: 0 px(3);
     color: $black;
   }
 
   .starIcon {
-    // padding-left: 4px;
     color: $orange;
-    width: 10px;
-    height: 10px;
+    width: px(10);
+    height: px(10);
   }
 }

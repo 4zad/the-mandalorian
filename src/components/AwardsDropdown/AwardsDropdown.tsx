@@ -7,21 +7,22 @@ import StarIcon from '@/components/svgs/star.svg';
 
 export type Props = {
   className?: string;
+  content: {
+    trailerText: string;
+    winnerText: string;
+    description: string;
+  };
 };
 
-function AwardsDropdown({ className }: Props) {
+function AwardsDropdown({ className, content }: Props) {
   return (
     <div className={classnames(styles.AwardsDropdown, className)}>
-      <div>
-        <p className={styles.subtitle}>
-          Trailer 1.
-          <span className={styles.awardWinnerText}> Award Winner</span>
-          <StarIcon className={styles.starIcon} />
-        </p>
-        <p className={styles.body}>
-          Oficial trailer curabitur quis nunc augue duis vulputate nisl quis dignissim vulputate.
-        </p>
-      </div>
+      <p className={styles.subtitle}>
+        {content.trailerText}
+        <span className={styles.awardWinnerText}>{content.winnerText}</span>
+        <StarIcon className={styles.starIcon} />
+      </p>
+      <p className={styles.description}>{content.description}</p>
     </div>
   );
 }
