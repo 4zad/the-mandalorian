@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+import Banner from '@/components/Banner/Banner';
 
 type Props = {
   className: string;
@@ -31,6 +32,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.Home, className)} ref={containerRef}>
       <Head />
+      <Banner />
       <section className={styles.hero}>
         <h1 ref={titleRef}>Welcome to Jam3!</h1>
         <h2 className={styles.description} ref={descriptionRef}>

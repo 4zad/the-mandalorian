@@ -1,0 +1,43 @@
+@import 'shared';
+
+.Banner {
+  padding: 30px;
+  border: 1px solid black;
+
+  h1 {
+    padding: 10px;
+  }
+
+  .imgwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: auto;
+
+    img {
+      width: 100vw;
+      top: 375px;
+      left: 0px;
+    }
+  }
+
+  .tags {
+    padding-top: 30px;
+    text-align: left;
+    padding-left: 13px;
+    padding-right: 13px;
+
+    .caption {
+      @include typography-subtitle;
+      color: $dark-gray;
+    }
+
+    .tagscontent {
+      @include typography-caption;
+      color: black;
+      padding-top: 10px;
+      padding-bottom: 60px;
+    }
+  }
+}
