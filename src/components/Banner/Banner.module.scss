@@ -1,8 +1,7 @@
 @import 'shared';
 
 .Banner {
-  padding: 30px;
-  border: 1px solid black;
+  background-color: white;
 
   h1 {
     padding: 10px;
@@ -23,14 +22,25 @@
   }
 
   .tags {
-    padding-top: 30px;
+    padding-top: 54px;
     text-align: left;
     padding-left: 13px;
     padding-right: 13px;
 
-    .caption {
-      @include typography-subtitle;
+    @include media-tablet {
+      padding-top: 113px;
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+    @include media-desktopSm {
+      padding-top: 125px;
+      padding-left: 152px;
+      padding-right: 152px;
+    }
+
+    .subtitle {
       color: $dark-gray;
+      @include typography-subtitle;
     }
 
     .tagscontent {
@@ -38,6 +48,13 @@
       color: black;
       padding-top: 10px;
       padding-bottom: 60px;
+
+      @include media-tablet {
+        padding-bottom: 100px;
+      }
+      @include media-desktopSm {
+        padding-bottom: 100px;
+      }
     }
   }
 }
