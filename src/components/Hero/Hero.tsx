@@ -5,6 +5,7 @@ import HeroNav from './HeroNav/HeroNav';
 import HeroText from './HeroText/HeroText';
 
 import styles from './Hero.module.scss';
+import HeroScrollBtn from './HeroScrollBtn/HeroScrollBtn';
 
 export type Props = {
   className?: string;
@@ -15,14 +16,12 @@ export type Props = {
 };
 
 const Hero: React.FC<Props> = ({ className, titles }: Props) => {
-  //const heroImg: any = require(`../../assets/images/${info.image}`);
-  //style={{ backgroundImage: `url(${heroImg})` }}
-
   return (
     <header className={classnames(styles.header, className)}>
       <section className={classnames(styles.hero)}>
         <HeroNav />
         <HeroText titles={titles} />
+        <HeroScrollBtn />
       </section>
     </header>
   );
