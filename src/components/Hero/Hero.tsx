@@ -1,14 +1,31 @@
 import { memo } from 'react';
 import classnames from 'classnames';
 
+import HeroNav from './HeroNav/HeroNav';
+import HeroText from './HeroText/HeroText';
+
 import styles from './Hero.module.scss';
 
 export type Props = {
   className?: string;
+  titles: {
+    smallTitle: string;
+    bigTitle: string;
+  };
 };
 
-function Hero({ className }: Props) {
-  return <div className={classnames(styles.Hero, className)}>Hero component</div>;
-}
+const Hero: React.FC<Props> = ({ className, titles }: Props) => {
+  //const heroImg: any = require(`../../assets/images/${info.image}`);
+  //style={{ backgroundImage: `url(${heroImg})` }}
+
+  return (
+    <header className={classnames(styles.header, className)}>
+      <section className={classnames(styles.hero)}>
+        <HeroNav />
+        <HeroText titles={titles} />
+      </section>
+    </header>
+  );
+};
 
 export default memo(Hero);
