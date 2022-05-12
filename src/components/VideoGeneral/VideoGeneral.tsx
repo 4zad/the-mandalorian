@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import classnames from 'classnames';
+import Vimeo from '@u-wave/react-vimeo';
 
 import styles from './VideoGeneral.module.scss';
 
@@ -13,8 +14,7 @@ export type Props = {
 function VideoGeneral({ className, isFullWidth, link }: Props) {
   return (
     <div className={classnames(styles.VideoGeneral, className)}>
-      VideoGeneral component
-      <iframe className={classnames(styles.VideoGeneral, { [styles.fullWidth]: isFullWidth })} src={link} />
+      <Vimeo video={link} className={classnames({ [styles.isFullWidth]: isFullWidth })} />
     </div>
   );
 }
