@@ -5,6 +5,9 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+import Hero from '@/components/Hero/Hero';
+
+import { heroText } from '@/data/data';
 
 type Props = {
   className: string;
@@ -29,9 +32,11 @@ function Home({ className }: Props) {
   }, []);
 
   return (
-    <main className={classnames(styles.Home, className)} ref={containerRef}>
+    <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
-      <section className={styles.hero}>
+      <Hero className={className} titles={heroText} />
+
+      {/* <section className={styles.hero}>
         <h1 ref={titleRef}>Welcome to Jam3!</h1>
         <h2 className={styles.description} ref={descriptionRef}>
           To get started, edit <code>pages/index.js</code> and save to reload.
@@ -55,7 +60,7 @@ function Home({ className }: Props) {
             </a>
           </li>
         </ul>
-      </section>
+      </section> */}
     </main>
   );
 }
