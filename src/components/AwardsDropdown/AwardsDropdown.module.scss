@@ -1,0 +1,31 @@
+@import 'shared';
+
+.AwardsDropdown {
+  width: 100%;
+  text-align: left;
+  // padding is temporary until global styling is resolved
+  padding-left: px(50);
+  background-color: $white;
+
+  .subtitle {
+    @include typography-subtitle;
+    color: $dark-gray;
+  }
+
+  .description {
+    @include typography-paragraph;
+    margin-top: px(20);
+    color: $black;
+  }
+
+  .awardWinnerText {
+    padding: 0 px(3);
+    color: $black;
+  }
+
+  .starIcon {
+    color: $orange;
+    width: px(10);
+    height: px(10);
+  }
+}

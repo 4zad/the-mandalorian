@@ -190,7 +190,7 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
   @include font-size(16, 18);
 
   @include media-tablet {
-    @include font-size(16, 24);
+    @include font-size(21, 24);
   }
 
   @include media-desktopSm {
