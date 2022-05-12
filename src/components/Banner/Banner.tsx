@@ -6,19 +6,21 @@ import styles from './Banner.module.scss';
 
 export type Props = {
   className?: string;
+  tags: {
+    title: string;
+    description: string;
+  };
 };
 
-function Banner({ className }: Props) {
+function Banner({ className, tags }: Props) {
   return (
     <div className={classnames(styles.Banner, className)}>
       <div className={styles.imgWrapper}>
         <img src={bannerImage} alt="Mandalorian Billboard" />
       </div>
       <div className={styles.tags}>
-        <div className={styles.subtitle}>Tags</div>
-        <div className={styles.tagsContent}>
-          Trailer. Social Media Content. Disney. Disney+. Series. Drama. SCI FI. Featured
-        </div>
+        <div className={styles.subtitle}>{tags.title}</div>
+        <div className={styles.tagsContent}>{tags.description}</div>
       </div>
     </div>
   );

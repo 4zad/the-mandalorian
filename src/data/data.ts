@@ -1,3 +1,4 @@
+
 export const awardDropdownData = {
   trailerText: 'Trailer 1.',
   winnerText: 'Award Winner',
@@ -12,3 +13,9 @@ export const awardDropdownCardData = [
   { id: 2, year: '2020', award: 'Promax: Program Trailer Promo' },
   { id: 3, year: '2020', award: 'Shortys: Twitter Video' }
 ];
+
+export const tags = {
+  title: 'Tags',
+  description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured'
+};
+
