@@ -1,7 +1,7 @@
 @import 'shared';
 
 .Banner {
-  background-color: white;
+  background-color: $white;
 
   .imgWrapper {
     display: flex;
@@ -12,26 +12,20 @@
 
     img {
       width: 100vw;
-      top: 375px;
+      top: px(375);
       left: 0;
     }
   }
 
   .tags {
-    padding-top: 54px;
     text-align: left;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding: px(52) px(13) px(60);
 
     @include media-tablet {
-      padding-top: 113px;
-      padding-left: 120px;
-      padding-right: 120px;
+      padding: px(113) px(120) px(100);
     }
     @include media-desktopSm {
-      padding-top: 125px;
-      padding-left: 152px;
-      padding-right: 152px;
+      padding: px(125) px(152) px(100);
     }
 
     .subtitle {
@@ -41,16 +35,8 @@
 
     .tagsContent {
       @include typography-caption;
-      color: black;
-      padding-top: 10px;
-      padding-bottom: 60px;
-
-      @include media-tablet {
-        padding-bottom: 100px;
-      }
-      @include media-desktopSm {
-        padding-bottom: 100px;
-      }
+      color: $black;
+      padding-top: px(10);
     }
   }
 }

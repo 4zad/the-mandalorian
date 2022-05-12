@@ -5,5 +5,8 @@ export default { title: 'components/Banner' };
 export const Default = (args: Props) => <Banner {...args} />;
 
 Default.args = {
-  // add control data
+  tags: {
+    title: 'Tags',
+    description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured'
+  }
 };
