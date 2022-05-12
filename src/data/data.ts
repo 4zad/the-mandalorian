@@ -1,8 +1,3 @@
-export const heroText = {
-  smallTitle: 'Disney+',
-  bigTitle: 'The Mandalorian'
-};
-
 export const awardDropdownData = {
   trailerText: 'Trailer 1.',
   winnerText: 'Award Winner',

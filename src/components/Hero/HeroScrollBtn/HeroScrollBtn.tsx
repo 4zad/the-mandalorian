@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import styles from './HeroScrollBtn.module.scss';
 
-import Arrow from '@/components/svgs/arrow.svg';
+import Arrow from '../../svgs/arrow.svg';
 
 export type Props = {
   className?: string;

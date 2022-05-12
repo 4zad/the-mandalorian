@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './HeroNav.module.scss';
 
-import Logo from '@/assets/images/buddha-logo.png';
+import Logo from '../../../assets/images/buddha-logo.png';
 
 export type Props = {
   className?: string;
