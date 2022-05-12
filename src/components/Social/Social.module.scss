@@ -1,0 +1,38 @@
+@import 'shared';
+
+.Social {
+  background-color: $white;
+}
+
+.textContainer {
+  text-align: left;
+  padding: px(35) px(13) px(56);
+  @include media-tablet {
+    padding: px(60) px(120) px(90);
+  }
+  @include media-desktopSm {
+    padding: px(48) px(152) px(90);
+  }
+}
+
+.title {
+  @include typography-subtitle;
+  color: $dark-gray;
+}
+
+.description {
+  @include typography-paragraph;
+  color: $black;
+  padding: px(10) 0;
+  @include media-tablet {
+    padding-bottom: px(15);
+  }
+  @include media-desktopSm {
+    padding-bottom: px(30);
+  }
+}
+
+.number {
+  @include typography-number;
+  color: $black;
+}

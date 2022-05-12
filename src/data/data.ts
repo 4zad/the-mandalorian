@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> 3f0ca70 (feature: added social component and data.ts, text is a wip)
 export const awardDropdownData = {
   trailerText: 'Trailer 1.',
   winnerText: 'Award Winner',
@@ -18,6 +23,7 @@ export const tags = {
   description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured'
 };
 
+<<<<<<< HEAD
 export const descContent = {
   title: 'Optional Eyebrow',
   description:
@@ -28,3 +34,12 @@ export const servicesContent = {
   title: 'Services',
   description: 'Teaser, Trailer, Original Content'
 };
+=======
+=======
+export const socialContent = {
+  title: 'Social Media',
+  description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:',
+  number: '500K'
+};
+>>>>>>> d324d78 (feature: added social component and data.ts, text is a wip)
+>>>>>>> 3f0ca70 (feature: added social component and data.ts, text is a wip)
