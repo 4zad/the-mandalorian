@@ -4,6 +4,8 @@ import classnames from 'classnames';
 
 import styles from './HeroNav.module.scss';
 
+import Logo from '../../../assets/images/buddha-logo.png';
+
 export type Props = {
   className?: string;
 };
@@ -14,12 +16,8 @@ const HeroNav: React.FC<Props> = ({ className }: Props) => {
       <div className={classnames(styles.navBar)}>
         <ul>
           <li>
-            <a href="" aria-label="Home">
-              <img
-                src={'../../../assets/imagesbuddha-logo.png'}
-                alt="Buddha Jones"
-                className={classnames(styles.buddha)}
-              ></img>
+            <a href="/" aria-label="Home">
+              <img src={Logo} alt="Buddha Jones" className={classnames(styles.buddha)}></img>
             </a>
           </li>
         </ul>
@@ -27,9 +25,9 @@ const HeroNav: React.FC<Props> = ({ className }: Props) => {
         <ul className={styles.links}>
           <li>
             <a href={'/'} target="_blank" rel="noopener noreferrer" aria-label={'Menu'}>
-              <svg className={styles.menuHamburger} viewBox="0 0 100 80" width="40" height="40">
-                <rect className={styles.topBar} y="0" rx="3"></rect>
-                <rect className={styles.bottomBar} y="30" x="20" rx="3"></rect>
+              <svg className={styles.menuHamburger} viewBox="0 0 100 30" width="40" height="40">
+                <rect className={styles.topBar} y="0" rx="4"></rect>
+                <rect className={styles.bottomBar} y="30" x="20" rx="4"></rect>
               </svg>
             </a>
           </li>

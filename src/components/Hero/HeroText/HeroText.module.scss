@@ -4,14 +4,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
   width: 90%;
   @include transform-center;
 
   > .smallTitle,
   > .bigTitle {
     color: $white;
-    padding: 0 0 12px 0;
+    padding: px(6) 0;
   }
 
   > .smallTitle {
