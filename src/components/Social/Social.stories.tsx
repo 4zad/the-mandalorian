@@ -8,6 +8,7 @@ Default.args = {
   socialContent: {
     title: 'Social Media',
     description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:',
-    number: '500K'
+    shortNum: '500K',
+    num: '500.000K'
   }
 };

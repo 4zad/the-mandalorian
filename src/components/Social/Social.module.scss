@@ -32,7 +32,38 @@
   }
 }
 
-.number {
+.shortNum {
   @include typography-number;
   color: $black;
+  display: block;
+  @include media-tablet {
+    display: none;
+  }
+  @include media-desktopSm {
+    display: none;
+  }
+}
+
+.shortNum {
+  @include typography-number;
+  color: $black;
+  display: block;
+  @include media-tablet {
+    display: none;
+  }
+  @include media-desktopSm {
+    display: none;
+  }
+}
+
+.num {
+  @include typography-number;
+  color: $black;
+  display: none;
+  @include media-tablet {
+    display: block;
+  }
+  @include media-desktopSm {
+    display: block;
+  }
 }

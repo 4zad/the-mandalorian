@@ -8,7 +8,8 @@ export type Props = {
   socialContent: {
     title: string;
     description: string;
-    number: string;
+    shortNum: string;
+    num: string;
   };
 };
 
@@ -18,7 +19,8 @@ function Social({ className, socialContent }: Props) {
       <div className={styles.textContainer}>
         <p className={styles.title}>{socialContent.title}</p>
         <p className={styles.description}>{socialContent.description}</p>
-        <p className={styles.number}>{socialContent.number}</p>
+        <p className={styles.shortNum}>{socialContent.shortNum}</p>
+        <p className={styles.num}>{socialContent.num}</p>
       </div>
     </div>
   );
