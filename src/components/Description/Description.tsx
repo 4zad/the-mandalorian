@@ -5,22 +5,19 @@ import styles from './Description.module.scss';
 
 export type Props = {
   className?: string;
-  descContent: {
+  content: {
     title: string;
     description: string;
-    servicesTitle: string;
-    servicesText: string;
   };
+  isSmallText?: boolean;
 };
 
-function Description({ className, descContent }: Props) {
+function Description({ className, content, isSmallText = false }: Props) {
   return (
     <div className={classnames(styles.Description, className)}>
       <div className={styles.textContainer}>
-        <p className={styles.subtitle}>{descContent.title}</p>
-        <p className={styles.mainText}>{descContent.description}</p>
-        <p className={styles.subtitle}>{descContent.servicesTitle}</p>
-        <p className={styles.servicesContent}>{descContent.servicesText}</p>
+        <p className={styles.title}>{content.title}</p>
+        <p className={classnames(styles.desc, { [styles.smallDesc]: isSmallText })}>{content.description}</p>
       </div>
     </div>
   );

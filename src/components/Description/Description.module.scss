@@ -3,32 +3,33 @@
 .Description {
   background-color: $white;
   text-align: left;
+  padding: px(5) 0;
 }
 
 .textContainer {
-  padding: px(60) px(13) px(45);
+  padding: px(10) px(13);
 
   @include media-tablet {
-    padding: px(90) px(120);
+    padding: px(10) px(120);
   }
   @include media-desktopSm {
-    padding: px(100) px(152);
+    padding: px(10) px(152);
   }
 }
 
-.subtitle {
+.title {
   @include typography-subtitle;
   color: $dark-gray;
 }
 
-.mainText {
+.desc {
   @include typography-paragraph;
   color: $black;
-  padding: px(10) 0 px(30);
+  padding: px(10) 0;
 }
 
-.servicesContent {
+.smallDesc {
   @include typography-caption;
   color: $black;
-  padding-top: px(10);
+  padding: px(10) 0;
 }
