@@ -1,9 +1,60 @@
 @import 'shared';
 
 .VideoGeneral {
+  // display: none;
   width: 100%;
+  height: 100%;
+  position: relative;
   background-color: $black;
+
   .fullWidth {
     width: 100vw;
+  }
+
+  button {
+    position: absolute;
+    top: calc(50% - px(36));
+    left: calc(50% - px(36));
+    width: px(72);
+    height: px(72);
+    background-color: transparent;
+    border: none;
+  }
+
+  .svgPlayIcon {
+    position: absolute;
+    top: calc(50% - px(11));
+    left: calc(50% - px(11));
+    width: px(22);
+    height: px(22);
+    color: blue;
+    z-index: 10;
+  }
+
+  .svgPlayCircle {
+    position: absolute;
+    top: calc(50% - px(36));
+    left: calc(50% - px(36));
+    // transform: translate(0, -50%);
+
+    width: px(72);
+    height: px(72);
+    z-index: 10;
+    color: blue;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .player {
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    width: 60%;
+    height: 500px;
+    z-index: 20;
   }
 }
