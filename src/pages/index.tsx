@@ -5,6 +5,8 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+// import VideoGeneral from '@/components/VideoGeneral/VideoGeneral';
+import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
 
 type Props = {
   className: string;
@@ -31,6 +33,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.Home, className)} ref={containerRef}>
       <Head />
+      <FullScreenVideo></FullScreenVideo>
       <section className={styles.hero}>
         <h1 ref={titleRef}>Welcome to Jam3!</h1>
         <h2 className={styles.description} ref={descriptionRef}>
