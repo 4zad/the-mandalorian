@@ -12,9 +12,10 @@ export type Props = {
   className?: string;
   imLink: string;
   vidId: number;
+  alt?: string;
 };
 
-function VideoGeneral({ className, imLink, vidId }: Props) {
+function VideoGeneral({ className, imLink, vidId, alt }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
   function buttonClick() {
@@ -27,7 +28,7 @@ function VideoGeneral({ className, imLink, vidId }: Props) {
         <PlayCircle className={styles.svgPlayCircle} />
         <PlayIcon className={styles.svgPlayIcon} />
       </button>
-      <img src={imLink}></img>
+      <img src={imLink} alt={alt}></img>
       {modalOpen && <VideoModal id={vidId} setModalOpen={setModalOpen} />}
     </div>
   );
