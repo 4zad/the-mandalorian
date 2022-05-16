@@ -8,17 +8,17 @@
   width: 90%;
   @include transform-center;
 
-  > .smallTitle,
-  > .bigTitle {
+  > .subTitle,
+  > .title {
     color: $white;
     padding: px(6) 0;
   }
 
-  > .smallTitle {
+  > .subTitle {
     @include typography-paragraph;
   }
 
-  > .bigTitle {
+  > .title {
     @include typography-title;
   }
 }

@@ -14,8 +14,8 @@ export type Props = {
 const HeroText: React.FC<Props> = ({ className, titles }: Props) => {
   return (
     <div className={classnames(styles.heroText, className)}>
-      <span className={classnames(styles.smallTitle)}>{titles.subTitle}</span>
-      <h1 className={classnames(styles.bigTitle)}>{titles.title}</h1>
+      <span className={classnames(styles.subTitle)}>{titles.subTitle}</span>
+      <h1 className={classnames(styles.title)}>{titles.title}</h1>
     </div>
   );
 };

@@ -7,8 +7,8 @@ export const Default = (args: Props) => <Hero {...args} />;
 Default.args = {
   // add control data
   titles: {
-    smallTitle: 'Disney+',
-    bigTitle: 'The Mandalorian'
+    subTitle: 'Disney+',
+    title: 'The Mandalorian'
   },
   images: {
     background: 'hero-bg.png'
