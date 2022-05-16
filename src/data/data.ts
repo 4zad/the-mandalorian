@@ -31,7 +31,10 @@ export const servicesContent = {
 
 export const socialContent = {
   title: 'Social Media',
-  description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:',
-  shortNum: '500K',
+  description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:'
+};
+
+export const socialNumber = {
+  smallNum: '500K',
   num: '500.000K'
 };
