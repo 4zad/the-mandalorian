@@ -18,7 +18,6 @@ function VideoGeneral({ className, imLink, vidId }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
   function buttonClick() {
-    console.log('Button is clicked and modal is set to open');
     setModalOpen(true);
   }
 
@@ -29,7 +28,7 @@ function VideoGeneral({ className, imLink, vidId }: Props) {
         <PlayIcon className={styles.svgPlayIcon} />
       </button>
       <img src={imLink}></img>
-      {modalOpen && <VideoModal id={vidId} />}
+      {modalOpen && <VideoModal id={vidId} setModalOpen={setModalOpen} />}
     </div>
   );
 }
