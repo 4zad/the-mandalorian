@@ -28,3 +28,12 @@ export const servicesContent = {
   title: 'Services',
   description: 'Teaser, Trailer, Original Content'
 };
+
+export const socialContent = {
+  desc: {
+    title: 'Social Media',
+    description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:'
+  },
+  smallNum: '500K',
+  num: '500.000K'
+};
