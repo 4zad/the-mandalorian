@@ -78,6 +78,32 @@ export const socialContent = {
   },
   smallNum: '500K',
   num: '500.000K'
+}
+
+export const processContent = {
+  title: 'Process',
+  description:
+    'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.'
+};
+
+export const processEyebrow = {
+  title: 'Services',
+  description: 'Teaser, Trailer, Original Content'
+};
+
+export const processGraphicsDesc = {
+  title: 'Graphic Effects',
+  description: 'The result of graphic effects curabitur quis nunc augue.'
+};
+
+export const processVid3Desc = {
+  title: 'Optional Eyebrow',
+  description: 'Vivamus fringilla elit nunc ut facilisis risus egestas at.'
+};
+
+export const processVid4Desc = {
+  title: 'Optional Eyebrow',
+  description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
 };
 
 export const collageData = {
