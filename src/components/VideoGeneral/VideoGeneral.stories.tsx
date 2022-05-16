@@ -7,6 +7,7 @@ export const Default = (args: Props) => <VideoGeneral {...args} />;
 Default.args = {
   videoinf: {
     imLink: 'assets/images/mandaloriantest.png',
-    vidId: 148751763
+    vidId: 148751763,
+    alt: 'Image of Mandalorian'
   }
 };
