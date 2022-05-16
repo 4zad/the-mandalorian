@@ -78,7 +78,7 @@ export const socialContent = {
   },
   smallNum: '500K',
   num: '500.000K'
-}
+};
 
 export const processContent = {
   title: 'Process',
@@ -88,7 +88,7 @@ export const processContent = {
 
 export const processEyebrow = {
   title: 'Services',
-  description: 'Teaser, Trailer, Original Content'
+  description: 'Oficial trailer curabitur quis nunc augue duis vulputate nisl quis dignissim vulputate.'
 };
 
 export const processGraphicsDesc = {
