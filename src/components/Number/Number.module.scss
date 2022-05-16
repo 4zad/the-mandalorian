@@ -1,0 +1,40 @@
+@import 'shared';
+
+.Number {
+  background-color: $white;
+}
+
+.textContainer {
+  text-align: left;
+  padding: 0 px(13);
+  @include media-tablet {
+    padding: 0 px(120);
+  }
+  @include media-desktopSm {
+    padding: 0 px(152);
+  }
+}
+
+.shortNum {
+  @include typography-number;
+  color: $black;
+  display: block;
+  @include media-tablet {
+    display: none;
+  }
+  @include media-desktopSm {
+    display: none;
+  }
+}
+
+.num {
+  @include typography-number;
+  color: $black;
+  display: none;
+  @include media-tablet {
+    display: block;
+  }
+  @include media-desktopSm {
+    display: block;
+  }
+}

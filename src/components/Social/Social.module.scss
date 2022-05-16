@@ -5,65 +5,11 @@
 }
 
 .textContainer {
-  text-align: left;
-  padding: px(35) px(13) px(56);
+  padding-bottom: px(56);
   @include media-tablet {
-    padding: px(60) px(120) px(90);
+    padding-bottom: px(56);
   }
   @include media-desktopSm {
-    padding: px(48) px(152) px(90);
-  }
-}
-
-.title {
-  @include typography-subtitle;
-  color: $dark-gray;
-}
-
-.description {
-  @include typography-paragraph;
-  color: $black;
-  padding: px(10) 0;
-  @include media-tablet {
-    padding-bottom: px(15);
-  }
-  @include media-desktopSm {
-    padding-bottom: px(30);
-  }
-}
-
-.shortNum {
-  @include typography-number;
-  color: $black;
-  display: block;
-  @include media-tablet {
-    display: none;
-  }
-  @include media-desktopSm {
-    display: none;
-  }
-}
-
-.shortNum {
-  @include typography-number;
-  color: $black;
-  display: block;
-  @include media-tablet {
-    display: none;
-  }
-  @include media-desktopSm {
-    display: none;
-  }
-}
-
-.num {
-  @include typography-number;
-  color: $black;
-  display: none;
-  @include media-tablet {
-    display: block;
-  }
-  @include media-desktopSm {
-    display: block;
+    padding-bottom: px(56);
   }
 }

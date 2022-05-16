@@ -3,24 +3,22 @@ import classnames from 'classnames';
 
 import styles from './Social.module.scss';
 
+import Description from '../Description/Description';
+import Number from '../Number/Number';
+
+import { socialContent } from '@/data/data';
+import { socialNumber } from '@/data/data';
+
 export type Props = {
   className?: string;
-  socialContent: {
-    title: string;
-    description: string;
-    shortNum: string;
-    num: string;
-  };
 };
 
-function Social({ className, socialContent }: Props) {
+function Social({ className }: Props) {
   return (
     <div className={classnames(styles.Social, className)}>
       <div className={styles.textContainer}>
-        <p className={styles.title}>{socialContent.title}</p>
-        <p className={styles.description}>{socialContent.description}</p>
-        <p className={styles.shortNum}>{socialContent.shortNum}</p>
-        <p className={styles.num}>{socialContent.num}</p>
+        <Description content={socialContent} />
+        <Number numContent={socialNumber} />
       </div>
     </div>
   );
