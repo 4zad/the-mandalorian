@@ -8,8 +8,7 @@ Default.args = {
   // add control data
 
   videoinf: {
-    isFullWidth: true,
-    divID: 'test1',
-    id: 148751763
+    imLink: 'assets/images/mandaloriantest.png',
+    vidId: 148751763
   }
 };
