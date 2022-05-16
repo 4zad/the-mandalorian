@@ -1,15 +1,10 @@
 @import 'shared';
 
 .VideoGeneral {
-  // display: none;
   width: 100%;
   height: 100%;
   position: relative;
   background-color: $black;
-
-  .fullWidth {
-    width: 100vw;
-  }
 
   button {
     position: absolute;
@@ -47,14 +42,5 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-
-  .player {
-    position: fixed;
-    top: 50%;
-    left: 20%;
-    width: 60%;
-    height: 500px;
-    z-index: 20;
   }
 }
