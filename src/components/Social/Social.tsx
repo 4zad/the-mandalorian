@@ -4,10 +4,8 @@ import classnames from 'classnames';
 import styles from './Social.module.scss';
 
 import Description from '../Description/Description';
-import Number from '../Number/Number';
 
 import { socialContent } from '@/data/data';
-import { socialNumber } from '@/data/data';
 
 export type Props = {
   className?: string;
@@ -16,9 +14,10 @@ export type Props = {
 function Social({ className }: Props) {
   return (
     <div className={classnames(styles.Social, className)}>
+      <Description content={socialContent.desc} />
       <div className={styles.textContainer}>
-        <Description content={socialContent} />
-        <Number numContent={socialNumber} />
+        <p className={styles.shortNum}>{socialContent.smallNum}</p>
+        <p className={styles.num}>{socialContent.num}</p>
       </div>
     </div>
   );
