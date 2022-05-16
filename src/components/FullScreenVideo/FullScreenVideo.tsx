@@ -7,16 +7,14 @@ import VideoGeneral from '@/components/VideoGeneral/VideoGeneral';
 
 export type Props = {
   className?: string;
+  vidId: number;
+  imLink: string;
 };
 
-function FullScreenVideo({ className }: Props) {
+function FullScreenVideo({ className, vidId, imLink }: Props) {
   return (
     <div className={classnames(styles.FullScreenVideo, className)}>
-      {/* The size of the Image should match the dimensions of this div    */}
-      <div style={{ width: 500, height: 600 }}>
-        <VideoGeneral vidId={148751763} imLink={'assets/images/mandaloriantest.png'}></VideoGeneral>
-        {/* <VideoGeneral id={148751763} imlink={"mandaloriantest.png"}></VideoGeneral> */}
-      </div>
+      <VideoGeneral vidId={vidId} imLink={imLink}></VideoGeneral>
     </div>
   );
 }
