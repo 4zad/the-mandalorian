@@ -9,5 +9,8 @@ Default.args = {
   titles: {
     smallTitle: 'Disney+',
     bigTitle: 'The Mandalorian'
+  },
+  images: {
+    background: 'hero-bg.png'
   }
 };

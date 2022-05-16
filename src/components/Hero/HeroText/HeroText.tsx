@@ -6,17 +6,16 @@ import styles from './HeroText.module.scss';
 export type Props = {
   className?: string;
   titles: {
-    smallTitle: string;
-    bigTitle: string;
+    subTitle: string;
+    title: string;
   };
 };
 
 const HeroText: React.FC<Props> = ({ className, titles }: Props) => {
   return (
     <div className={classnames(styles.heroText, className)}>
-      <h1 className={classnames(styles.smallTitle)}>{titles.smallTitle}</h1>
-
-      <h1 className={classnames(styles.bigTitle)}>{titles.bigTitle}</h1>
+      <span className={classnames(styles.smallTitle)}>{titles.subTitle}</span>
+      <h1 className={classnames(styles.bigTitle)}>{titles.title}</h1>
     </div>
   );
 };

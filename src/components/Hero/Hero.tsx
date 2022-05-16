@@ -1,27 +1,37 @@
 import { memo } from 'react';
 import classnames from 'classnames';
 
-import HeroNav from './HeroNav/HeroNav';
-import HeroText from './HeroText/HeroText';
-
 import styles from './Hero.module.scss';
-import HeroScrollBtn from './HeroScrollBtn/HeroScrollBtn';
+
+import HeroText from './HeroText/HeroText';
+import Arrow from '@/components/svgs/arrow.svg';
 
 export type Props = {
   className?: string;
   titles: {
-    smallTitle: string;
-    bigTitle: string;
+    subTitle: string;
+    title: string;
+  };
+  images: {
+    background: string;
   };
 };
 
-const Hero: React.FC<Props> = ({ className, titles }: Props) => {
+const Hero: React.FC<Props> = ({ className, titles, images }: Props) => {
+  const heroBg = require(`../../assets/images/${images.background}`);
+
   return (
     <header className={classnames(styles.header, className)}>
-      <section className={classnames(styles.hero)}>
-        <HeroNav />
+      <section
+        className={classnames(styles.hero)}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${heroBg})` }}
+      >
         <HeroText titles={titles} />
-        <HeroScrollBtn />
+        <div className={classnames(styles.heroScrollBtn, className)}>
+          <span role="button">
+            <Arrow className={classnames(styles.arrowImg)} />
+          </span>
+        </div>
       </section>
     </header>
   );

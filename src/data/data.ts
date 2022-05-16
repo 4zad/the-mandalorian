@@ -1,6 +1,10 @@
 export const heroText = {
-  smallTitle: 'Disney+',
-  bigTitle: 'The Mandalorian'
+  subTitle: 'Disney+',
+  title: 'The Mandalorian'
+};
+
+export const heroImages = {
+  background: 'hero-bg.png'
 };
 
 export const awardDropdownData = {
