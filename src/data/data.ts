@@ -51,4 +51,10 @@ export const socialContent = {
   },
   smallNum: '500K',
   num: '500.000K'
+}
+
+export const collageImageNames = {
+  image1: 'collage-1.png',
+  image2: 'collage-2.png',
+  image3: 'collage-3.png'
 };
