@@ -1,0 +1,35 @@
+@import 'shared';
+
+.Description {
+  background-color: $white;
+  text-align: left;
+  padding: px(5) 0;
+}
+
+.textContainer {
+  padding: px(10) px(13);
+
+  @include media-tablet {
+    padding: px(10) px(120);
+  }
+  @include media-desktopSm {
+    padding: px(10) px(152);
+  }
+}
+
+.title {
+  @include typography-subtitle;
+  color: $dark-gray;
+}
+
+.desc {
+  @include typography-paragraph;
+  color: $black;
+  padding: px(10) 0;
+}
+
+.smallDesc {
+  @include typography-caption;
+  color: $black;
+  padding: px(10) 0;
+}

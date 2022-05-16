@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import classnames from 'classnames';
-import bannerImage from '@/assets/images/banner-img.png';
 
 import styles from './Banner.module.scss';
+
+import BannerImage from '@/assets/images/banner-img.png';
 
 export type Props = {
   className?: string;
@@ -16,7 +17,7 @@ function Banner({ className, tags }: Props) {
   return (
     <div className={classnames(styles.Banner, className)}>
       <div className={styles.imgWrapper}>
-        <img src={bannerImage} alt="Mandalorian Billboard" />
+        <img src={BannerImage} alt="Mandalorian Billboard" />
       </div>
       <div className={styles.tags}>
         <div className={styles.subtitle}>{tags.title}</div>
