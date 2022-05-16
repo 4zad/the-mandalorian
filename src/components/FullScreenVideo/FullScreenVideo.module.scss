@@ -1,4 +1,14 @@
 @import 'shared';
 
 .FullScreenVideo {
+  width: 100vw;
+  height: px(217);
+
+  @include media-tablet {
+    height: px(707);
+  }
+
+  @include media-desktopSm {
+    height: px(707);
+  }
 }
