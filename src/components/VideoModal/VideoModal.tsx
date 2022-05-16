@@ -9,21 +9,25 @@ import CloseIcon from '@/components/svgs/xmark-solid.svg';
 export type Props = {
   className?: string;
   id: number;
+  setModalOpen: (arg0: boolean) => void;
 };
 
-function VideoModal({ className, id }: Props) {
+function VideoModal({ className, id, setModalOpen }: Props) {
   const playerRef = useRef<HTMLDivElement>(null);
+  const mainDivRef = useRef<HTMLDivElement>(null);
 
-  // css padding bottom trick
-  // css video modal close and open
   useEffect(() => {
     let options = {
       id: id,
-      // pick width value somehow relative to the screen
-      width: 1000,
+      responsive: true,
       loop: false,
       autoplay: false
     };
+
+    // Closes modal on click outside of video div
+    mainDivRef.current?.addEventListener('click', () => {
+      setModalOpen(false);
+    });
 
     if (playerRef.current !== null) {
       let player = new Vimeo(playerRef.current, options);
@@ -34,10 +38,18 @@ function VideoModal({ className, id }: Props) {
     }
   }, [id]);
 
+  function closeClick() {
+    setModalOpen(false);
+  }
+
   return (
-    <div className={classnames(styles.VideoModal, className)}>
-      <CloseIcon className={styles.svgClose} />
-      <div className={styles.player} ref={playerRef} />
+    <div ref={mainDivRef} className={classnames(styles.VideoModal, className)}>
+      <button onClick={closeClick}>
+        <CloseIcon className={styles.svgClose} />
+      </button>
+      <div className={styles.videoWrapper}>
+        <div className={styles.player} ref={playerRef} />
+      </div>
     </div>
   );
 }
