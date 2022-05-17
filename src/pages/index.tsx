@@ -5,10 +5,35 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+import Carousel from '@/components/Carousel/Carousel';
 
 type Props = {
   className: string;
 };
+
+export const carouselItems = [
+  {
+    key: 0,
+    vidId: 0,
+    imLink: 'assets/images/carousel-img-1.png',
+    title: 'Trailer 2',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  },
+  {
+    key: 1,
+    vidId: 1,
+    imLink: 'assets/images/carousel-img-2.png',
+    title: 'Trailer 3',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  },
+  {
+    key: 2,
+    vidId: 1,
+    imLink: 'assets/images/carousel-img-2.png',
+    title: 'Trailer 4',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  }
+];
 
 function Home({ className }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +56,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.Home, className)} ref={containerRef}>
       <Head />
+      <Carousel carouselItems={carouselItems} />
       <section className={styles.hero}>
         <h1 ref={titleRef}>Welcome to Jam3!</h1>
         <h2 className={styles.description} ref={descriptionRef}>

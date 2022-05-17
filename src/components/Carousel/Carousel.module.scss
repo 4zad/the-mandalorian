@@ -1,4 +1,46 @@
 @import 'shared';
 
 .Carousel {
+  background-color: $white;
+  text-align: left;
+}
+
+.swiperContainer {
+  height: 300px;
+  padding: px(5) px(13);
+
+  @include media-tablet {
+    padding: px(5) px(30);
+  }
+}
+
+.slide {
+  @include media-tablet {
+    padding: 0 px(5);
+  }
+}
+
+.video {
+  width: px(354);
+  height: px(200);
+
+  @include media-tablet {
+    width: px(325);
+    height: px(200);
+  }
+  @include media-desktopSm {
+    width: px(443);
+    height: px(274);
+  }
+}
+
+.title {
+  @include typography-subtitle;
+  color: $dark-gray;
+}
+
+.description {
+  @include typography-caption;
+  color: $black;
+  padding: px(10) 0;
 }
