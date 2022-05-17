@@ -1,5 +1,7 @@
-import { memo, useState } from 'react';
+import { memo, useState, useCallback } from 'react';
 import classnames from 'classnames';
+
+import scroll from '@/services/lock-body-scroll';
 
 import styles from './VideoGeneral.module.scss';
 
@@ -18,18 +20,24 @@ export type Props = {
 function VideoGeneral({ className, imLink, vidId, alt }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  function buttonClick() {
+  const openVideo = useCallback(async () => {
     setModalOpen(true);
-  }
+    scroll.lock();
+  }, []);
+
+  const closeVideo: () => void = useCallback(async () => {
+    scroll.unlock();
+    setModalOpen(false);
+  }, []);
 
   return (
     <div className={classnames(styles.VideoGeneral, className)}>
-      <button onClick={buttonClick}>
+      <button onClick={openVideo}>
         <PlayCircle className={styles.svgPlayCircle} />
         <PlayIcon className={styles.svgPlayIcon} />
       </button>
       <img src={imLink} alt={alt}></img>
-      {modalOpen && <VideoModal id={vidId} setModalOpen={setModalOpen} />}
+      {modalOpen && <VideoModal id={vidId} closeModal={closeVideo} />}
     </div>
   );
 }

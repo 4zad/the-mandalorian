@@ -9,12 +9,11 @@ import CloseIcon from '@/components/svgs/xmark-solid.svg';
 export type Props = {
   className?: string;
   id: number;
-  setModalOpen: (arg0: boolean) => void;
+  closeModal: () => void;
 };
 
-function VideoModal({ className, id, setModalOpen }: Props) {
+function VideoModal({ className, id, closeModal }: Props) {
   const playerRef = useRef<HTMLDivElement>(null);
-  const mainDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let options = {
@@ -23,11 +22,6 @@ function VideoModal({ className, id, setModalOpen }: Props) {
       loop: false,
       autoplay: false
     };
-
-    // Closes modal on click outside of video div
-    mainDivRef.current?.addEventListener('click', () => {
-      setModalOpen(false);
-    });
 
     if (playerRef.current !== null) {
       let player = new Vimeo(playerRef.current, options);
@@ -38,15 +32,9 @@ function VideoModal({ className, id, setModalOpen }: Props) {
     }
   }, [id]);
 
-  function closeClick() {
-    setModalOpen(false);
-  }
-
   return (
-    <div ref={mainDivRef} className={classnames(styles.VideoModal, className)}>
-      <button onClick={closeClick}>
-        <CloseIcon className={styles.svgClose} />
-      </button>
+    <div className={classnames(styles.VideoModal, className)} onClick={closeModal}>
+      <CloseIcon className={styles.svgClose} />
       <div className={styles.videoWrapper}>
         <div className={styles.player} ref={playerRef} />
       </div>
