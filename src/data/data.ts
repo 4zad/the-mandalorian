@@ -51,10 +51,19 @@ export const socialContent = {
   },
   smallNum: '500K',
   num: '500.000K'
-}
+};
 
 export const collageImageNames = {
-  image1: 'collage-1.png',
-  image2: 'collage-2.png',
-  image3: 'collage-3.png'
+  image1: {
+    name: 'collage-1.png',
+    alt: 'Illustration of the Mandalorian at night'
+  },
+  image2: {
+    name: 'collage-2.png',
+    alt: '"The Mandalorian" poster image'
+  },
+  image3: {
+    name: 'collage-3.png',
+    alt: 'Illustration of the Mandalorian entering a door'
+  }
 };
