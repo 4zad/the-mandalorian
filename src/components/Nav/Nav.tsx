@@ -6,6 +6,8 @@ import styles from './Nav.module.scss';
 
 import Image from '@/components/Image/Image';
 
+import { navLinks } from '@/data/data';
+
 // const LINKS = [
 //   { href: 'https://jam3.com', label: 'Jam3', file: 'three-logo.jpeg' },
 //   { href: 'https://github.com/jam3', label: 'GitHub', file: 'github-icon-64b.png' }
@@ -22,7 +24,7 @@ function Nav() {
       <div className={classnames(styles.navBar)}>
         <ul>
           <li>
-            <Link href={'/'}>
+            <Link href={navLinks.buddhaHome}>
               <a aria-label="Home">
                 <Image src={'buddha-logo.png'} alt="Buddha Jones" className={classnames(styles.buddha)} />
               </a>
@@ -32,12 +34,10 @@ function Nav() {
 
         <ul className={styles.links}>
           <li>
-            <a href={'/'} target="_blank" rel="noopener noreferrer" aria-label={'Menu'}>
-              <svg className={styles.menuHamburger} viewBox="0 0 100 30" width="40" height="40">
-                <rect className={styles.topBar} y="0" rx="4"></rect>
-                <rect className={styles.bottomBar} y="30" x="20" rx="4"></rect>
-              </svg>
-            </a>
+            <svg className={styles.menuHamburger} viewBox="0 0 100 30" width="40" height="40">
+              <rect className={styles.topBar} y="0" rx="4"></rect>
+              <rect className={styles.bottomBar} y="30" x="20" rx="4"></rect>
+            </svg>
           </li>
         </ul>
       </div>

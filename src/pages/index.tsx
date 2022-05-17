@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 import Head from '@/components/Head/Head';
 import Hero from '@/components/Hero/Hero';
 
-import { heroText, heroImages } from '@/data/data';
+import { heroData } from '@/data/data';
 
 type Props = {
   className: string;
@@ -34,8 +34,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
-      <Hero className={className} titles={heroText} images={heroImages} />
-      ``
+      <Hero className={className} data={heroData} />
     </main>
   );
 }

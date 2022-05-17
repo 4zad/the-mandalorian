@@ -43,12 +43,7 @@ body {
 
 main {
   min-height: 100vh;
-  // padding-top: $navbar-height-mobile;
   @include z-index(pages);
-
-  @include media-desktopSm {
-    // padding-top: $navbar-height-desktop;
-  }
 }
 
 a {

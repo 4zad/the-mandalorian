@@ -1,10 +1,11 @@
-export const heroText = {
+export const heroData = {
   subTitle: 'Disney+',
-  title: 'The Mandalorian'
+  title: 'The Mandalorian',
+  background: 'hero-bg.png'
 };
 
-export const heroImages = {
-  background: 'hero-bg.png'
+export const navLinks = {
+  buddhaHome: '/'
 };
 
 export const awardDropdownData = {

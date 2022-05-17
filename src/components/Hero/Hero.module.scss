@@ -14,7 +14,6 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  // background: ;
   background-size: cover;
   @include position-0;
   background-position-x: px(-175);
@@ -55,5 +54,28 @@
     @include media-desktopSm {
       width: 16px;
     }
+  }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 90%;
+  @include transform-center;
+
+  > .subTitle,
+  > .title {
+    color: $white;
+    padding: px(6) 0;
+  }
+
+  > .subTitle {
+    @include typography-paragraph;
+  }
+
+  > .title {
+    @include typography-title;
   }
 }
