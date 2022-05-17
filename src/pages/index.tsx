@@ -6,8 +6,9 @@ import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
 import Hero from '@/components/Hero/Hero';
+import Collage from '@/components/Collage/Collage';
 
-import { heroData } from '@/data/data';
+import { heroData, collageData } from '@/data/data';
 
 type Props = {
   className: string;
@@ -35,6 +36,7 @@ function Home({ className }: Props) {
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
       <Hero className={className} data={heroData} />
+      <Collage content={collageData} />
     </main>
   );
 }

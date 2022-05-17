@@ -7,29 +7,21 @@ import Image from '@/components/Image/Image';
 
 export type Props = {
   className?: string;
-  images: {
-    image1: {
-      name: string;
+  content: {
+    image: {
+      src: string;
       alt: string;
-    };
-    image2: {
-      name: string;
-      alt: string;
-    };
-    image3: {
-      name: string;
-      alt: string;
-    };
+    }[];
   };
 };
 
-function Collage({ className, images }: Props) {
+function Collage({ className, content }: Props) {
   return (
     <div className={classnames(styles.collage, className)}>
       <div className={styles.collageImages}>
-        <Image src={images.image1.name} alt={images.image1.alt} className={styles.image} />
-        <Image src={images.image2.name} alt={images.image2.alt} className={styles.image} />
-        <Image src={images.image3.name} alt={images.image3.alt} className={styles.image} />
+        {content.image.map((image: { src: string; alt: string }) => (
+          <Image className={styles.image} src={image.src} alt={image.alt} key={image.src} />
+        ))}
       </div>
     </div>
   );
