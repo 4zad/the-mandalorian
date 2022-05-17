@@ -20,16 +20,16 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
   return (
     <header className={classnames(styles.header, className)}>
       <section
-        className={classnames(styles.hero)}
+        className={styles.hero}
         style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${heroBg})` }}
       >
-        <div className={classnames(styles.heroText, className)}>
-          <span className={classnames(styles.subTitle)}>{data.subTitle}</span>
-          <h1 className={classnames(styles.title)}>{data.title}</h1>
+        <div className={styles.heroText}>
+          <span className={styles.subTitle}>{data.subTitle}</span>
+          <h1 className={styles.title}>{data.title}</h1>
         </div>
-        <div className={classnames(styles.heroScrollBtn, className)}>
+        <div className={styles.heroScrollBtn}>
           <span role="button">
-            <Arrow className={classnames(styles.arrowImg)} />
+            <Arrow className={styles.arrowImg} />
           </span>
         </div>
       </section>

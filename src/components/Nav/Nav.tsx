@@ -1,6 +1,6 @@
 // import { useRef } from 'react';
 import Link from 'next/link';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
 import styles from './Nav.module.scss';
 
@@ -20,13 +20,13 @@ function Nav() {
   // const containerRef = useRef<HTMLElement>(null);
 
   return (
-    <nav className={classnames(styles.nav)}>
-      <div className={classnames(styles.navBar)}>
+    <nav className={styles.nav}>
+      <div className={styles.navBar}>
         <ul>
           <li>
             <Link href={navLinks.buddhaHome}>
               <a aria-label="Home">
-                <Image src={'buddha-logo.png'} alt="Buddha Jones" className={classnames(styles.buddha)} />
+                <Image src={'buddha-logo.png'} alt="Buddha Jones" className={styles.buddha} />
               </a>
             </Link>
           </li>
