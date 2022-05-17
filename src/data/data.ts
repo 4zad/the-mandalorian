@@ -87,7 +87,7 @@ export const processContent = {
 };
 
 export const processEyebrow = {
-  title: 'Services',
+  title: 'Optional Eyebrow',
   description: 'Oficial trailer curabitur quis nunc augue duis vulputate nisl quis dignissim vulputate.'
 };
 
