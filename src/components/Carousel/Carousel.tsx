@@ -5,7 +5,6 @@ import VideoGeneral from '@/components/VideoGeneral/VideoGeneral';
 
 import classnames from 'classnames';
 import useWindowSize from '@/hooks/use-windowsize';
-
 import styles from './Carousel.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -52,7 +51,7 @@ function Carousel({ className, carouselItems }: Props) {
           return (
             <SwiperSlide className={styles.slide} key={carouselItem.key}>
               <div className={styles.video}>
-                <VideoGeneral imLink={carouselItem.imLink} vidId={carouselItem.vidId} />
+                <VideoGeneral vidId={carouselItem.vidId} imLink={carouselItem.imLink}></VideoGeneral>
               </div>
               <p className={styles.title}>{carouselItem.title}</p>
               <p className={styles.description}>{carouselItem.description}</p>

@@ -6,17 +6,21 @@
 }
 
 .swiperContainer {
-  height: 300px;
+  height: px(290);
   padding: px(5) px(13);
 
   @include media-tablet {
     padding: px(5) px(30);
+    height: px(320);
+  }
+  @include media-desktopSm {
+    height: px(395);
   }
 }
 
 .slide {
   @include media-tablet {
-    padding: 0 px(5);
+    padding: 0 px(10);
   }
 }
 

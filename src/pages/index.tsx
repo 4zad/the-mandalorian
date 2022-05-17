@@ -14,21 +14,21 @@ type Props = {
 export const carouselItems = [
   {
     key: 0,
-    vidId: 0,
+    vidId: 368223964,
     imLink: 'assets/images/carousel-img-1.png',
     title: 'Trailer 2',
     description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
   },
   {
     key: 1,
-    vidId: 1,
+    vidId: 368223964,
     imLink: 'assets/images/carousel-img-2.png',
     title: 'Trailer 3',
     description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
   },
   {
     key: 2,
-    vidId: 1,
+    vidId: 368223964,
     imLink: 'assets/images/carousel-img-2.png',
     title: 'Trailer 4',
     description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
