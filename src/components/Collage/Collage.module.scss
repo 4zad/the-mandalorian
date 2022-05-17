@@ -6,14 +6,14 @@
   position: relative;
   width: 100vw;
   background-color: $white;
-  padding: px(1) px(13);
+  padding: 0 px(13);
 
   @include media-tablet {
-    padding: px(1) px(30);
+    padding: 0 px(30);
   }
 
   @include media-desktopSm {
-    // padding: px(1) px(30);
+    // padding: 0 px(30);
   }
 
   .collageImages {
