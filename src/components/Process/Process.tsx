@@ -14,29 +14,44 @@ export type Props = {
 function Process({ className }: Props) {
   return (
     <div className={classnames(styles.Process, className)}>
-      <Description content={processContent} />
-      <div className={styles.vid1Container}>
-        {/* <Description isSmallText={true} content={processGraphicsDesc} /> */}
-        <p className={styles.subtitle}>{processGraphicsDesc.title}</p>
-        <p className={styles.desc}>{processGraphicsDesc.description}</p>
+      <div className={styles.processTextContainer}>
+        <Description content={processContent} />
       </div>
-      <div className={styles.vid2Container}>
-        {/* <Description className={styles.vid2} isSmallText={true} content={processGraphicsDesc} /> */}
-        <div className={styles.vid2TextContainer}>
+
+      <div className={styles.vid1Container}>
+        <div className={styles.vid1Placeholder}></div>
+        <div className={styles.text1Container}>
           <p className={styles.subtitle}>{processGraphicsDesc.title}</p>
           <p className={styles.desc}>{processGraphicsDesc.description}</p>
         </div>
       </div>
-      <Description content={processEyebrow} />
-      <div className={styles.vid3Container}>
-        {/* <Description isSmallText={true} content={processVid3Desc} /> */}
-        <p className={styles.subtitle}>{processVid3Desc.title}</p>
-        <p className={styles.desc}>{processVid3Desc.description}</p>
+
+      <div className={styles.vid2Container}>
+        <div className={styles.vid2Placeholder}></div>
+        <div className={styles.text2Container}>
+          <p className={styles.subtitle}>{processGraphicsDesc.title}</p>
+          <p className={styles.desc}>{processGraphicsDesc.description}</p>
+        </div>
       </div>
+
+      <div className={styles.eyebrowTextContainer}>
+        <Description content={processEyebrow} />
+      </div>
+
+      <div className={styles.vid3Container}>
+        <div className={styles.vid3Placeholder}></div>
+        <div className={styles.text3Container}>
+          <p className={styles.subtitle}>{processVid3Desc.title}</p>
+          <p className={styles.desc}>{processVid3Desc.description}</p>
+        </div>
+      </div>
+
       <div className={styles.vid4Container}>
-        {/* <Description isSmallText={true} content={processVid4Desc} /> */}
-        <p className={styles.subtitle}>{processVid4Desc.title}</p>
-        <p className={styles.desc}>{processVid4Desc.description}</p>
+        <div className={styles.vid4Placeholder}></div>
+        <div className={styles.text4Container}>
+          <p className={styles.subtitle}>{processVid4Desc.title}</p>
+          <p className={styles.desc}>{processVid4Desc.description}</p>
+        </div>
       </div>
     </div>
   );
