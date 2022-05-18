@@ -12,10 +12,6 @@
     padding: 0 px(30);
   }
 
-  @include media-desktopSm {
-    // padding: 0 px(30);
-  }
-
   .collageImages {
     display: inline-block;
     position: relative;
@@ -58,12 +54,10 @@
       @include media-tablet {
         transform: translate(-25%, -90%);
         margin: 0 auto -10vw;
-        // width: px(352);
       }
 
       @include media-desktopSm {
         transform: translate(-25%, -90%);
-        // margin: 0 auto -10vh;
         width: px(479);
       }
     }
