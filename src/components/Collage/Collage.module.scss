@@ -1,0 +1,65 @@
+@import 'shared';
+
+.collage {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 100vw;
+  background-color: $white;
+  padding: 0 px(13);
+
+  @include media-tablet {
+    padding: 0 px(30);
+  }
+
+  .collageImages {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    .image:nth-child(1) {
+      margin: 0 auto 0 0;
+      margin-bottom: px(120);
+      width: px(260);
+
+      @include media-tablet {
+        width: px(345);
+      }
+
+      @include media-desktopSm {
+        width: px(470);
+      }
+    }
+
+    .image:nth-child(2) {
+      margin: 0 0 0 auto;
+      margin-bottom: px(60);
+      width: px(259);
+
+      @include media-tablet {
+        transform: translate(-55%, -100%);
+        width: px(169);
+      }
+
+      @include media-desktopSm {
+        transform: translate(-55%, -100%);
+        width: px(231);
+      }
+    }
+
+    .image:nth-child(3) {
+      margin: 0 auto 20vw;
+      width: px(352);
+
+      @include media-tablet {
+        transform: translate(-25%, -90%);
+        margin: 0 auto -10vw;
+      }
+
+      @include media-desktopSm {
+        transform: translate(-25%, -90%);
+        width: px(479);
+      }
+    }
+  }
+}
