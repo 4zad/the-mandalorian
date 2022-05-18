@@ -5,7 +5,12 @@ export const heroData = {
 };
 
 export const navLinks = {
-  buddhaHome: '/'
+  home: {
+    href: '/',
+    src: 'buddha-logo.png',
+    alt: 'Buddha Jones',
+    ariaLabel: 'Home'
+  }
 };
 
 export const awardDropdownData = {

@@ -24,9 +24,9 @@ function Nav() {
       <div className={classnames(styles.navBar)}>
         <ul>
           <li>
-            <Link href={navLinks.buddhaHome}>
-              <a aria-label="Home">
-                <Image src={'buddha-logo.png'} alt="Buddha Jones" className={classnames(styles.buddha)} />
+            <Link href={navLinks.home.href}>
+              <a aria-label={navLinks.home.ariaLabel}>
+                <Image src={navLinks.home.src} alt={navLinks.home.alt} className={classnames(styles.buddha)} />
               </a>
             </Link>
           </li>
