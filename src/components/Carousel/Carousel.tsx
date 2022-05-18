@@ -66,7 +66,7 @@ function Carousel({ className, carouselItems }: Props) {
         })}
       </Swiper>
       {carouselItems.map((carouselItem) => {
-        return <PortalDiv divId={carouselItem.divId} />;
+        return <PortalDiv key={carouselItem.key} divId={carouselItem.divId} />;
       })}
     </div>
   );
