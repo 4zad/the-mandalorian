@@ -1,3 +1,18 @@
+export const heroData = {
+  subTitle: 'Disney+',
+  title: 'The Mandalorian',
+  background: 'hero-bg.png'
+};
+
+export const navLinks = {
+  home: {
+    href: '/',
+    src: 'buddha-logo.png',
+    alt: 'Buddha Jones',
+    ariaLabel: 'Home'
+  }
+};
+
 export const awardDropdownData = {
   trailerText: 'Trailer 1.',
   winnerText: 'Award Winner',

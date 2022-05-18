@@ -8,8 +8,4 @@ Default.args = {};
 
 Default.argTypes = {};
 
-Default.parameters = {
-  jira: {
-    id: 'SON-145'
-  }
-};
+Default.parameters = {};
