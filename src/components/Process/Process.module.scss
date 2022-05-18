@@ -98,24 +98,67 @@
   padding: px(25) 0;
 }
 
-.vid3Container {
-  padding: px(10) px(13);
+.carouselContainer {
+  padding: px(5) px(13);
+  @include media-tablet {
+    display: inline;
+    padding: px(10) px(30);
+  }
+}
 
-  //   @include media-tablet {
-  //     padding: px(10) px(120);
-  //   }
-  //   @include media-desktopSm {
-  //     padding: px(10) px(152);
-  //   }
+.vid3Container {
+  //   padding: px(5) px(13);
+  display: block;
+  .text3Container {
+    align-items: left;
+    padding: px(20) 0;
+  }
+  .desc {
+    width: 75%;
+  }
+  .vid3Placeholder {
+    background-color: $black;
+    width: px(354);
+    height: px(200);
+    margin: auto;
+  }
+  @include media-tablet {
+    // padding: px(10) px(30);
+    .vid1Placeholder {
+      width: px(715);
+      height: px(410);
+      margin: 0;
+    }
+    // width: 50%;
+  }
+  @include media-desktopSm {
+    // padding: px(10) px(25);
+    .vid1Placeholder {
+      width: px(975);
+      height: px(555);
+    }
+  }
 }
 
 .vid4Container {
-  padding: px(10) px(13);
+  //   padding: px(10) px(13);
+  display: none;
 
-  //   @include media-tablet {
-  //     padding: px(10) px(120);
-  //   }
-  //   @include media-desktopSm {
-  //     padding: px(10) px(152);
-  //   }
+  @include media-tablet {
+    // padding: px(10) px(120);
+    .vid4Placeholder {
+      background-color: $black;
+      width: px(354);
+      height: px(200);
+    }
+    display: block;
+    // width: 50%;
+  }
+  @include media-desktopSm {
+    // padding: px(10) px(25);
+    .vid4Placeholder {
+      width: px(354);
+      height: px(200);
+    }
+  }
 }

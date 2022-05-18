@@ -38,19 +38,21 @@ function Process({ className }: Props) {
         <Description content={processEyebrow} />
       </div>
 
-      <div className={styles.vid3Container}>
-        <div className={styles.vid3Placeholder}></div>
-        <div className={styles.text3Container}>
-          <p className={styles.subtitle}>{processVid3Desc.title}</p>
-          <p className={styles.desc}>{processVid3Desc.description}</p>
+      <div className={styles.carouselContainer}>
+        <div className={styles.vid3Container}>
+          <div className={styles.vid3Placeholder}></div>
+          <div className={styles.text3Container}>
+            <p className={styles.subtitle}>{processVid3Desc.title}</p>
+            <p className={styles.desc}>{processVid3Desc.description}</p>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.vid4Container}>
-        <div className={styles.vid4Placeholder}></div>
-        <div className={styles.text4Container}>
-          <p className={styles.subtitle}>{processVid4Desc.title}</p>
-          <p className={styles.desc}>{processVid4Desc.description}</p>
+        <div className={styles.vid4Container}>
+          <div className={styles.vid4Placeholder}></div>
+          <div className={styles.text4Container}>
+            <p className={styles.subtitle}>{processVid4Desc.title}</p>
+            <p className={styles.desc}>{processVid4Desc.description}</p>
+          </div>
         </div>
       </div>
     </div>
