@@ -7,9 +7,6 @@
 
 .processTextContainer {
   padding: px(50) 0;
-  //   @include media-tablet {
-  //     padding-top: px(95);
-  //   }
 }
 
 .subtitle {
@@ -64,9 +61,6 @@
     margin-left: auto;
     align-items: left;
     padding: px(20) 0 px(25);
-    @include media-tablet {
-      width: 50%;
-    }
   }
   .vid2Placeholder {
     background-color: $black;
@@ -74,19 +68,18 @@
     height: px(153);
     margin-left: auto;
   }
-
   @include media-tablet {
-    padding: px(14) px(30) px(100);
+    padding: px(14) px(30) px(75);
     .vid2Placeholder {
       width: px(354);
       height: px(207);
     }
-    .desc {
-      width: 75%;
+    .text2Container {
+      width: 50%;
     }
   }
   @include media-desktopSm {
-    padding: px(40) px(30) px(100);
+    padding: px(40) px(30) px(75);
     .vid2Placeholder {
       width: px(482);
       height: px(282);
@@ -101,14 +94,14 @@
 .carouselContainer {
   padding: px(5) px(13);
   @include media-tablet {
-    display: inline;
+    //display: inline;
     padding: px(10) px(30);
   }
 }
 
 .vid3Container {
-  //   padding: px(5) px(13);
-  display: block;
+  // padding: px(5) px(13);
+  // display: block;
   .text3Container {
     align-items: left;
     padding: px(20) 0;
@@ -118,47 +111,51 @@
   }
   .vid3Placeholder {
     background-color: $black;
-    width: px(354);
+    width: px(345);
     height: px(200);
-    margin: auto;
+    // margin: auto;
   }
   @include media-tablet {
     // padding: px(10) px(30);
-    .vid1Placeholder {
-      width: px(715);
-      height: px(410);
-      margin: 0;
-    }
-    // width: 50%;
+    width: 50%;
+    float: left;
+    // margin-right: px(3);
   }
   @include media-desktopSm {
     // padding: px(10) px(25);
-    .vid1Placeholder {
-      width: px(975);
-      height: px(555);
+    .vid3Placeholder {
+      width: px(475);
+      height: px(282);
     }
   }
 }
 
 .vid4Container {
   //   padding: px(10) px(13);
-  display: none;
+  //display: none;
 
   @include media-tablet {
     // padding: px(10) px(120);
+    display: block;
+    width: 50%;
+    float: left;
     .vid4Placeholder {
       background-color: $black;
-      width: px(354);
+      width: px(345);
       height: px(200);
     }
-    display: block;
-    // width: 50%;
+    .text4Container {
+      align-items: left;
+      padding: px(20) 0;
+    }
   }
   @include media-desktopSm {
     // padding: px(10) px(25);
+    display: block;
+    width: 50%;
     .vid4Placeholder {
-      width: px(354);
-      height: px(200);
+      width: px(475);
+      height: px(282);
     }
   }
 }

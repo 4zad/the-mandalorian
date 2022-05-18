@@ -10,6 +10,7 @@ import VideoModal from '@/components/VideoModal/VideoModal';
 
 import Hero from '@/components/Hero/Hero';
 import Collage from '@/components/Collage/Collage';
+import Process from '@/components/Process/Process';
 
 import { heroData, collageData, carouselItems } from '@/data/data';
 
@@ -37,11 +38,18 @@ function Home({ className }: Props) {
 
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
+      <Process />
       <Head />
+<<<<<<< HEAD
       <VideoModal />
       <Hero className={className} data={heroData} />
       <Collage content={collageData} />
       <Carousel carouselItems={carouselItems} />
+=======
+      {/* <Hero className={className} data={heroData} />
+      <Collage content={collageData} /> */}
+      {/* <Hero className={className} data={heroData} /> */}
+>>>>>>> 3cb1170 (feature: conditional rendering for process and style editing)
     </main>
   );
 }
