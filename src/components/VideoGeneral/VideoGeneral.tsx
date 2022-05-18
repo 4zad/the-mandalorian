@@ -9,15 +9,17 @@ import PlayIcon from '@/components/svgs/play-icon.svg';
 import PlayCircle from '@/components/svgs/play-circle.svg';
 
 import VideoModal from '@/components/VideoModal/VideoModal';
+import { Portal } from '@/components/Portal/Portal';
 
 export type Props = {
   className?: string;
   imLink: string;
   vidId: number;
+  divId: string;
   alt?: string;
 };
 
-function VideoGeneral({ className, imLink, vidId, alt }: Props) {
+function VideoGeneral({ className, imLink, vidId, divId, alt }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openVideo = useCallback(async () => {
@@ -37,7 +39,11 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
         <PlayIcon className={styles.svgPlayIcon} />
       </button>
       <img src={imLink} alt={alt}></img>
-      {modalOpen && <VideoModal id={vidId} closeModal={closeVideo} />}
+      {modalOpen && (
+        <Portal divId={divId}>
+          <VideoModal id={vidId} closeModal={closeVideo} />
+        </Portal>
+      )}
     </div>
   );
 }

@@ -10,12 +10,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { PortalDiv } from '@/components/Portal/Portal';
 
 export type Props = {
   className?: string;
   carouselItems: {
     key: number;
     vidId: number;
+    divId: string;
     imLink: string;
     title: string;
     description: string;
@@ -27,7 +29,7 @@ function Carousel({ className, carouselItems }: Props) {
   const width = useWindowSize();
 
   useEffect(() => {
-    if (width <= 375) {
+    if (width < 768) {
       setNumSlides(1);
     } else {
       setNumSlides(2);
@@ -51,7 +53,11 @@ function Carousel({ className, carouselItems }: Props) {
           return (
             <SwiperSlide className={styles.slide} key={carouselItem.key}>
               <div className={styles.video}>
-                <VideoGeneral vidId={carouselItem.vidId} imLink={carouselItem.imLink}></VideoGeneral>
+                <VideoGeneral
+                  divId={carouselItem.divId}
+                  vidId={carouselItem.vidId}
+                  imLink={carouselItem.imLink}
+                ></VideoGeneral>
               </div>
               <p className={styles.title}>{carouselItem.title}</p>
               <p className={styles.description}>{carouselItem.description}</p>
@@ -59,6 +65,9 @@ function Carousel({ className, carouselItems }: Props) {
           );
         })}
       </Swiper>
+      {carouselItems.map((carouselItem) => {
+        return <PortalDiv divId={carouselItem.divId} />;
+      })}
     </div>
   );
 }
