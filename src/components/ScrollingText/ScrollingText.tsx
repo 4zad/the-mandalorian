@@ -5,10 +5,17 @@ import styles from './ScrollingText.module.scss';
 
 export type Props = {
   className?: string;
+  scrollingText: {
+    text: string;
+  };
 };
 
-function ScrollingText({ className }: Props) {
-  return <div className={classnames(styles.ScrollingText, className)}>ScrollingText component</div>;
+function ScrollingText({ className, scrollingText }: Props) {
+  return (
+    <div className={classnames(styles.textWrapper, className)}>
+      <span className={styles.text}>{scrollingText.text}</span>
+    </div>
+  );
 }
 
 export default memo(ScrollingText);

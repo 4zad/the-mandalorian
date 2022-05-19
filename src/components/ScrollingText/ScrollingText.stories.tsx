@@ -6,4 +6,7 @@ export const Default = (args: Props) => <ScrollingText {...args} />;
 
 Default.args = {
   // add control data
+  scrollingText: {
+    text: '#themandalorian'
+  }
 };
