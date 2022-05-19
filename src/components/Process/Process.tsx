@@ -1,59 +1,90 @@
-import { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
 import classnames from 'classnames';
 
 import styles from './Process.module.scss';
 
 import Description from '../Description/Description';
-
-import { processContent, processEyebrow, processGraphicsDesc, processVid3Desc, processVid4Desc } from '@/data/data';
+import VideoGeneral from '../VideoGeneral/VideoGeneral';
+import { processContent } from '@/data/data';
 
 export type Props = {
   className?: string;
+  processContent: {
+    backgroundText: string;
+    descContent: {
+      title: string;
+      description: string;
+    };
+    smallVid: {
+      vid: {
+        imLink: string;
+        vidId: number;
+      };
+      desc: {
+        title: string;
+        description: string;
+      };
+    };
+    largeVid: {
+      vid: {
+        imLink: string;
+        vidId: number;
+      };
+      desc: {
+        title: string;
+        description: string;
+      };
+    };
+  };
 };
 
 function Process({ className }: Props) {
-  const [isMobile, setMobile] = useState(true);
+  // const [isMobile, setMobile] = useState(true);
 
-  useEffect(() => {
-    if (window.innerWidth > 376) {
-      setMobile(false);
-    } else {
-      setMobile(true);
-    }
-    const updateMedia = () => {
-      if (window.innerWidth > 376) {
-        setMobile(false);
-      } else {
-        setMobile(true);
-      }
-    };
-    window.addEventListener('resize', updateMedia);
-    return () => window.removeEventListener('resize', updateMedia);
-  }, []);
+  // useEffect(() => {
+  //   if (window.innerWidth > 376) {
+  //     setMobile(false);
+  //   } else {
+  //     setMobile(true);
+  //   }
+  //   const updateMedia = () => {
+  //     if (window.innerWidth > 376) {
+  //       setMobile(false);
+  //     } else {
+  //       setMobile(true);
+  //     }
+  //   };
+  //   window.addEventListener('resize', updateMedia);
+  //   return () => window.removeEventListener('resize', updateMedia);
+  // }, []);
 
   return (
-    <div className={classnames(styles.Process, className)}>
+    <div className={classnames(styles.Process, className, processContent)}>
       <div className={styles.processTextContainer}>
-        <Description content={processContent} />
+        <Description content={processContent.descContent} />
       </div>
 
       <div className={styles.vid1Container}>
-        <div className={styles.vid1Placeholder}></div>
+        <div className={styles.vid1Placeholder}>
+          <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
+        </div>
         <div className={styles.text1Container}>
-          <p className={styles.subtitle}>{processGraphicsDesc.title}</p>
-          <p className={styles.desc}>{processGraphicsDesc.description}</p>
+          <p className={styles.subtitle}>{processContent.largeVid.desc.title}</p>
+          <p className={styles.desc}>{processContent.largeVid.desc.description}</p>
         </div>
       </div>
 
       <div className={styles.vid2Container}>
-        <div className={styles.vid2Placeholder}></div>
+        <div className={styles.vid2Placeholder}>
+          <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
+        </div>
         <div className={styles.text2Container}>
-          <p className={styles.subtitle}>{processGraphicsDesc.title}</p>
-          <p className={styles.desc}>{processGraphicsDesc.description}</p>
+          <p className={styles.subtitle}>{processContent.smallVid.desc.title}</p>
+          <p className={styles.desc}>{processContent.smallVid.desc.description}</p>
         </div>
       </div>
 
-      <div className={styles.eyebrowTextContainer}>
+      {/* <div className={styles.eyebrowTextContainer}>
         <Description content={processEyebrow} />
       </div>
 
@@ -79,7 +110,7 @@ function Process({ className }: Props) {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -81,29 +81,32 @@ export const socialContent = {
 };
 
 export const processContent = {
-  title: 'Process',
-  description:
-    'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.'
-};
-
-export const processEyebrow = {
-  title: 'Optional Eyebrow',
-  description: 'Oficial trailer curabitur quis nunc augue duis vulputate nisl quis dignissim vulputate.'
-};
-
-export const processGraphicsDesc = {
-  title: 'Graphic Effects',
-  description: 'The result of graphic effects curabitur quis nunc augue.'
-};
-
-export const processVid3Desc = {
-  title: 'Optional Eyebrow',
-  description: 'Vivamus fringilla elit nunc ut facilisis risus egestas at.'
-};
-
-export const processVid4Desc = {
-  title: 'Optional Eyebrow',
-  description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  backgroundText: './assets/images/process-bg-text.png',
+  descContent: {
+    title: 'Process',
+    description:
+      'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.'
+  },
+  smallVid: {
+    vid: {
+      imLink: 'assets/images/small-process-vid.png',
+      vidId: 368223964
+    },
+    desc: {
+      title: 'Graphic Effects',
+      description: 'The result of graphic effects curabitur quis nunc augue.'
+    }
+  },
+  largeVid: {
+    vid: {
+      imLink: 'assets/images/large-process-vid.png',
+      vidId: 368223964
+    },
+    desc: {
+      title: 'Graphic Effects',
+      description: 'The result of graphic effects curabitur quis nunc augue.'
+    }
+  }
 };
 
 export const collageData = {

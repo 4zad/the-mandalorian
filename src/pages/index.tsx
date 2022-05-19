@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+<<<<<<< HEAD
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
 
@@ -13,6 +14,14 @@ import Collage from '@/components/Collage/Collage';
 import Process from '@/components/Process/Process';
 
 import { heroData, collageData, carouselItems } from '@/data/data';
+=======
+// import Hero from '@/components/Hero/Hero';
+// import Collage from '@/components/Collage/Collage';
+import Process from '@/components/Process/Process';
+
+// import { heroData, collageData } from '@/data/data';
+import { processContent } from '@/data/data';
+>>>>>>> 2f28272 (feature: updates process props and inserted videos)
 
 type Props = {
   className: string;
@@ -38,7 +47,7 @@ function Home({ className }: Props) {
 
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
-      <Process />
+      <Process processContent={processContent} />
       <Head />
 <<<<<<< HEAD
       <VideoModal />
