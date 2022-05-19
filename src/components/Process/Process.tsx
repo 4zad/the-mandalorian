@@ -64,23 +64,27 @@ function Process({ className }: Props) {
         <Description content={processContent.descContent} />
       </div>
 
-      <div className={styles.vid1Container}>
-        <div className={styles.vid1Placeholder}>
-          <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
+      <div className={styles.videoBlock}>
+        <div className={styles.vid1Container}>
+          <div className={styles.vid1PlaceholderContainer}>
+            <div className={styles.vid1Placeholder}>
+              <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
+            </div>
+          </div>
+          <div className={styles.text1Container}>
+            <p className={styles.subtitle}>{processContent.largeVid.desc.title}</p>
+            <p className={styles.desc}>{processContent.largeVid.desc.description}</p>
+          </div>
         </div>
-        <div className={styles.text1Container}>
-          <p className={styles.subtitle}>{processContent.largeVid.desc.title}</p>
-          <p className={styles.desc}>{processContent.largeVid.desc.description}</p>
-        </div>
-      </div>
 
-      <div className={styles.vid2Container}>
-        <div className={styles.vid2Placeholder}>
-          <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
-        </div>
-        <div className={styles.text2Container}>
-          <p className={styles.subtitle}>{processContent.smallVid.desc.title}</p>
-          <p className={styles.desc}>{processContent.smallVid.desc.description}</p>
+        <div className={styles.vid2Container}>
+          <div className={styles.vid2Placeholder}>
+            <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
+          </div>
+          <div className={styles.text2Container}>
+            <p className={styles.subtitle}>{processContent.smallVid.desc.title}</p>
+            <p className={styles.desc}>{processContent.smallVid.desc.description}</p>
+          </div>
         </div>
       </div>
 
