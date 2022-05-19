@@ -3,6 +3,7 @@
 .Process {
   padding: px(10) 0;
   background-color: $white;
+  position: relative;
 }
 
 .processTextContainer {
@@ -10,6 +11,7 @@
 }
 
 .videoBlock {
+  z-index: 1;
   text-align: left;
   padding: px(5) px(13);
   width: 100%;
@@ -33,6 +35,7 @@
 }
 
 .vid1Container {
+  z-index: 1;
   .text1Container {
     padding: px(20) 0;
     width: 75%;
@@ -82,7 +85,15 @@
   border: px(1);
   border-color: black;
   width: 88%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  z-index: 0;
+  // .background {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  // }
   @include media-tablet {
     padding: px(10) px(30);
   }
