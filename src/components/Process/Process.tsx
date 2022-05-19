@@ -5,12 +5,14 @@ import styles from './Process.module.scss';
 
 import Description from '../Description/Description';
 import VideoGeneral from '../VideoGeneral/VideoGeneral';
-import { processContent } from '@/data/data';
 
 export type Props = {
   className?: string;
   processContent: {
-    backgroundText: string;
+    backgroundText: {
+      top: string;
+      bottom: string;
+    };
     descContent: {
       title: string;
       description: string;
@@ -38,32 +40,12 @@ export type Props = {
   };
 };
 
-function Process({ className }: Props) {
-  // const [isMobile, setMobile] = useState(true);
-
-  // useEffect(() => {
-  //   if (window.innerWidth > 376) {
-  //     setMobile(false);
-  //   } else {
-  //     setMobile(true);
-  //   }
-  //   const updateMedia = () => {
-  //     if (window.innerWidth > 376) {
-  //       setMobile(false);
-  //     } else {
-  //       setMobile(true);
-  //     }
-  //   };
-  //   window.addEventListener('resize', updateMedia);
-  //   return () => window.removeEventListener('resize', updateMedia);
-  // }, []);
-
+function Process({ className, processContent }: Props) {
   return (
     <div className={classnames(styles.Process, className, processContent)}>
       <div className={styles.processTextContainer}>
         <Description content={processContent.descContent} />
       </div>
-
       <div className={styles.videoBlock}>
         <div className={styles.vid1Container}>
           <div className={styles.vid1PlaceholderContainer}>
@@ -76,7 +58,6 @@ function Process({ className }: Props) {
             <p className={styles.desc}>{processContent.largeVid.desc.description}</p>
           </div>
         </div>
-
         <div className={styles.vid2Container}>
           <div className={styles.vid2Placeholder}>
             <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
@@ -87,34 +68,16 @@ function Process({ className }: Props) {
           </div>
         </div>
       </div>
-
-      {/* <div className={styles.eyebrowTextContainer}>
-        <Description content={processEyebrow} />
-      </div>
-
-      <div>
-        {isMobile ? (
-          <div className={styles.carouselContainer}>INSERT CAROUSEL</div>
-        ) : (
-          <div className={styles.carouselContainer}>
-            <div className={styles.vid3Container}>
-              <div className={styles.vid3Placeholder}></div>
-              <div className={styles.text3Container}>
-                <p className={styles.subtitle}>{processVid3Desc.title}</p>
-                <p className={styles.desc}>{processVid3Desc.description}</p>
-              </div>
-            </div>
-
-            <div className={styles.vid4Container}>
-              <div className={styles.vid4Placeholder}></div>
-              <div className={styles.text4Container}>
-                <p className={styles.subtitle}>{processVid4Desc.title}</p>
-                <p className={styles.desc}>{processVid4Desc.description}</p>
-              </div>
-            </div>
+      <div className={styles.bgTextContainer}>
+        <div className={styles.background}>
+          <div className={styles.bgTopContainer}>
+            <p className={styles.bgText}>{processContent.backgroundText.top}</p>
           </div>
-        )}
-      </div> */}
+          <div className={styles.bgBottomContainer}>
+            <p className={styles.bgText}>{processContent.backgroundText.bottom}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

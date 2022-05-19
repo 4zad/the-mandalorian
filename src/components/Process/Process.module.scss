@@ -3,7 +3,6 @@
 .Process {
   padding: px(10) 0;
   background-color: $white;
-  text-align: left;
 }
 
 .processTextContainer {
@@ -11,6 +10,7 @@
 }
 
 .videoBlock {
+  text-align: left;
   padding: px(5) px(13);
   width: 100%;
   @include media-tablet {
@@ -73,5 +73,57 @@
     .desc {
       width: 80%;
     }
+  }
+}
+
+.bgTextContainer {
+  padding: px(5) px(13);
+  float: right;
+  border: px(1);
+  border-color: black;
+  width: 88%;
+  position: relative;
+  @include media-tablet {
+    padding: px(10) px(30);
+  }
+  @include media-desktopSm {
+    padding: px(10) px(25);
+    width: 95%;
+  }
+}
+
+.bgTopContainer {
+  text-align: right;
+}
+.bgBottomContainer {
+  text-align: left;
+}
+
+.bgText {
+  display: none;
+  @include media-tablet {
+    display: block;
+    -webkit-text-stroke: 1px $med-gray;
+    -moz-text-stroke: 1px $med-gray;
+    -o-text-stroke: 1px $med-gray;
+    -ms-text-stroke: 1px $med-gray;
+    text-transform: uppercase;
+    color: transparent;
+    line-height: 83%;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 900;
+    font-size: px(120);
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  @include media-desktopSm {
+    line-height: 89%;
+    font-size: px(180);
+  }
+  .bgText:after {
+    position: absolute;
+    z-index: -1;
   }
 }

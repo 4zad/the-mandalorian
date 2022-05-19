@@ -81,7 +81,10 @@ export const socialContent = {
 };
 
 export const processContent = {
-  backgroundText: './assets/images/process-bg-text.png',
+  backgroundText: {
+    top: 'Before',
+    bottom: '& after'
+  },
   descContent: {
     title: 'Process',
     description:
