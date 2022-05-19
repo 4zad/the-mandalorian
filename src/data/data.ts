@@ -4,14 +4,41 @@ export const awardDropdownData = {
   description: 'Oficial trailer curabitur quis nunc augue duis vulputate nisl quis dignissim vulputate.'
 };
 
-// Once I have a better idea of how to animate and structure the Card,
-// I may make it a child to the main component
 export const awardDropdownCardData = [
   { id: 0, year: '2019', award: 'Clio Awards: Theatrical Audio/Visual Technique' },
   { id: 1, year: '2020', award: 'Golden Trailers: Best Drama' },
   { id: 2, year: '2020', award: 'Promax: Program Trailer Promo' },
   { id: 3, year: '2020', award: 'Shortys: Twitter Video' }
 ];
+
+export const carouselItems = [
+  {
+    key: 0,
+    vidId: 368223964,
+    imLink: 'assets/images/carousel-img-1.png',
+    title: 'Trailer 2',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  },
+  {
+    key: 1,
+    vidId: 15755498,
+    imLink: 'assets/images/carousel-img-2.png',
+    title: 'Trailer 3',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  },
+  {
+    key: 2,
+    vidId: 235788155,
+    imLink: 'assets/images/carousel-img-2.png',
+    title: 'Trailer 4',
+    description: 'Etiam sagittis eu felis sit amet egestas aenean vestibulum.'
+  }
+];
+
+export const fullScreenContent = {
+  vidId: 368223964,
+  imLink: 'assets/images/full-screen-poster.png'
+};
 
 export const tags = {
   title: 'Tags',

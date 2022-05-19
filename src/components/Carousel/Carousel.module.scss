@@ -1,47 +1,37 @@
 @import 'shared';
 
 .Carousel {
+  padding: 0 px(13);
   background-color: $white;
   text-align: left;
-}
-
-.swiperContainer {
-  height: px(290);
-  padding: px(5) px(13);
-
   @include media-tablet {
-    padding: px(5) px(30);
-    height: px(320);
-  }
-  @include media-desktopSm {
-    height: px(395);
+    padding: 0 px(30);
   }
 }
 
 .slide {
+  margin: px(20) 0;
   @include media-tablet {
-    padding: 0 px(10);
+    margin: px(30) 0;
+  }
+  @include media-desktopSm {
+    margin: px(40) 0;
   }
 }
 
 .video {
-  width: px(354);
-  height: px(200);
-
-  @include media-tablet {
-    width: px(325);
-    height: px(200);
-  }
-  @include media-desktopSm {
-    width: px(443);
-    height: px(274);
-  }
+  aspect-ratio: 13 / 8;
+  width: 100%;
 }
 
 .title {
   @include typography-subtitle;
-  padding-top: px(30);
+  padding-top: px(20);
   color: $dark-gray;
+
+  @include media-tablet {
+    padding-top: px(30);
+  }
 }
 
 .description {
