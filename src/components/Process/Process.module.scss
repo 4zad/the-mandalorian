@@ -10,6 +10,17 @@
   padding: px(50) 0;
 }
 
+.videoBlock {
+  padding: px(5) px(13);
+  width: 100%;
+  @include media-tablet {
+    padding: px(10) px(30);
+  }
+  @include media-desktopSm {
+    padding: px(10) px(25);
+  }
+}
+
 .subtitle {
   @include typography-subtitle;
   color: $dark-gray;
@@ -22,139 +33,45 @@
 }
 
 .vid1Container {
-  padding: px(5) px(13);
   .text1Container {
-    align-items: left;
     padding: px(20) 0;
-  }
-  .desc {
     width: 75%;
+    @include media-tablet {
+      width: 50%;
+    }
+    @include media-desktopSm {
+      width: 40%;
+    }
+  }
+  .vid1PlaceholderContainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   .vid1Placeholder {
-    width: px(354);
-    height: px(200);
+    width: 100%;
+    height: auto;
     margin: auto;
-  }
-  @include media-tablet {
-    padding: px(10) px(30);
-    .vid1Placeholder {
-      width: px(715);
-      height: px(410);
-    }
-  }
-  @include media-desktopSm {
-    padding: px(10) px(25);
-    .vid1Placeholder {
-      width: px(975);
-      height: px(555);
-    }
   }
 }
 
 .vid2Container {
-  padding: px(5) px(13);
   float: right;
-  width: 100%;
-
+  width: 75%;
   .text2Container {
-    width: 75%;
+    width: 100%;
     margin-left: auto;
-    align-items: left;
     padding: px(20) 0 px(25);
   }
   .vid2Placeholder {
-    width: px(263);
-    height: px(153);
+    width: 100%;
+    height: auto;
     margin-left: auto;
   }
   @include media-tablet {
-    padding: px(14) px(30) px(75);
-    .vid2Placeholder {
-      width: px(354);
-      height: px(207);
-    }
-    .text2Container {
-      width: 50%;
-    }
-  }
-  @include media-desktopSm {
-    padding: px(40) px(30) px(75);
-    .vid2Placeholder {
-      width: px(482);
-      height: px(282);
-    }
-  }
-}
-
-.eyebrowTextContainer {
-  padding: px(25) 0;
-}
-
-.carouselContainer {
-  padding: px(5) px(13);
-  @include media-tablet {
-    //display: inline;
-    padding: px(10) px(30);
-  }
-}
-
-.vid3Container {
-  // padding: px(5) px(13);
-  // display: block;
-  .text3Container {
-    align-items: left;
-    padding: px(20) 0;
-  }
-  .desc {
-    width: 75%;
-  }
-  .vid3Placeholder {
-    background-color: $black;
-    width: px(345);
-    height: px(200);
-    // margin: auto;
-  }
-  @include media-tablet {
-    // padding: px(10) px(30);
     width: 50%;
-    float: left;
-    // margin-right: px(3);
-  }
-  @include media-desktopSm {
-    // padding: px(10) px(25);
-    .vid3Placeholder {
-      width: px(475);
-      height: px(282);
-    }
-  }
-}
-
-.vid4Container {
-  //   padding: px(10) px(13);
-  //display: none;
-
-  @include media-tablet {
-    // padding: px(10) px(120);
-    display: block;
-    width: 50%;
-    float: left;
-    .vid4Placeholder {
-      background-color: $black;
-      width: px(345);
-      height: px(200);
-    }
-    .text4Container {
-      align-items: left;
-      padding: px(20) 0;
-    }
-  }
-  @include media-desktopSm {
-    // padding: px(10) px(25);
-    display: block;
-    width: 50%;
-    .vid4Placeholder {
-      width: px(475);
-      height: px(282);
+    .desc {
+      width: 80%;
     }
   }
 }
