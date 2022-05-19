@@ -47,6 +47,21 @@ $navbar-height-desktop: px(80);
 // ====================================================================
 $elements: pages, main-nav, rotate;
 
+$z-index: (
+  modal: 10,
+  playButton: 10,
+  close: 20,
+  video: 20
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
 // ====================================================================
 // Font Names
 // ====================================================================

@@ -4,16 +4,25 @@
   padding: 0 px(13);
   background-color: $white;
   text-align: left;
+
   @include media-tablet {
     padding: 0 px(30);
   }
 }
 
+.sliderWrapper {
+  :global(.swiper-pagination-bullet-active) {
+    background-color: $orange;
+  }
+}
+
 .slide {
   margin: px(20) 0;
+
   @include media-tablet {
     margin: px(30) 0;
   }
+
   @include media-desktopSm {
     margin: px(40) 0;
   }

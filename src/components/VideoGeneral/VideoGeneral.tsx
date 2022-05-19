@@ -28,7 +28,7 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
         <PlayCircle className={styles.svgPlayCircle} />
         <PlayIcon className={styles.svgPlayIcon} />
       </button>
-      <img src={imLink} alt={alt}></img>
+      <img src={imLink} alt={alt} />
     </div>
   );
 }

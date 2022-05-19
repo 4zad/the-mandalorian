@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from 'react';
-import { Navigation } from 'swiper';
+import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import VideoGeneral from '@/components/VideoGeneral/VideoGeneral';
 
@@ -8,7 +8,7 @@ import useWindowSize from '@/hooks/use-windowsize';
 import classnames from 'classnames';
 import styles from './Carousel.module.scss';
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export type Props = {
   className?: string;
@@ -36,7 +36,8 @@ function Carousel({ className, carouselItems }: Props) {
   return (
     <div className={classnames(styles.Carousel, className)}>
       <Swiper
-        modules={[Navigation]}
+        className={styles.sliderWrapper}
+        modules={[Pagination]}
         spaceBetween={15}
         slidesPerView={numSlides}
         pagination={{ clickable: true }}
@@ -47,7 +48,7 @@ function Carousel({ className, carouselItems }: Props) {
           return (
             <SwiperSlide className={styles.slide} key={carouselItem.key}>
               <div className={styles.video}>
-                <VideoGeneral vidId={carouselItem.vidId} imLink={carouselItem.imLink}></VideoGeneral>
+                <VideoGeneral vidId={carouselItem.vidId} imLink={carouselItem.imLink} />
               </div>
               <p className={styles.title}>{carouselItem.title}</p>
               <p className={styles.description}>{carouselItem.description}</p>
