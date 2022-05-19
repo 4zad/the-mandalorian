@@ -1,7 +1,6 @@
 import { memo, PropsWithChildren, useCallback, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { device } from '@jam3/detect';
 
 import Nav from '@/components/Nav/Nav';
 
@@ -10,7 +9,6 @@ import { checkWebpSupport } from '@/utils/basic-functions';
 import { setIsWebpSupported, setPrevRoute, useAppDispatch } from '@/redux';
 
 const AppAdmin = dynamic(() => import('@/components/AppAdmin/AppAdmin'), { ssr: false });
-const RotateScreen = dynamic(() => import('@/components/RotateScreen/RotateScreen'), { ssr: false });
 
 export type Props = PropsWithChildren<{}>;
 
@@ -42,8 +40,6 @@ function Layout({ children }: Props) {
       <Nav />
 
       {children}
-
-      {!device.desktop && <RotateScreen />}
 
       {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production' && <AppAdmin />}
     </>

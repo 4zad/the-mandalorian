@@ -14,7 +14,7 @@ export type Props = {
 function FullScreenVideo({ className, vidId, imLink }: Props) {
   return (
     <div className={classnames(styles.FullScreenVideo, className)}>
-      <VideoGeneral vidId={vidId} imLink={imLink}></VideoGeneral>
+      <VideoGeneral vidId={vidId} imLink={imLink} />
     </div>
   );
 }

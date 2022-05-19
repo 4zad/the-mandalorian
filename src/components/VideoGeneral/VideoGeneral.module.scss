@@ -22,8 +22,7 @@
     left: calc(50% - px(11));
     width: px(22);
     height: px(22);
-    color: blue;
-    z-index: 10;
+    @include z-index(playButton);
   }
 
   .svgPlayCircle {
@@ -32,8 +31,7 @@
     left: calc(50% - px(36));
     width: px(72);
     height: px(72);
-    z-index: 10;
-    color: blue;
+    @include z-index(playButton);
   }
 
   img {

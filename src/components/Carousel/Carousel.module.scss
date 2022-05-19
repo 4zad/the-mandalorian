@@ -1,0 +1,50 @@
+@import 'shared';
+
+.Carousel {
+  padding: 0 px(13);
+  background-color: $white;
+  text-align: left;
+
+  @include media-tablet {
+    padding: 0 px(30);
+  }
+}
+
+.sliderWrapper {
+  :global(.swiper-pagination-bullet-active) {
+    background-color: $orange;
+  }
+}
+
+.slide {
+  margin: px(20) 0;
+
+  @include media-tablet {
+    margin: px(30) 0;
+  }
+
+  @include media-desktopSm {
+    margin: px(40) 0;
+  }
+}
+
+.video {
+  aspect-ratio: 13 / 8;
+  width: 100%;
+}
+
+.title {
+  @include typography-subtitle;
+  padding-top: px(20);
+  color: $dark-gray;
+
+  @include media-tablet {
+    padding-top: px(30);
+  }
+}
+
+.description {
+  @include typography-caption;
+  color: $black;
+  padding: px(10) 0;
+}

@@ -5,10 +5,13 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+import Carousel from '@/components/Carousel/Carousel';
+import VideoModal from '@/components/VideoModal/VideoModal';
+
 import Hero from '@/components/Hero/Hero';
 import Collage from '@/components/Collage/Collage';
 
-import { heroData, collageData } from '@/data/data';
+import { heroData, collageData, carouselItems } from '@/data/data';
 
 type Props = {
   className: string;
@@ -35,8 +38,10 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
+      <VideoModal />
       <Hero className={className} data={heroData} />
       <Collage content={collageData} />
+      <Carousel carouselItems={carouselItems} />
     </main>
   );
 }

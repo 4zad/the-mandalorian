@@ -5,7 +5,8 @@ const { actions, reducer } = createSlice({
   name: 'app',
   initialState: {
     prevRoute: '',
-    isWebpSupported: true
+    isWebpSupported: true,
+    videoId: -1
   },
   reducers: {
     setPrevRoute(state, action: PayloadAction<string>) {
@@ -13,11 +14,15 @@ const { actions, reducer } = createSlice({
     },
     setIsWebpSupported(state, action: PayloadAction<boolean>) {
       state.isWebpSupported = action.payload;
+    },
+    // Set to -1 when there is no video to be displayed
+    setVideoId(state, action: PayloadAction<number>) {
+      state.videoId = action.payload;
     }
   }
 });
 
-export const { setPrevRoute, setIsWebpSupported } = actions;
+export const { setPrevRoute, setIsWebpSupported, setVideoId } = actions;
 
 export const store = configureStore({ reducer, devTools: process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production' });
 
