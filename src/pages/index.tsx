@@ -24,8 +24,8 @@ import {
   carouselItems,
   fullScreenContent,
   tags,
-  socialContent
-  // servicesContent
+  socialContent,
+  servicesContent
 } from '@/data/data';
 
 type Props = {
@@ -56,6 +56,7 @@ function Home({ className }: Props) {
       <VideoModal />
       <Hero className={className} data={heroData} />
       <Description content={descContent} />
+      <Description isSmallText={true} content={servicesContent} />
       <FullScreenVideo vidId={fullScreenContent.vidId} imLink={fullScreenContent.imLink} />
       <AwardsDropdown content={awardDropdownData} />
       <Carousel carouselItems={carouselItems} />
