@@ -2,10 +2,24 @@
 
 .AwardsDropdown {
   width: 100%;
-  text-align: left;
-  // padding is temporary until global styling is resolved
-  padding-left: px(50);
+  display: inline-block;
+  text-align: center;
   background-color: $white;
+  padding: px(20) px(13) px(60);
+
+  @include media-tablet {
+    padding: px(40) px(30) px(100);
+  }
+
+  .awardsWrapper {
+    text-align: left;
+    margin: 0 auto;
+    width: 100%;
+
+    @include media-tablet {
+      width: 80%;
+    }
+  }
 
   .subtitle {
     @include typography-subtitle;
@@ -14,7 +28,7 @@
 
   .description {
     @include typography-paragraph;
-    margin-top: px(20);
+    margin-top: px(15);
     color: $black;
   }
 

@@ -17,12 +17,14 @@ export type Props = {
 function AwardsDropdown({ className, content }: Props) {
   return (
     <div className={classnames(styles.AwardsDropdown, className)}>
-      <p className={styles.subtitle}>
-        {content.trailerText}
-        <span className={styles.awardWinnerText}>{content.winnerText}</span>
-        <StarIcon className={styles.starIcon} />
-      </p>
-      <p className={styles.description}>{content.description}</p>
+      <div className={styles.awardsWrapper}>
+        <p className={styles.subtitle}>
+          {content.trailerText}
+          <span className={styles.awardWinnerText}>{content.winnerText}</span>
+          <StarIcon className={styles.starIcon} />
+        </p>
+        <p className={styles.description}>{content.description}</p>
+      </div>
     </div>
   );
 }

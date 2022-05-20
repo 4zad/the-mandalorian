@@ -2,7 +2,7 @@
 export const resizeDebounceTime = 10; // in ms
 
 // Head
-export const siteName = 'Jam3 Generator';
+export const siteName = 'The Mandalorian';
 export const siteDescription = 'Default Description';
-export const siteSlogan = 'The Relentless Pursuit of Better';
+export const siteSlogan = 'Buddha Jones';
 export const siteKeywords = ['Jam3', 'Web App', 'React', 'NextJS'];

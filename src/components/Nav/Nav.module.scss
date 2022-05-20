@@ -15,10 +15,6 @@
     height: $navbar-height-desktop;
   }
 
-  @include media-desktopSm {
-    // height: $navbar-height-desktop;
-  }
-
   > .navBar {
     display: flex;
     align-items: baseline;
@@ -47,6 +43,10 @@
         position: relative;
         list-style: none;
         text-align: center;
+
+        .buddha {
+          height: px(46);
+        }
       }
     }
 

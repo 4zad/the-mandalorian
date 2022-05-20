@@ -3,8 +3,10 @@
 .FullScreenVideo {
   width: 100vw;
   height: px(217);
+  margin-top: px(40);
 
   @include media-tablet {
+    margin-top: px(80);
     height: px(707);
   }
 
