@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
-<<<<<<< HEAD
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
 
@@ -13,15 +12,7 @@ import Hero from '@/components/Hero/Hero';
 import Collage from '@/components/Collage/Collage';
 import Process from '@/components/Process/Process';
 
-import { heroData, collageData, carouselItems } from '@/data/data';
-=======
-// import Hero from '@/components/Hero/Hero';
-// import Collage from '@/components/Collage/Collage';
-import Process from '@/components/Process/Process';
-
-// import { heroData, collageData } from '@/data/data';
-import { processContent } from '@/data/data';
->>>>>>> 2f28272 (feature: updates process props and inserted videos)
+import { heroData, collageData, carouselItems, processContent } from '@/data/data';
 
 type Props = {
   className: string;
@@ -49,16 +40,10 @@ function Home({ className }: Props) {
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Process processContent={processContent} />
       <Head />
-<<<<<<< HEAD
       <VideoModal />
       <Hero className={className} data={heroData} />
       <Collage content={collageData} />
       <Carousel carouselItems={carouselItems} />
-=======
-      {/* <Hero className={className} data={heroData} />
-      <Collage content={collageData} /> */}
-      {/* <Hero className={className} data={heroData} /> */}
->>>>>>> 3cb1170 (feature: conditional rendering for process and style editing)
     </main>
   );
 }

@@ -46,6 +46,13 @@ function Process({ className, processContent }: Props) {
       <div className={styles.processTextContainer}>
         <Description content={processContent.descContent} />
       </div>
+      <div className={styles.bgTextContainer}>
+        <p className={styles.bgText}>
+          {processContent.backgroundText.top}
+          <br />
+          <span className={styles.bottomText}>{processContent.backgroundText.bottom}</span>
+        </p>
+      </div>
       <div className={styles.videoBlock}>
         <div className={styles.vid1Container}>
           <div className={styles.vid1PlaceholderContainer}>
@@ -65,16 +72,6 @@ function Process({ className, processContent }: Props) {
           <div className={styles.text2Container}>
             <p className={styles.subtitle}>{processContent.smallVid.desc.title}</p>
             <p className={styles.desc}>{processContent.smallVid.desc.description}</p>
-          </div>
-        </div>
-      </div>
-      <div className={styles.bgTextContainer}>
-        <div className={styles.background}>
-          <div className={styles.bgTopContainer}>
-            <p className={styles.bgText}>{processContent.backgroundText.top}</p>
-          </div>
-          <div className={styles.bgBottomContainer}>
-            <p className={styles.bgText}>{processContent.backgroundText.bottom}</p>
           </div>
         </div>
       </div>
