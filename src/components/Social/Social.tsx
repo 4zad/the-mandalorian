@@ -5,13 +5,19 @@ import styles from './Social.module.scss';
 
 import Description from '../Description/Description';
 
-import { socialContent } from '@/data/data';
-
 export type Props = {
   className?: string;
+  socialContent: {
+    desc: {
+      title: string;
+      description: string;
+    };
+    smallNum: string;
+    num: string;
+  };
 };
 
-function Social({ className }: Props) {
+function Social({ className, socialContent }: Props) {
   return (
     <div className={classnames(styles.Social, className)}>
       <Description content={socialContent.desc} />

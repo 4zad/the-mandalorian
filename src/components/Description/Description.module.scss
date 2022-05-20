@@ -1,6 +1,7 @@
 @import 'shared';
 
 .Description {
+  display: inline-block;
   background-color: $white;
   text-align: left;
   padding: px(5) 0;

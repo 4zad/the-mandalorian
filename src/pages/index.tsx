@@ -7,11 +7,26 @@ import styles from './index.module.scss';
 import Head from '@/components/Head/Head';
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
-
 import Hero from '@/components/Hero/Hero';
+import Description from '@/components/Description/Description';
 import Collage from '@/components/Collage/Collage';
+import Social from '@/components/Social/Social';
+import Banner from '@/components/Banner/Banner';
+import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
+import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
 
-import { heroData, collageData, carouselItems } from '@/data/data';
+import {
+  // awardDropdownCardData,
+  awardDropdownData,
+  heroData,
+  descContent,
+  collageData,
+  carouselItems,
+  fullScreenContent,
+  tags,
+  socialContent
+  // servicesContent
+} from '@/data/data';
 
 type Props = {
   className: string;
@@ -40,8 +55,13 @@ function Home({ className }: Props) {
       <Head />
       <VideoModal />
       <Hero className={className} data={heroData} />
-      <Collage content={collageData} />
+      <Description content={descContent} />
+      <FullScreenVideo vidId={fullScreenContent.vidId} imLink={fullScreenContent.imLink} />
+      <AwardsDropdown content={awardDropdownData} />
       <Carousel carouselItems={carouselItems} />
+      <Collage content={collageData} />
+      <Social socialContent={socialContent} />
+      <Banner tags={tags} />
     </main>
   );
 }
