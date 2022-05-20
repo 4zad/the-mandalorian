@@ -11,10 +11,10 @@
 }
 
 .videoBlock {
-  z-index: 1;
   text-align: left;
   padding: px(5) px(13);
   width: 100%;
+  position: relative;
   @include media-tablet {
     padding: px(10) px(30);
   }
@@ -35,7 +35,6 @@
 }
 
 .vid1Container {
-  z-index: 1;
   .text1Container {
     padding: px(20) 0;
     width: 75%;
@@ -82,32 +81,24 @@
 .bgTextContainer {
   padding: px(5) px(13);
   float: right;
+  text-align: right;
   border: px(1);
   border-color: black;
-  width: 88%;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  left: 10%;
-  z-index: 0;
-  // .background {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  // }
+  top: 80%;
   @include media-tablet {
     padding: px(10) px(30);
   }
   @include media-desktopSm {
+    top: 81%;
     padding: px(10) px(25);
-    width: 95%;
   }
 }
 
-.bgTopContainer {
-  text-align: right;
-}
-.bgBottomContainer {
-  text-align: left;
+.bottomText {
+  position: relative;
+  right: 16%;
 }
 
 .bgText {
@@ -120,21 +111,8 @@
     -ms-text-stroke: 1px $med-gray;
     text-transform: uppercase;
     color: transparent;
-    line-height: 83%;
-    font-family: $main-font;
-    font-style: normal;
-    font-weight: 900;
-    font-size: px(120);
+    @include typography-beforeAfter;
+
     position: relative;
-    top: 0;
-    left: 0;
-  }
-  @include media-desktopSm {
-    line-height: 89%;
-    font-size: px(180);
-  }
-  .bgText:after {
-    position: absolute;
-    z-index: -1;
   }
 }

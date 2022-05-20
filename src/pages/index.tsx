@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
-
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
 import Hero from '@/components/Hero/Hero';

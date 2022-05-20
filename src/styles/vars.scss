@@ -45,7 +45,11 @@ $navbar-height-desktop: px(80);
 // ====================================================================
 // List of z-index element
 // ====================================================================
+<<<<<<< HEAD
 $elements: pages, main-nav, rotate, playButton, modal, video, close;
+=======
+$elements: bgText, pages, main-nav, rotate, modal, playButton, video, close;
+>>>>>>> 5dddd4e (feature: completed process and fixed background)
 
 // ====================================================================
 // Font Names
