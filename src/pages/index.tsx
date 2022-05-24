@@ -14,6 +14,7 @@ import Social from '@/components/Social/Social';
 import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
+import Process from '@/components/Process/Process';
 
 import {
   // awardDropdownCardData,
@@ -25,7 +26,8 @@ import {
   fullScreenContent,
   tags,
   socialContent,
-  servicesContent
+  servicesContent,
+  processContent
 } from '@/data/data';
 
 type Props = {
@@ -52,6 +54,7 @@ function Home({ className }: Props) {
 
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
+      <Process processContent={processContent} />
       <Head />
       <VideoModal />
       <Hero className={className} data={heroData} />
