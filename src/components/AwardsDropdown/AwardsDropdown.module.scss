@@ -26,15 +26,15 @@
     @include typography-subtitle;
     color: $dark-gray;
     transition: color 0.2s;
-  }
 
-  .subtitle:hover .dropdownCard {
-    visibility: visible;
-    opacity: 1;
-  }
+    &:hover .dropdownCard {
+      visibility: visible;
+      opacity: 1;
+    }
 
-  .subtitle:hover {
-    color: $black;
+    &:hover {
+      color: $black;
+    }
   }
 
   .description {
@@ -87,11 +87,6 @@
       @include media-tablet {
         margin-bottom: px(10);
       }
-    }
-
-    .subtitle {
-      @include typography-subtitle;
-      color: $dark-gray;
     }
   }
 
