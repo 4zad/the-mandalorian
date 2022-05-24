@@ -26,8 +26,11 @@ function ScrollingText({ className, scrollingText }: Props) {
       const scrollText = document.querySelector<HTMLDivElement>('#scrollText');
       if (scrollText) {
         // scrollText.style.cssText = `transform: translateX(-${(scrollY - scrollText.offsetTop)}px);`;
-        scrollText.setAttribute('style', `transform: translateX(-${(scrollY - 1300) /*scrollText.offsetTop*/ / 15}%);`);
-        console.log(`transform: translateX(-${scrollY - scrollText.offsetTop});`);
+        scrollText.setAttribute(
+          'style',
+          `transform: translateX(-${(window.scrollY - 1300) /*scrollText.offsetTop*/ / 15}%);`
+        );
+        console.log(window.scrollY);
         // console.log(scrollText.offsetTop);
       }
     };
