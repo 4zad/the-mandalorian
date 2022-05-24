@@ -25,6 +25,16 @@
     position: relative;
     @include typography-subtitle;
     color: $dark-gray;
+    transition: color 0.2s;
+  }
+
+  .subtitle:hover .dropdownCard {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .subtitle:hover {
+    color: $black;
   }
 
   .description {
@@ -42,11 +52,6 @@
     color: $orange;
     width: px(10);
     height: px(10);
-  }
-
-  .subtitle:hover .dropdownCard {
-    visibility: visible;
-    opacity: 1;
   }
 
   .dropdownCard {
