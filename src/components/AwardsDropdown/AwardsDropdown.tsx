@@ -12,7 +12,7 @@ export type Props = {
     winnerText: string;
     description: string;
     awardItems: {
-      key: string;
+      key: number;
       year: string;
       award: string;
     }[];
@@ -22,25 +22,26 @@ export type Props = {
 function AwardsDropdown({ className, content }: Props) {
   return (
     <div className={classnames(styles.AwardsDropdown, className)}>
-      <div className={styles.hoverTrigger}>
+      <div className={styles.awardsWrapper}>
         <p className={styles.subtitle}>
           {content.trailerText}
           <span className={styles.awardWinnerText}>{content.winnerText}</span>
           <StarIcon className={styles.starIcon} />
+          <div className={styles.dropdownCard}>
+            <div className={styles.triangle} />
+            <div className={styles.textHolder}>
+              {content.awardItems.map((awardItem) => {
+                return (
+                  <div key={awardItem.key}>
+                    <p className={styles.subtitle}>{awardItem.year}</p>
+                    <p className={styles.awardBody}>{awardItem.award}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </p>
-      </div>
-      <p className={styles.description}>{content.description}</p>
-      <div className={styles.dropdownCard}>
-        <div className={styles.textHolder}>
-          {content.awardItems.map((awardItem) => {
-            return (
-              <div key={awardItem.key}>
-                <p className={styles.subtitle}>{awardItem.year}</p>
-                <p className={styles.awardBody}>{awardItem.award}</p>
-              </div>
-            );
-          })}
-        </div>
+        <p className={styles.description}>{content.description}</p>
       </div>
     </div>
   );

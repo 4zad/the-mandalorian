@@ -21,15 +21,8 @@
     }
   }
 
-  @include media-tablet {
-    height: px(125);
-  }
-
-  @include media-desktopSm {
-    height: px(100);
-  }
-
   .subtitle {
+    position: relative;
     @include typography-subtitle;
     color: $dark-gray;
   }
@@ -51,59 +44,75 @@
     height: px(10);
   }
 
-  .hoverTrigger:hover ~ .dropdownCard {
+  .subtitle:hover .dropdownCard {
     visibility: visible;
-    display: block;
-  }
-}
-
-.dropdownCard {
-  // transition: visibility 0s, opacity 0.2s ease-in;
-  visibility: hidden;
-  display: none;
-  // opacity: 0;
-  position: relative;
-  background-color: $white;
-  width: px(260);
-  height: px(304);
-  text-align: left;
-  box-shadow: 0 0 px(50) rgba(0, 0, 0, 0.15);
-
-  @include media-tablet {
-    width: px(220);
-    height: px(218);
+    opacity: 1;
   }
 
-  @include media-desktopSm {
-    width: px(220);
-    height: px(218);
-  }
+  .dropdownCard {
+    transition: display 0.2s, visibility 0s, opacity 0.2s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: px(30);
+    left: px(60);
+    background-color: $white;
+    width: px(260);
+    height: px(304);
+    text-align: left;
+    box-shadow: 0 0 px(50) rgba(0, 0, 0, 0.15);
 
-  .awardBody {
-    @include typography-award-detail;
-    color: $black;
-    margin-bottom: px(15);
+    @include z-index(dropdownCard);
 
     @include media-tablet {
-      margin-bottom: px(10);
+      width: px(220);
+      height: px(218);
+    }
+
+    @include media-desktopSm {
+      width: px(220);
+      height: px(218);
+    }
+
+    .awardBody {
+      @include typography-award-detail;
+      color: $black;
+      margin-bottom: px(15);
+
+      @include media-tablet {
+        margin-bottom: px(10);
+      }
+    }
+
+    .subtitle {
+      @include typography-subtitle;
+      color: $dark-gray;
     }
   }
 
-  .subtitle {
-    @include typography-subtitle;
-    color: $dark-gray;
+  .textHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: px(20);
+    margin-top: px(20);
+    margin-bottom: px(15);
+
+    @include media-mobile {
+      margin-right: px(15);
+    }
   }
-}
 
-.textHolder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: px(20);
-  margin-top: px(20);
-  margin-bottom: px(15);
-
-  @include media-mobile {
-    margin-right: px(15);
+  .triangle {
+    position: absolute;
+    top: px(-15);
+    left: px(30);
+    width: 0;
+    height: 0;
+    border-top: px(12) solid transparent;
+    border-bottom: px(12) solid transparent;
+    border-right: px(12) solid $white;
+    transform: rotate(90deg);
+    @include z-index(dropdownCard);
   }
 }

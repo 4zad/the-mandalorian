@@ -16,7 +16,6 @@ import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
 
 import {
-  // awardDropdownCardData,
   awardDropdownData,
   heroData,
   descContent,
