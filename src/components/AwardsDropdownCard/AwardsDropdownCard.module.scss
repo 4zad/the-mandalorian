@@ -19,7 +19,7 @@
 
   .textHolder {
     margin-left: px(20);
-    margin-top: px(20);
+    margin-top: px(20) !important;
     margin-bottom: px(15);
 
     @include media-mobile {
