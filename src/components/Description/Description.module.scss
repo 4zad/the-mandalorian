@@ -3,12 +3,11 @@
 .Description {
   width: 100%;
   display: inline-block;
-  background-color: $white;
   text-align: left;
   padding: px(5) 0;
 }
 
-.textContainer {
+.textContainerPadding {
   padding: px(10) px(13);
 
   @include media-tablet {
@@ -17,6 +16,10 @@
   @include media-desktopSm {
     padding: px(10) px(152);
   }
+}
+
+.textContainer {
+  padding: 0;
 }
 
 .title {

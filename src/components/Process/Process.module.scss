@@ -1,8 +1,6 @@
 @import 'shared';
 
 .Process {
-  padding: px(10) 0;
-  background-color: $white;
   position: relative;
 }
 
@@ -11,6 +9,7 @@
 }
 
 .videoBlock {
+  display: block;
   text-align: left;
   padding: px(5) px(13);
   width: 100%;
@@ -21,17 +20,6 @@
   @include media-desktopSm {
     padding: px(10) px(25);
   }
-}
-
-.subtitle {
-  @include typography-subtitle;
-  color: $dark-gray;
-}
-
-.desc {
-  @include typography-caption;
-  color: $black;
-  padding: px(10) 0;
 }
 
 .vid1Container {
@@ -63,7 +51,7 @@
   .text2Container {
     width: 100%;
     margin-left: auto;
-    padding: px(20) 0 px(25);
+    padding: px(20) 0 px(60);
   }
   .vid2Placeholder {
     width: 100%;
@@ -74,6 +62,9 @@
     width: 50%;
     .desc {
       width: 80%;
+    }
+    .text2Container {
+      padding-bottom: px(100);
     }
   }
 }
@@ -112,7 +103,6 @@
     text-transform: uppercase;
     color: transparent;
     @include typography-beforeAfter;
-
     position: relative;
   }
 }

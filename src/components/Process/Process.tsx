@@ -61,8 +61,7 @@ function Process({ className, processContent }: Props) {
             </div>
           </div>
           <div className={styles.text1Container}>
-            <p className={styles.subtitle}>{processContent.largeVid.desc.title}</p>
-            <p className={styles.desc}>{processContent.largeVid.desc.description}</p>
+            <Description isSmallText={true} noPadding={true} content={processContent.smallVid.desc} />
           </div>
         </div>
         <div className={styles.vid2Container}>
@@ -70,8 +69,7 @@ function Process({ className, processContent }: Props) {
             <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
           </div>
           <div className={styles.text2Container}>
-            <p className={styles.subtitle}>{processContent.smallVid.desc.title}</p>
-            <p className={styles.desc}>{processContent.smallVid.desc.description}</p>
+            <Description isSmallText={true} noPadding={true} content={processContent.largeVid.desc} />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@
   position: relative;
   width: 100vw;
   background-color: $white;
+  overflow-y: hidden;
   padding: 0 px(13);
 
   @include media-tablet {

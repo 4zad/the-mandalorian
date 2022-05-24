@@ -54,7 +54,6 @@ function Home({ className }: Props) {
 
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
-      <Process processContent={processContent} />
       <Head />
       <VideoModal />
       <Hero className={className} data={heroData} />
@@ -63,6 +62,7 @@ function Home({ className }: Props) {
       <FullScreenVideo vidId={fullScreenContent.vidId} imLink={fullScreenContent.imLink} />
       <AwardsDropdown content={awardDropdownData} />
       <Carousel carouselItems={carouselItems} />
+      <Process processContent={processContent} />
       <Collage content={collageData} />
       <Social socialContent={socialContent} />
       <Banner tags={tags} />
