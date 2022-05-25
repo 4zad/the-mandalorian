@@ -14,7 +14,11 @@ import Social from '@/components/Social/Social';
 import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
+<<<<<<< HEAD
 import Process from '@/components/Process/Process';
+=======
+// import Cursor from '@/components/Cursor/Cursor';
+>>>>>>> ce97341 (feature: cursor progress)
 
 import {
   awardDropdownData,
@@ -54,6 +58,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
+      {/* <Cursor/> */}
       <VideoModal />
       <Hero className={className} data={heroData} />
       <Description content={descContent} />
