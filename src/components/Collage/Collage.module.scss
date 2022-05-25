@@ -69,7 +69,7 @@
     transform: rotate(10.19deg);
     width: px(2514);
     height: 100%;
-    left: px(450);
+    left: px(150);
     top: px(500);
 
     @include media-tablet {
@@ -80,7 +80,7 @@
 
     @include media-desktopSm {
       width: px(2357);
-      left: px(400);
+      left: px(450);
       top: px(695);
     }
 

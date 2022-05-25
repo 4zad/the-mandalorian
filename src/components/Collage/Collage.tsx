@@ -36,10 +36,7 @@ function Collage({ className, content }: Props) {
     const scrollEffect = () => {
       const scrollText = document.querySelector<HTMLDivElement>('#scrollText');
       if (scrollText) {
-        // scrollText.style.cssText = `transform: translateX(-${(scrollY - offsetTop) / 15}%);`;
         scrollText.setAttribute('style', `transform: translateX(-${(window.scrollY - offsetTop) / 15}%);`);
-        // console.log(window.scrollY);
-        // console.log(scrollText.offsetTop);
       }
     };
 
