@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useRef, useEffect, useState } from 'react';
 import classnames from 'classnames';
 
 import styles from './Collage.module.scss';
@@ -12,16 +12,62 @@ export type Props = {
       src: string;
       alt: string;
     }[];
+    scrollingText: string;
   };
 };
 
 function Collage({ className, content }: Props) {
+  const scrollTextRef = useRef<HTMLDivElement>(null);
+  const [scrollTextVisible, setScrollTextVisible] = useState<boolean>();
+  let offsetTop: number;
+  let offsetCalculated: boolean = false;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setScrollTextVisible(entry.isIntersecting);
+    });
+
+    if (scrollTextRef.current) {
+      observer.observe(scrollTextRef.current);
+    }
+
+    // scrolling effect and event listener initialization
+    const scrollEffect = () => {
+      const scrollText = document.querySelector<HTMLDivElement>('#scrollText');
+      if (scrollText) {
+        // scrollText.style.cssText = `transform: translateX(-${(scrollY - offsetTop) / 15}%);`;
+        scrollText.setAttribute('style', `transform: translateX(-${(window.scrollY - offsetTop) / 15}%);`);
+        // console.log(window.scrollY);
+        // console.log(scrollText.offsetTop);
+      }
+    };
+
+    if (scrollTextVisible) {
+      if (!offsetCalculated) {
+        offsetTop = scrollY;
+        offsetCalculated = true;
+      }
+      window.addEventListener('scroll', scrollEffect);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', scrollEffect);
+    };
+  });
+
   return (
     <div className={classnames(styles.collage, className)}>
       <div className={styles.collageImages}>
         {content.image.map((image: { src: string; alt: string }) => (
           <Image className={styles.image} src={image.src} alt={image.alt} key={image.src} />
         ))}
+      </div>
+
+      <div className={classnames(styles.textWrapper, className)} ref={scrollTextRef}>
+        <div className={styles.text} id="scrollText">
+          {content.scrollingText}
+        </div>
       </div>
     </div>
   );

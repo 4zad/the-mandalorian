@@ -138,5 +138,5 @@ export const collageData = {
       alt: 'Illustration of the Mandalorian entering a door'
     }
   ],
-  scrollText: '#themandalorian'
+  scrollingText: '#themandalorian'
 };

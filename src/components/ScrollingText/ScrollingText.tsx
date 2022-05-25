@@ -11,6 +11,9 @@ export type Props = {
 function ScrollingText({ className, scrollingText }: Props) {
   const scrollTextRef = useRef<HTMLDivElement>(null);
   const [scrollTextVisible, setScrollTextVisible] = useState<boolean>();
+  let offsetTop: number;
+  let offsetCalculated: boolean = false;
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
@@ -25,17 +28,18 @@ function ScrollingText({ className, scrollingText }: Props) {
     const scrollEffect = () => {
       const scrollText = document.querySelector<HTMLDivElement>('#scrollText');
       if (scrollText) {
-        // scrollText.style.cssText = `transform: translateX(-${(scrollY - scrollText.offsetTop)}px);`;
-        scrollText.setAttribute(
-          'style',
-          `transform: translateX(-${(window.scrollY - 1300) /*scrollText.offsetTop*/ / 15}%);`
-        );
-        console.log(window.scrollY);
+        // scrollText.style.cssText = `transform: translateX(-${(scrollY - offsetTop) / 15}%);`;
+        scrollText.setAttribute('style', `transform: translateX(-${(window.scrollY - offsetTop) / 15}%);`);
+        // console.log(window.scrollY);
         // console.log(scrollText.offsetTop);
       }
     };
 
     if (scrollTextVisible) {
+      if (!offsetCalculated) {
+        offsetTop = scrollY;
+        offsetCalculated = true;
+      }
       window.addEventListener('scroll', scrollEffect);
     }
 
