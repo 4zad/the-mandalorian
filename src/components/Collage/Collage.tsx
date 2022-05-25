@@ -42,7 +42,7 @@ function Collage({ className, content }: Props) {
 
     if (scrollTextVisible) {
       if (!offsetCalculated) {
-        offsetTop = scrollY;
+        offsetTop = window.scrollY;
         offsetCalculated = true;
       }
       window.addEventListener('scroll', scrollEffect);
