@@ -56,20 +56,6 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-<<<<<<< HEAD
-=======
-          <circle cx="36.2082" cy="36.6994" r="35.1906" stroke="white" strokeWidth="1.5" />
-        </svg>
-        <svg
-          className={styles.svgPlayIcon}
-          ref={playIconRef}
-          width="12"
-          height="15"
-          viewBox="0 0 12 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
->>>>>>> 0940255 (feature: video general motion update)
           <path
             d="M36.2082 71.89C55.6434 71.89 71.3988 56.1346 71.3988 36.6994C71.3988 17.2642 55.6434 1.5088 36.2082 1.5088C16.773 1.5088 1.01759 17.2642 1.01759 36.6994C1.01759 56.1346 16.773 71.89 36.2082 71.89Z"
             stroke="white"
