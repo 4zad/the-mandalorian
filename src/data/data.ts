@@ -79,6 +79,38 @@ export const socialContent = {
   num: '500.000K'
 };
 
+export const processContent = {
+  backgroundText: {
+    top: 'Before',
+    bottom: '& after'
+  },
+  descContent: {
+    title: 'Process',
+    description:
+      'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.'
+  },
+  smallVid: {
+    vid: {
+      imLink: 'assets/images/small-process-vid.png',
+      vidId: 368223964
+    },
+    desc: {
+      title: 'Graphic Effects',
+      description: 'The result of graphic effects curabitur quis nunc augue.'
+    }
+  },
+  largeVid: {
+    vid: {
+      imLink: 'assets/images/large-process-vid.png',
+      vidId: 368223964
+    },
+    desc: {
+      title: 'Graphic Effects',
+      description: 'The result of graphic effects curabitur quis nunc augue.'
+    }
+  }
+};
+
 export const collageData = {
   image: [
     {

@@ -14,6 +14,7 @@ import Social from '@/components/Social/Social';
 import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
+import Process from '@/components/Process/Process';
 
 import {
   awardDropdownData,
@@ -24,7 +25,8 @@ import {
   fullScreenContent,
   tags,
   socialContent,
-  servicesContent
+  servicesContent,
+  processContent
 } from '@/data/data';
 
 type Props = {
@@ -59,6 +61,7 @@ function Home({ className }: Props) {
       <FullScreenVideo vidId={fullScreenContent.vidId} imLink={fullScreenContent.imLink} />
       <AwardsDropdown content={awardDropdownData} />
       <Carousel carouselItems={carouselItems} />
+      <Process processContent={processContent} />
       <Collage content={collageData} />
       <Social socialContent={socialContent} />
       <Banner tags={tags} />
