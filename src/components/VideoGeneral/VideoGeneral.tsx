@@ -73,7 +73,7 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="36.2082" cy="36.6994" r="35.1906" stroke="white" stroke-width="1.5" />
+          <circle cx="36.2082" cy="36.6994" r="35.1906" stroke="white" strokeWidth="1.5" />
         </svg>
         <svg
           className={styles.svgPlayIcon}
