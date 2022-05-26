@@ -23,6 +23,8 @@
     width: px(22);
     height: px(22);
     @include z-index(playButton);
+    opacity: 1;
+    scale: 1;
   }
 
   .svgPlayCircle {
@@ -32,6 +34,8 @@
     width: px(72);
     height: px(72);
     @include z-index(playButton);
+    opacity: 1;
+    scale: 1;
   }
 
   img {
