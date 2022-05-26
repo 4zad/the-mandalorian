@@ -2,7 +2,7 @@ import { memo, useRef } from 'react';
 import classnames from 'classnames';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { textEase } from '@/data/eases';
+// import { textEase } from '@/data/eases';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +40,7 @@ function Description({ className, content, isSmallText = false }: Props) {
   //   // }
   // }, []);
 
+  /*
   const tl = gsap.timeline();
   tl.from(title.current, {
     scrollTrigger: {
@@ -56,6 +57,7 @@ function Description({ className, content, isSmallText = false }: Props) {
     { scrollTrigger: { trigger: desc.current }, duration: 1, opacity: 0, y: 40, ease: textEase },
     0.96
   );
+  */
 
   return (
     <div className={classnames(styles.Description, className)}>
