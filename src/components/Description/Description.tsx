@@ -42,13 +42,20 @@ function Description({ className, content, isSmallText = false }: Props) {
 
   const tl = gsap.timeline();
   tl.from(title.current, {
-    scrollTrigger: title.current,
+    scrollTrigger: {
+      trigger: title.current,
+      // start: 'top center',
+      markers: true
+    },
     duration: 1,
     opacity: 0,
     y: 40,
-    ease: textEase,
-    markers: true
-  }).from(desc.current, { scrollTrigger: desc.current, duration: 1, opacity: 0, y: 40, ease: textEase }, 0.96);
+    ease: textEase
+  }).from(
+    desc.current,
+    { scrollTrigger: { trigger: desc.current }, duration: 1, opacity: 0, y: 40, ease: textEase },
+    0.96
+  );
 
   return (
     <div className={classnames(styles.Description, className)}>
