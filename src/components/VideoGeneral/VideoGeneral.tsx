@@ -9,7 +9,11 @@ import styles from './VideoGeneral.module.scss';
 
 import { setVideoId, useAppDispatch } from '@/redux';
 import gsap from 'gsap';
+<<<<<<< HEAD
 import { mainEase } from '@/data/eases';
+=======
+import { bezier1 } from '@/data/eases';
+>>>>>>> 1bba002 (feature: video general motion update)
 
 export type Props = {
   className?: string;
