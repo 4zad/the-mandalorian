@@ -13,59 +13,43 @@ export type Props = {
   content: {
     title: string;
     description: string;
+    titleAnimation: { delay: number };
+    descAnimation: { delay: number };
   };
   isSmallText?: boolean;
   noPadding?: boolean;
 };
 
-function Description({ className, content, isSmallText = false }: Props) {
+function Description({ className, content, isSmallText = false, noPadding = false }: Props) {
   let title = useRef<HTMLDivElement>(null);
   let desc = useRef<HTMLDivElement>(null);
-  const tl = gsap.timeline();
 
   useEffect(() => {
-    tl.from(title.current, {
+    gsap.from(title.current, {
       scrollTrigger: {
         trigger: title.current,
-        start: 'top 90%',
-        markers: true
+        start: 'top 90%'
       },
       lazy: false,
       duration: 1,
       opacity: 0,
       y: 40,
-      ease: textEase
-    }).from(desc.current, {
+      ease: textEase,
+      delay: content.titleAnimation.delay
+    });
+    gsap.from(desc.current, {
       scrollTrigger: { trigger: title.current },
       duration: 1,
       opacity: 0,
       y: 40,
       ease: textEase,
-      delay: 0.96
+      delay: content.descAnimation.delay
     });
   }, []);
-  /*
-  const tl = gsap.timeline();
-  tl.from(title.current, {
-    scrollTrigger: {
-      trigger: title.current,
-      // start: 'top 75%',
-      markers: true
-    },
-    duration: 1,
-    opacity: 0,
-    y: 40,
-    ease: textEase
-  }).from(
-    desc.current,
-    { scrollTrigger: { trigger: title.current }, duration: 1, opacity: 0, y: 40, ease: textEase },
-    0.96
-  );
-  */
 
   return (
     <div className={classnames(styles.Description, className)}>
-      <div className={styles.textContainer}>
+      <div className={classnames(styles.textContainerPadding, { [styles.textContainer]: noPadding })}>
         <p ref={title} className={styles.title}>
           {content.title}
         </p>

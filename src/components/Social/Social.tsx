@@ -11,6 +11,8 @@ export type Props = {
     desc: {
       title: string;
       description: string;
+      titleAnimation: { delay: number };
+      descAnimation: { delay: number };
     };
     smallNum: string;
     num: string;
