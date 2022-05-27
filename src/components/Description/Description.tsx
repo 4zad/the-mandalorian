@@ -1,12 +1,11 @@
 import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
+import styles from './Description.module.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { textEase } from '@/data/eases';
+import { mainEase } from '@/data/eases';
 
 gsap.registerPlugin(ScrollTrigger);
-
-import styles from './Description.module.scss';
 
 export type Props = {
   className?: string;
@@ -34,7 +33,7 @@ function Description({ className, content, isSmallText = false, noPadding = fals
       duration: 1,
       opacity: 0,
       y: 40,
-      ease: textEase,
+      ease: mainEase,
       delay: content.titleAnimation.delay
     });
     gsap.from(desc.current, {
@@ -42,7 +41,7 @@ function Description({ className, content, isSmallText = false, noPadding = fals
       duration: 1,
       opacity: 0,
       y: 40,
-      ease: textEase,
+      ease: mainEase,
       delay: content.descAnimation.delay
     });
   }, []);
