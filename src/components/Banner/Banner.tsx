@@ -1,27 +1,47 @@
-import { memo } from 'react';
+import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
+import { gsap } from 'gsap';
+import { mainEase } from '@/data/eases';
 
 import styles from './Banner.module.scss';
 
 import BannerImage from '@/assets/images/banner-img.png';
+import Description from '../Description/Description';
 
 export type Props = {
   className?: string;
   tags: {
     title: string;
     description: string;
+    // titleAnimation: { delay: number };
+    // descAnimation: { delay: number };
   };
 };
 
 function Banner({ className, tags }: Props) {
+  let image = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.from(image.current, {
+      ScrollTrigger: {
+        trigger: image.current
+      },
+      duration: 1,
+      y: 40,
+      opacity: 0,
+      skewY: 40,
+      delay: 0.2,
+      ease: mainEase
+    });
+  });
+
   return (
     <div className={classnames(styles.Banner, className)}>
-      <div className={styles.imgWrapper}>
+      <div ref={image} className={styles.imgWrapper}>
         <img src={BannerImage} alt="Mandalorian Billboard" />
       </div>
       <div className={styles.tags}>
-        <div className={styles.subtitle}>{tags.title}</div>
-        <div className={styles.tagsContent}>{tags.description}</div>
+        <Description isSmallText={true} noPadding={true} content={tags} />
       </div>
     </div>
   );
