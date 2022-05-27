@@ -1,8 +1,8 @@
-import { memo, useRef } from 'react';
+import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import { textEase } from '@/data/eases';
+import { textEase } from '@/data/eases';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,31 +21,35 @@ export type Props = {
 function Description({ className, content, isSmallText = false }: Props) {
   let title = useRef<HTMLDivElement>(null);
   let desc = useRef<HTMLDivElement>(null);
+  const tl = gsap.timeline();
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline();
-  //   tl.from(title.current, {
-  //     scrollTrigger: title.current,
-  //     duration: 1,
-  //     opacity: 0,
-  //     x: 40,
-  //     ease: textEase //'fadeIn'
-  //   });
-  //   //tl.current = gsap.timeline();
-
-  //   // gsap.from(title, {
-  //   //   duration: 1,
-  //   //   opacity: 0,
-  //   //   x: 40
-  //   // }
-  // }, []);
-
+  useEffect(() => {
+    tl.from(title.current, {
+      scrollTrigger: {
+        trigger: title.current,
+        start: 'top 90%',
+        markers: true
+      },
+      lazy: false,
+      duration: 1,
+      opacity: 0,
+      y: 40,
+      ease: textEase
+    }).from(desc.current, {
+      scrollTrigger: { trigger: title.current },
+      duration: 1,
+      opacity: 0,
+      y: 40,
+      ease: textEase,
+      delay: 0.96
+    });
+  }, []);
   /*
   const tl = gsap.timeline();
   tl.from(title.current, {
     scrollTrigger: {
       trigger: title.current,
-      // start: 'top center',
+      // start: 'top 75%',
       markers: true
     },
     duration: 1,
@@ -54,7 +58,7 @@ function Description({ className, content, isSmallText = false }: Props) {
     ease: textEase
   }).from(
     desc.current,
-    { scrollTrigger: { trigger: desc.current }, duration: 1, opacity: 0, y: 40, ease: textEase },
+    { scrollTrigger: { trigger: title.current }, duration: 1, opacity: 0, y: 40, ease: textEase },
     0.96
   );
   */
