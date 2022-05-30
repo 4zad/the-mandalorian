@@ -61,40 +61,18 @@ function Process({ className, processContent }: Props) {
       scrollTrigger: {
         trigger: vid1.current,
         start: 'top 10%',
-<<<<<<< HEAD
         scrub: true,
         markers: true
       }
-=======
-        toggleActions: 'play none reverse reset',
-        markers: true
-      },
-      x: 250,
-      opacity: 100,
-      duration: 4,
-      ease: mainEase,
-      scrub: true
->>>>>>> ba07e1a (feature: started scrolling for before & after text)
     });
 
     let tl_after = gsap.timeline({
       scrollTrigger: {
         trigger: vid1.current,
         start: 'top 10%',
-<<<<<<< HEAD
         scrub: true,
         markers: true
       }
-=======
-        toggleActions: 'play none reverse reset',
-        markers: true
-      },
-      x: -200,
-      opacity: 100,
-      duration: 4,
-      ease: mainEase,
-      scrub: true
->>>>>>> ba07e1a (feature: started scrolling for before & after text)
     });
 
     tl_before.from(before.current, { x: 160, opacity: 100, ease: mainEase });
@@ -113,10 +91,6 @@ function Process({ className, processContent }: Props) {
             {processContent.backgroundText.top}
           </p>
         </div>
-<<<<<<< HEAD
-=======
-        {/* <br /> */}
->>>>>>> ba07e1a (feature: started scrolling for before & after text)
         <div className={styles.afterText}>
           <p ref={after} className={styles.bgText}>
             {processContent.backgroundText.bottom}
@@ -124,17 +98,6 @@ function Process({ className, processContent }: Props) {
         </div>
       </div>
 
-<<<<<<< HEAD
-=======
-      {/* <div className={styles.bgTextContainer}>
-        <p ref={before} className={styles.bgText}>
-          {processContent.backgroundText.top}
-          <br />
-          <span className={styles.bottomText}>{processContent.backgroundText.bottom}</span>
-        </p>
-      </div> */}
-
->>>>>>> ba07e1a (feature: started scrolling for before & after text)
       <div className={styles.videoBlock}>
         <div className={styles.vid1Container}>
           <div ref={vid1} className={styles.vid1PlaceholderContainer}>
