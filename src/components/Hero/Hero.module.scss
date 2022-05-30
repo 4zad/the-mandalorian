@@ -6,7 +6,7 @@
   position: static;
   height: 100vh;
   width: 100vw;
-  margin-bottom: px(50);
+  margin-bottom: px(100);
   @include media-tablet {
     margin-bottom: px(70);
   }
@@ -17,7 +17,6 @@
   height: 100%;
   width: 100%;
   position: relative;
-  overflow: hidden;
   background-size: cover;
   @include position-0;
   background-position-x: px(-175);

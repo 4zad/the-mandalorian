@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import styles from './Hero.module.scss';
 
 import Arrow from '@/components/svgs/arrow.svg';
+import { easeInOut, easeInHero1, easeInHero2 } from '@/data/eases';
 
 export type Props = {
   className?: string;
@@ -17,14 +18,30 @@ export type Props = {
 
 const Hero: React.FC<Props> = ({ className, data }: Props) => {
   const heroBg = require(`../../assets/images/${data.background}`);
-  // const easeIn1: gsap.EaseFunction = gsap.parseEase(`0.9, 0.0, 0.1, 1.0`);
-  const easeIn2: gsap.EaseFunction = gsap.parseEase(`1.0, 0.0, 0.7, 1.0`);
-  const easeIn3: gsap.EaseFunction = gsap.parseEase(`0, 0.3, 0.0, 1.0`);
 
   const subTitleRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const arrowRef = useRef<HTMLDivElement>(null)!;
+  const arrowRef = useRef<HTMLDivElement>(null);
+
+  gsap.registerEffect({
+    name: 'levitate',
+    effect: (targets: any /*RefObject<HTMLDivElement>*/, config: any) => {
+      return gsap
+        .timeline()
+        .to(targets, {
+          y: config.y,
+          duration: config.duration,
+          ease: easeInOut
+        })
+        .to(targets, {
+          y: config.y + 10,
+          duration: config.duration,
+          ease: easeInOut
+        });
+    },
+    defaults: { duration: 1 }
+  });
 
   useEffect(() => {
     gsap
@@ -34,13 +51,13 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
         y: 40,
         skewY: 3,
         duration: 0.3,
-        ease: easeIn2
+        ease: easeInHero1
       })
       .to(titleRef.current, {
         y: 100,
         skewY: 0,
         duration: 0.5,
-        ease: easeIn3
+        ease: easeInHero2
       })
       .fromTo(
         subTitleRef.current,
@@ -52,52 +69,40 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
           opacity: 1,
           y: 100,
           duration: 0.5,
-          ease: easeIn2
+          ease: easeInHero1
         },
         '>-=100%'
+      )
+      .fromTo(
+        arrowRef.current,
+        {
+          opacity: 0,
+          y: 70
+        },
+        {
+          opacity: 1,
+          y: 120,
+          duration: 0.7,
+          ease: easeInHero1
+        },
+        '<'
       )
       .to(
         window,
         {
           scrollTo: { y: 100 },
           duration: 0.5,
-          ease: easeIn2
+          ease: easeInHero1
         },
         '<'
       );
-
-    //.from(
-    //   subTitleRef.current,
-    //   {
-    //     duration: 0.667,
-    //     y: -150,
-    //     autoAlpha: 0,
-    //     ease: easeIn2
-    //   },
-    //   1
-    // ).from(
-    //   containerRef.current,
-    //   {
-    //     scale: 1.1,
-    //     duration: 1,
-    //     ease: easeIn2
-    //   },
-    //   0
-    // ).to(
+    // .effects.levitate(
     //   arrowRef.current,
     //   {
-    //     y: 70,
-    //     ease: easeIn1
-    //   },
-    //   1.7
-    // ).to(
-    //   arrowRef.current!.children[0].children[0].children[2],
-    //   {
-    //     ease: easeIn1,
-    //     fill: 'black',
-    //     duration: 1
-    //   },
-    //   1.5
+    //     duration: 1,
+    //     y: 115,
+    //     repeat: -1
+    //   }
     // );
   }, []);
 
@@ -105,7 +110,9 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
     <header className={classnames(styles.header, className)}>
       <section
         className={classnames(styles.hero)}
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${heroBg})` }}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.5) 100%), url(${heroBg})`
+        }}
       >
         <div className={classnames(styles.heroText, className)} ref={containerRef}>
           <span className={classnames(styles.subTitle)} ref={subTitleRef}>
