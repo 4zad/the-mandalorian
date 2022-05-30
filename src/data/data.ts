@@ -62,18 +62,24 @@ export const tags = {
 export const descContent = {
   title: 'Optional Eyebrow',
   description:
-    'Move over streaming platforms, here comes The Mandalorian on Disney+. Disney wanted to promote their upcoming show to place all streaming audiences attention onto Disney+. And we did.'
+    'Move over streaming platforms, here comes The Mandalorian on Disney+. Disney wanted to promote their upcoming show to place all streaming audiences attention onto Disney+. And we did.',
+  titleAnimation: { delay: 0 },
+  descAnimation: { delay: 0.96 }
 };
 
 export const servicesContent = {
   title: 'Services',
-  description: 'Teaser, Trailer, Original Content'
+  description: 'Teaser, Trailer, Original Content',
+  titleAnimation: { delay: 1.034 },
+  descAnimation: { delay: 1.136 }
 };
 
 export const socialContent = {
   desc: {
     title: 'Social Media',
-    description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:'
+    description: 'Posts on Instagram and Twitter using #TheMandalorian between 28th June until the 3rd July:',
+    titleAnimation: { delay: 0 },
+    descAnimation: { delay: 0.067 }
   },
   smallNum: '500K',
   num: '500.000K'
@@ -87,7 +93,9 @@ export const processContent = {
   descContent: {
     title: 'Process',
     description:
-      'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.'
+      'Nullam risus mauris, dignissim eu volutpat in hendrerit in nibh pellentesque augue magna consectetur eget turpis vitae pretium aliquet nibh maecenas placerat felis.',
+    titleAnimation: { delay: 0 },
+    descAnimation: { delay: 0.067 }
   },
   smallVid: {
     vid: {
@@ -96,7 +104,9 @@ export const processContent = {
     },
     desc: {
       title: 'Graphic Effects',
-      description: 'The result of graphic effects curabitur quis nunc augue.'
+      description: 'The result of graphic effects curabitur quis nunc augue.',
+      titleAnimation: { delay: 0.067 },
+      descAnimation: { delay: 0.133 }
     }
   },
   largeVid: {
@@ -106,7 +116,9 @@ export const processContent = {
     },
     desc: {
       title: 'Graphic Effects',
-      description: 'The result of graphic effects curabitur quis nunc augue.'
+      description: 'The result of graphic effects curabitur quis nunc augue.',
+      titleAnimation: { delay: 0.266 },
+      descAnimation: { delay: 0.334 }
     }
   }
 };

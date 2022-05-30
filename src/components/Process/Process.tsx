@@ -16,6 +16,8 @@ export type Props = {
     descContent: {
       title: string;
       description: string;
+      titleAnimation: { delay: number };
+      descAnimation: { delay: number };
     };
     smallVid: {
       vid: {
@@ -25,6 +27,8 @@ export type Props = {
       desc: {
         title: string;
         description: string;
+        titleAnimation: { delay: number };
+        descAnimation: { delay: number };
       };
     };
     largeVid: {
@@ -35,6 +39,8 @@ export type Props = {
       desc: {
         title: string;
         description: string;
+        titleAnimation: { delay: number };
+        descAnimation: { delay: number };
       };
     };
   };
