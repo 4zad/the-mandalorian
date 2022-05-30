@@ -2,20 +2,9 @@ import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import styles from './VideoGeneral.module.scss';
-<<<<<<< HEAD
 import { setVideoId, useAppDispatch } from '@/redux';
 import gsap from 'gsap';
 import { mainEase } from '@/data/eases';
-=======
-
-// Will not delete until confirmation of best practices
-// import PlayIcon from '@/components/svgs/play-icon.svg';
-// import PlayCircle from '@/components/svgs/play-circle.svg';
-
-import { setVideoId, useAppDispatch } from '@/redux';
-import gsap from 'gsap';
-import { bezier1 } from '@/data/eases';
->>>>>>> 1bba002 (feature: video general motion update)
 
 export type Props = {
   className?: string;
@@ -28,28 +17,16 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
   const dispatch = useAppDispatch();
   const vidGenRef = useRef<HTMLDivElement>(null);
   const playCircleRef = useRef<SVGSVGElement>(null);
-<<<<<<< HEAD
 
   useEffect(() => {
     gsap.from(vidGenRef.current, {
       y: 40,
-=======
-  const playIconRef = useRef<SVGSVGElement>(null);
-
-  useEffect(() => {
-    gsap.from(vidGenRef.current, {
-      x: 40,
->>>>>>> 1bba002 (feature: video general motion update)
       skewX: 2,
       skewY: 2,
       opacity: 0,
       duration: 1,
       delay: 0.067,
-<<<<<<< HEAD
       ease: mainEase,
-=======
-      ease: gsap.parseEase(bezier1),
->>>>>>> 1bba002 (feature: video general motion update)
       scrollTrigger: { trigger: vidGenRef.current, start: 'center bottom' }
     });
 
