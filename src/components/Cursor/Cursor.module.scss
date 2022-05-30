@@ -3,9 +3,42 @@
 .Cursor {
   position: fixed;
   border-radius: 100%;
+  pointer-events: none;
+  @include z-index(cursor);
+  transition: height 0.4s, width 0.4s;
+}
+
+.normal {
   background-color: $orange;
   height: px(20);
   width: px(20);
-  pointer-events: none;
-  @include z-index(cursor);
+}
+
+.special {
+  border: px(2) solid $orange;
+  background-color: $transluscent-orange;
+  height: px(40);
+  width: px(40);
+}
+
+.arrow {
+  position: absolute;
+  border: solid $orange;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  top: 14px;
+  right: 50px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  top: 14px;
+  left: 50px;
 }

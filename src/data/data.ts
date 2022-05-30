@@ -127,5 +127,3 @@ export const collageData = {
     }
   ]
 };
-// Once I have a better idea of how to animate and structure the Card,
-// I may make it a child to the main component

@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 
 import styles from './VideoGeneral.module.scss';
@@ -6,7 +6,7 @@ import styles from './VideoGeneral.module.scss';
 import PlayIcon from '@/components/svgs/play-icon.svg';
 import PlayCircle from '@/components/svgs/play-circle.svg';
 
-import { setVideoId, useAppDispatch } from '@/redux';
+import { setSpecMouse, setVideoId, useAppDispatch, useAppSelector } from '@/redux';
 
 export type Props = {
   className?: string;
@@ -17,9 +17,20 @@ export type Props = {
 
 function VideoGeneral({ className, imLink, vidId, alt }: Props) {
   const dispatch = useAppDispatch();
+  const vidGenRef = useRef<HTMLDivElement>(null);
+  const inCarousel = useAppSelector((state) => state.inCarousel);
+
+  useEffect(() => {
+    vidGenRef.current?.addEventListener('mouseenter', () => {
+      dispatch(setSpecMouse(true));
+    });
+    vidGenRef.current?.addEventListener('mouseleave', () => {
+      if (!inCarousel) dispatch(setSpecMouse(false));
+    });
+  });
 
   return (
-    <div className={classnames(styles.VideoGeneral, className)}>
+    <div ref={vidGenRef} className={classnames(styles.VideoGeneral, className)}>
       <button
         onClick={() => {
           dispatch(setVideoId(vidId));
