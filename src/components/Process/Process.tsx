@@ -60,7 +60,7 @@ function Process({ className, processContent }: Props) {
     let tl_before = gsap.timeline({
       scrollTrigger: {
         trigger: vid1.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: true,
         markers: true
       }
@@ -69,7 +69,7 @@ function Process({ className, processContent }: Props) {
     let tl_after = gsap.timeline({
       scrollTrigger: {
         trigger: vid1.current,
-        start: 'top 10%',
+        start: 'top top',
         scrub: true,
         markers: true
       }
