@@ -6,8 +6,6 @@
   pointer-events: none;
   @include z-index(cursor);
   // transition: background-color 0.4s, height 0.4s, width 0.4s;
-  height: px(20);
-  width: px(20);
 }
 
 .normal {
@@ -17,7 +15,6 @@
 }
 
 .special {
-  // transform: scale(2, 2);
   border: px(2) solid $orange;
   background-color: $transluscent-orange;
   height: px(40);

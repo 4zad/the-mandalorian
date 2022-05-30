@@ -20,7 +20,6 @@ function Cursor({ className }: Props) {
   const width = useWindowSize();
   const [renderRightArrow, setRenderRightArrow] = useState(false);
   const [renderLeftArrow, setRenderLeftArrow] = useState(false);
-
   function updateMousePos(e: MouseEvent): void {
     setMousePos({ x: e.clientX, y: e.clientY });
   }
