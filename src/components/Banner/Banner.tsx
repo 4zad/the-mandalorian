@@ -1,6 +1,7 @@
 import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { mainEase } from '@/data/eases';
 
 import styles from './Banner.module.scss';
@@ -8,23 +9,25 @@ import styles from './Banner.module.scss';
 import BannerImage from '@/assets/images/banner-img.png';
 import Description from '../Description/Description';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export type Props = {
   className?: string;
   tags: {
     title: string;
     description: string;
-    // titleAnimation: { delay: number };
-    // descAnimation: { delay: number };
+    titleAnimation: { delay: number };
+    descAnimation: { delay: number };
   };
 };
 
 function Banner({ className, tags }: Props) {
-  let image = useRef<HTMLDivElement>(null);
-
+  let banner_img = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    gsap.from(image.current, {
-      ScrollTrigger: {
-        trigger: image.current
+    gsap.from(banner_img.current, {
+      scrollTrigger: {
+        trigger: banner_img.current,
+        markers: true
       },
       duration: 1,
       y: 40,
@@ -37,7 +40,7 @@ function Banner({ className, tags }: Props) {
 
   return (
     <div className={classnames(styles.Banner, className)}>
-      <div ref={image} className={styles.imgWrapper}>
+      <div ref={banner_img} className={styles.imgWrapper}>
         <img src={BannerImage} alt="Mandalorian Billboard" />
       </div>
       <div className={styles.tags}>
