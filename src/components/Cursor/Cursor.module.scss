@@ -5,7 +5,7 @@
   border-radius: 100%;
   pointer-events: none;
   @include z-index(cursor);
-  transition: background-color 0.4s, height 0.4s, width 0.4s;
+  // transition: background-color 0.4s, height 0.4s, width 0.4s;
   height: px(20);
   width: px(20);
 }
