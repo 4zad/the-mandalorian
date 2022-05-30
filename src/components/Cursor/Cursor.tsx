@@ -76,8 +76,8 @@ function Cursor({ className }: Props) {
         className
       )}
     >
-      {renderLeftArrow && <div className={classnames(styles.arrow, styles.left)} />}
-      {renderRightArrow && <div className={classnames(styles.arrow, styles.right)} />}
+      {renderLeftArrow && specMouse && <div className={classnames(styles.arrow, styles.left)} />}
+      {renderRightArrow && specMouse && <div className={classnames(styles.arrow, styles.right)} />}
     </div>
   );
 }
