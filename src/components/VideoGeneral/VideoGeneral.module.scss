@@ -16,20 +16,6 @@
     border: none;
   }
 
-<<<<<<< HEAD
-=======
-  .svgPlayIcon {
-    position: absolute;
-    top: calc(50% - px(11));
-    left: calc(50% - px(11));
-    width: px(22);
-    height: px(22);
-    @include z-index(playButton);
-    opacity: 1;
-    scale: 1;
-  }
-
->>>>>>> 1bba002 (feature: video general motion update)
   .svgPlayCircle {
     position: absolute;
     top: calc(50% - px(36));

@@ -2,10 +2,7 @@ import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import styles from './Description.module.scss';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { mainEase } from '@/data/eases';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export type Props = {
   className?: string;
