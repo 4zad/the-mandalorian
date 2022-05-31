@@ -20,7 +20,7 @@ $layout-desktopLg: map-get($layout, desktopLg) + px;
 //
 // Grayscale and brand colors for use across the site.
 // ====================================================================
-$transparent: #0000; // transparent may also be writtin as rgba(0, 0, 0, 0)
+$transparent: transparent;
 $white: #fff;
 $black: #000;
 $light-gray: #f1f1f1;

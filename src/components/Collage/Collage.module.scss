@@ -69,19 +69,18 @@
     transform: rotate(10.19deg);
     width: px(2514);
     height: 100%;
-    left: px(150);
-    top: px(500);
+    left: px(500);
+    top: 57%;
 
     @include media-tablet {
       width: px(1762);
-      left: px(300);
-      top: px(500);
+      left: px(700);
+      top: 80%;
     }
 
     @include media-desktopSm {
       width: px(2357);
-      left: px(450);
-      top: px(695);
+      left: px(1100);
     }
 
     .text {
