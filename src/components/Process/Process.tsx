@@ -1,6 +1,5 @@
 import { memo, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import classnames from 'classnames';
 
 import styles from './Process.module.scss';
@@ -8,8 +7,6 @@ import styles from './Process.module.scss';
 import Description from '../Description/Description';
 import VideoGeneral from '../VideoGeneral/VideoGeneral';
 import { mainEase } from '@/data/eases';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export type Props = {
   className?: string;
@@ -63,8 +60,7 @@ function Process({ className, processContent }: Props) {
         start: 'top 60%',
         end: 'bottom 10%',
         toggleActions: 'play none reverse none',
-        scrub: true,
-        markers: true
+        scrub: true
       }
     });
 
