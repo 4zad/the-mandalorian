@@ -63,8 +63,7 @@ function Process({ className, processContent }: Props) {
         start: 'top 60%',
         end: 'bottom 10%',
         toggleActions: 'play none reverse none',
-        scrub: true,
-        markers: true
+        scrub: true
       }
     });
 

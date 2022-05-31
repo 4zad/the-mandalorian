@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import styles from './index.module.scss';
 
@@ -15,6 +16,8 @@ import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
 import Process from '@/components/Process/Process';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import {
   awardDropdownData,
@@ -46,6 +49,7 @@ function Home({ className }: Props) {
       .fadeIn(descriptionRef.current, 0.4)
       .fadeIn(listRef.current?.childNodes, { stagger: 0.1 }, 0.6);
 
+    ScrollTrigger.refresh(true);
     return () => {
       timeline?.kill();
     };

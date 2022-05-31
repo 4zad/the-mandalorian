@@ -24,21 +24,23 @@ export type Props = {
 function Banner({ className, tags }: Props) {
   let banner_img = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    ScrollTrigger.refresh(true);
-    if (banner_img.current !== null) {
-      gsap.from(banner_img.current, {
-        scrollTrigger: {
-          trigger: banner_img.current,
-          markers: true
-        },
-        duration: 1,
-        y: 40,
-        opacity: 0,
-        skewY: 40,
-        delay: 0.2,
-        ease: mainEase
-      });
-    }
+    //ScrollTrigger.refresh(true);
+    //if (banner_img.current !== null) {
+    gsap.from(banner_img.current, {
+      scrollTrigger: {
+        trigger: banner_img.current,
+        markers: true
+        //invalidateOnRefresh: true
+      },
+      duration: 5,
+      y: 40,
+      opacity: 0,
+      skewY: 40,
+      delay: 0.2,
+      ease: mainEase
+    });
+    //}
+    //ScrollTrigger.refresh(true);
   }, []);
 
   return (
