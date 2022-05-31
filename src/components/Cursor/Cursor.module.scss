@@ -5,29 +5,24 @@
   border-radius: 100%;
   pointer-events: none;
   @include z-index(cursor);
-  // transition: background-color 0.4s, height 0.4s, width 0.4s;
   height: px(20);
   width: px(20);
 }
 
 .normal {
   background-color: $orange;
-  height: px(20);
-  width: px(20);
 }
 
 .special {
   // transform: scale(2, 2);
   border: px(2) solid $orange;
   background-color: $transluscent-orange;
-  height: px(40);
-  width: px(40);
 }
 
 .arrow {
   position: absolute;
   border: solid $orange;
-  border-width: 0 px(3) px(3) 0;
+  border-width: 0 px(1) px(1) 0;
   display: inline-block;
   padding: px(3);
 }
@@ -35,13 +30,13 @@
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
-  top: px(14);
-  right: px(50);
+  top: px(6);
+  right: px(30);
 }
 
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  top: px(14);
-  left: px(50);
+  top: px(6);
+  left: px(30);
 }
