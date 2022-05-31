@@ -1,10 +1,15 @@
-import { memo } from 'react';
+import { memo, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import classnames from 'classnames';
 
 import styles from './Process.module.scss';
 
 import Description from '../Description/Description';
 import VideoGeneral from '../VideoGeneral/VideoGeneral';
+import { mainEase } from '@/data/eases';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export type Props = {
   className?: string;
@@ -47,18 +52,48 @@ export type Props = {
 };
 
 function Process({ className, processContent }: Props) {
+  const beforeRef = useRef<HTMLDivElement>(null);
+  const afterRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 60%',
+        end: 'bottom 10%',
+        toggleActions: 'play none reverse none',
+        scrub: true,
+        markers: true
+      }
+    });
+
+    tl.from(beforeRef.current, { x: 160, autoAlpha: 0, opacity: 100, ease: mainEase }, 0).from(
+      afterRef.current,
+      { x: -180, autoAlpha: 0, opacity: 100, ease: mainEase },
+      0
+    );
+  }, []);
+
   return (
-    <div className={classnames(styles.Process, className, processContent)}>
+    <div ref={containerRef} className={classnames(styles.Process, className, processContent)}>
       <div className={styles.processTextContainer}>
         <Description content={processContent.descContent} />
       </div>
+
       <div className={styles.bgTextContainer}>
-        <p className={styles.bgText}>
-          {processContent.backgroundText.top}
-          <br />
-          <span className={styles.bottomText}>{processContent.backgroundText.bottom}</span>
-        </p>
+        <div className={styles.beforeText}>
+          <p ref={beforeRef} className={styles.bgText}>
+            {processContent.backgroundText.top}
+          </p>
+        </div>
+        <div className={styles.afterText}>
+          <p ref={afterRef} className={styles.bgText}>
+            {processContent.backgroundText.bottom}
+          </p>
+        </div>
       </div>
+
       <div className={styles.videoBlock}>
         <div className={styles.vid1Container}>
           <div className={styles.vid1PlaceholderContainer}>

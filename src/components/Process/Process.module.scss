@@ -87,9 +87,12 @@
   }
 }
 
-.bottomText {
-  position: relative;
-  right: 16%;
+.afterText {
+  text-align: right;
+}
+
+.beforeText {
+  text-align: left;
 }
 
 .bgText {
