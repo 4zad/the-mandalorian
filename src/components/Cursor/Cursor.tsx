@@ -10,16 +10,19 @@ export type Props = {
 };
 
 function Cursor({ className }: Props) {
+  // Random Offscreen for devices with no cursor
   const [mousePos, setMousePos] = useState({ x: -200, y: -200 });
   const specMouse = useAppSelector((state) => state.specMouse);
   const slideIndex = useAppSelector((state) => state.slideIndex);
   const inCarousel = useAppSelector((state) => state.inCarousel);
   const cursorRef = useRef<HTMLDivElement>(null);
-  let cursorDims = { normal: { x: 20, y: 20 }, special: { x: 40, y: 40 } };
+  // Allows for variable cursor dims when needed
+  let cursorDims = { x: 20, y: 20 };
 
   const width = useWindowSize();
   const [renderRightArrow, setRenderRightArrow] = useState(false);
   const [renderLeftArrow, setRenderLeftArrow] = useState(false);
+
   function updateMousePos(e: MouseEvent): void {
     setMousePos({ x: e.clientX, y: e.clientY });
   }
@@ -52,8 +55,8 @@ function Cursor({ className }: Props) {
   useEffect(() => {
     let xOffset;
     let yOffset;
-    xOffset = cursorDims.normal.x / 2;
-    yOffset = cursorDims.normal.y / 2;
+    xOffset = cursorDims.x / 2;
+    yOffset = cursorDims.y / 2;
 
     gsap.to(cursorRef.current, { x: mousePos.x - xOffset, y: mousePos.y - yOffset });
   }, [mousePos]);
