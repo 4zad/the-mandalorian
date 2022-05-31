@@ -52,16 +52,24 @@ function Cursor({ className }: Props) {
   useEffect(() => {
     let xOffset;
     let yOffset;
-    if (specMouse) {
-      xOffset = cursorDims.special.x / 2;
-      yOffset = cursorDims.special.y / 2;
-    } else {
-      xOffset = cursorDims.normal.x / 2;
-      yOffset = cursorDims.normal.y / 2;
-    }
+    // if (specMouse) {
+    //   xOffset = cursorDims.special.x / 2;
+    //   yOffset = cursorDims.special.y / 2;
+    // } else {
+    xOffset = cursorDims.normal.x / 2;
+    yOffset = cursorDims.normal.y / 2;
+    // }
 
     gsap.to(cursorRef.current, { x: mousePos.x - xOffset, y: mousePos.y - yOffset });
   }, [mousePos]);
+
+  useEffect(() => {
+    if (specMouse) {
+      gsap.to(cursorRef.current, { scaleX: 2.5, scaleY: 2.5, borderWidth: 1, duration: 0.3 });
+    } else {
+      gsap.to(cursorRef.current, { scaleX: 1, scaleY: 1, duration: 0.3 });
+    }
+  }, [specMouse]);
 
   return (
     <div
