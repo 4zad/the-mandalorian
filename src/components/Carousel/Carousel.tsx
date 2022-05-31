@@ -1,9 +1,11 @@
 import { memo, useEffect, useState, useRef } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import gsap from 'gsap';
+
 import VideoGeneral from '@/components/VideoGeneral/VideoGeneral';
 
-import { setSlideIndex, setInCarousel, useAppDispatch, setSpecMouse } from '@/redux';
+import { setSlideIndex, setInCarousel, useAppDispatch, useAppSelector, setSpecMouse } from '@/redux';
 import useWindowSize from '@/hooks/use-windowsize';
 
 import classnames from 'classnames';
@@ -24,6 +26,8 @@ export type Props = {
 
 function Carousel({ className, carouselItems }: Props) {
   const [numSlides, setNumSlides] = useState(1);
+  const [prevSlideIdx, setPrevSlideIdx] = useState(0);
+  const slideIndex = useAppSelector((state) => state.slideIndex);
   const width = useWindowSize();
   const dispatch = useAppDispatch();
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -47,6 +51,16 @@ function Carousel({ className, carouselItems }: Props) {
     }
   }, [width]);
 
+  function slideSkew() {
+    if (slideIndex > prevSlideIdx) {
+      gsap.from(carouselRef.current, { skewX: 4, duration: 0.8 });
+      setPrevSlideIdx(slideIndex);
+    } else {
+      gsap.from(carouselRef.current, { skewX: -4, duration: 0.8 });
+      setPrevSlideIdx(slideIndex);
+    }
+  }
+
   return (
     <div ref={carouselRef} className={classnames(styles.Carousel, className)}>
       <Swiper
@@ -56,7 +70,10 @@ function Carousel({ className, carouselItems }: Props) {
         slidesPerView={numSlides}
         pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={(swiper) => dispatch(setSlideIndex(swiper.realIndex))}
+        onSlideChange={(swiper) => {
+          dispatch(setSlideIndex(swiper.realIndex));
+          slideSkew();
+        }}
       >
         {carouselItems.map((carouselItem) => {
           return (
