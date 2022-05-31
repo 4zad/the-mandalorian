@@ -99,7 +99,6 @@
   display: none;
   @include media-tablet {
     display: block;
-    opacity: 100%;
     -webkit-text-stroke: 1px $med-gray;
     -moz-text-stroke: 1px $med-gray;
     -o-text-stroke: 1px $med-gray;

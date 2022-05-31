@@ -52,47 +52,43 @@ export type Props = {
 };
 
 function Process({ className, processContent }: Props) {
-  let before = useRef<HTMLDivElement>(null);
-  let after = useRef<HTMLDivElement>(null);
-  let vid1 = useRef<HTMLDivElement>(null);
+  const beforeRef = useRef<HTMLDivElement>(null);
+  const afterRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let tl_before = gsap.timeline({
+    let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: vid1.current,
-        start: 'top top',
+        trigger: containerRef.current,
+        start: 'top 60%',
+        end: 'bottom 10%',
+        toggleActions: 'play none reverse none',
         scrub: true,
         markers: true
       }
     });
 
-    let tl_after = gsap.timeline({
-      scrollTrigger: {
-        trigger: vid1.current,
-        start: 'top top',
-        scrub: true,
-        markers: true
-      }
-    });
-
-    tl_before.from(before.current, { x: 160, opacity: 100, ease: mainEase });
-    tl_after.from(after.current, { x: -160, opacity: 100, ease: mainEase });
+    tl.from(beforeRef.current, { x: 160, autoAlpha: 0, opacity: 100, ease: mainEase }, 0).from(
+      afterRef.current,
+      { x: -180, autoAlpha: 0, opacity: 100, ease: mainEase },
+      0
+    );
   }, []);
 
   return (
-    <div className={classnames(styles.Process, className, processContent)}>
+    <div ref={containerRef} className={classnames(styles.Process, className, processContent)}>
       <div className={styles.processTextContainer}>
         <Description content={processContent.descContent} />
       </div>
 
       <div className={styles.bgTextContainer}>
         <div className={styles.beforeText}>
-          <p ref={before} className={styles.bgText}>
+          <p ref={beforeRef} className={styles.bgText}>
             {processContent.backgroundText.top}
           </p>
         </div>
         <div className={styles.afterText}>
-          <p ref={after} className={styles.bgText}>
+          <p ref={afterRef} className={styles.bgText}>
             {processContent.backgroundText.bottom}
           </p>
         </div>
@@ -100,7 +96,7 @@ function Process({ className, processContent }: Props) {
 
       <div className={styles.videoBlock}>
         <div className={styles.vid1Container}>
-          <div ref={vid1} className={styles.vid1PlaceholderContainer}>
+          <div className={styles.vid1PlaceholderContainer}>
             <div className={styles.vid1Placeholder}>
               <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
             </div>
