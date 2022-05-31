@@ -53,10 +53,8 @@ function Cursor({ className }: Props) {
   }, [inCarousel, slideIndex]);
 
   useEffect(() => {
-    let xOffset;
-    let yOffset;
-    xOffset = cursorDims.x / 2;
-    yOffset = cursorDims.y / 2;
+    let xOffset = cursorDims.x / 2;
+    let yOffset = cursorDims.y / 2;
 
     gsap.to(cursorRef.current, { x: mousePos.x - xOffset, y: mousePos.y - yOffset });
   }, [mousePos]);
