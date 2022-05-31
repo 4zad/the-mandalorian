@@ -57,8 +57,8 @@ export const fullScreenContent = {
 export const tags = {
   title: 'Tags',
   description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured',
-  titleAnimation: { delay: 1 },
-  descAnimation: { delay: 1.067 }
+  titleAnimation: { delay: 0.75 },
+  descAnimation: { delay: 0.767 }
 };
 
 export const descContent = {
