@@ -53,13 +53,8 @@ function Cursor({ className }: Props) {
   useEffect(() => {
     let xOffset;
     let yOffset;
-    // if (specMouse) {
-    //   xOffset = cursorDims.special.x / 2;
-    //   yOffset = cursorDims.special.y / 2;
-    // } else {
     xOffset = cursorDims.normal.x / 2;
     yOffset = cursorDims.normal.y / 2;
-    // }
 
     gsap.to(cursorRef.current, { x: mousePos.x - xOffset, y: mousePos.y - yOffset });
   }, [mousePos]);
