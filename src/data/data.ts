@@ -137,7 +137,6 @@ export const collageData = {
       src: 'collage-3.png',
       alt: 'Illustration of the Mandalorian entering a door'
     }
-  ]
+  ],
+  scrollingText: '#themandalorian'
 };
-// Once I have a better idea of how to animate and structure the Card,
-// I may make it a child to the main component

@@ -5,6 +5,7 @@
   display: block;
   position: relative;
   width: 100vw;
+  background-color: transparent;
   padding: 0 px(13);
 
   @include media-tablet {
@@ -58,6 +59,49 @@
       @include media-desktopSm {
         transform: translate(-25%, -90%);
         width: px(479);
+      }
+    }
+  }
+
+  .textWrapper {
+    z-index: -1;
+    position: absolute;
+    transform: rotate(10.19deg);
+    width: px(2514);
+    height: 100%;
+    left: px(500);
+    top: 57%;
+
+    @include media-tablet {
+      width: px(1762);
+      left: px(700);
+      top: 80%;
+    }
+
+    @include media-desktopSm {
+      width: px(2357);
+      left: px(1100);
+    }
+
+    .text {
+      -webkit-text-stroke: 1px $med-gray;
+      -moz-text-stroke: 1px $med-gray;
+      -o-text-stroke: 1px $med-gray;
+      -ms-text-stroke: 1px $med-gray;
+      text-transform: uppercase;
+      color: transparent;
+      line-height: 120%;
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 900;
+      font-size: px(120);
+
+      @include media-tablet {
+        font-size: px(100);
+      }
+
+      @include media-tablet {
+        font-size: px(130);
       }
     }
   }
