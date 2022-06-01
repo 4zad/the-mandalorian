@@ -142,3 +142,22 @@ export const collageData = {
   ],
   scrollingText: '#themandalorian'
 };
+
+export const menuContent = {
+  pageOne: 'Home',
+  pageTwo: 'Work',
+  pageThree: 'Our Story',
+  contactDesc: {
+    title: 'Contact Us:',
+    number: '(323)962-5100',
+    email: 'hello@buddha-jones.com'
+  },
+  addressDesc: {
+    title: 'Address:',
+    description: '1741 Ivar Ave. Hollywood, CA 90028'
+  },
+  followDesc: {
+    title: 'Follow Us:',
+    description: 'Facebook, Twitter, Instagram'
+  }
+};
