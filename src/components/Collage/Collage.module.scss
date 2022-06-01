@@ -35,7 +35,7 @@
       margin: 0 0 0 auto;
       margin-bottom: px(60);
       width: px(259);
-      aspect-ratio: 259 / 389;
+      aspect-ratio: 0.67 / 1;
 
       @include media-tablet {
         transform: translate(-55%, -100%);
@@ -51,7 +51,7 @@
     .image:nth-child(3) {
       margin: 0 auto;
       width: px(352);
-      aspect-ratio: 349 / 197;
+      aspect-ratio: 1.77 / 1;
 
       @include media-tablet {
         transform: translate(-25%, -90%);
