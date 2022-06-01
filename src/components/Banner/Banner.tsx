@@ -26,23 +26,19 @@ function Banner({ className, tags }: Props) {
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    //ScrollTrigger.refresh(true);
-    //if (banner_img.current !== null) {
     gsap.from(imgRef.current, {
       scrollTrigger: {
         trigger: bannerContainerRef.current,
+        start: 'top 60%',
         markers: true
-        //invalidateOnRefresh: true
       },
-      duration: 5,
+      duration: 1,
       y: 40,
       opacity: 0,
       skewY: 40,
       delay: 0.2,
       ease: mainEase
     });
-    //}
-    //ScrollTrigger.refresh(true);
   }, []);
 
   return (

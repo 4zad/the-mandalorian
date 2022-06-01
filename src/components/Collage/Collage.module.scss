@@ -20,6 +20,7 @@
       margin: 0 auto 0 0;
       margin-bottom: px(120);
       width: px(260);
+      aspect-ratio: 1 / 1;
 
       @include media-tablet {
         width: px(345);
@@ -34,6 +35,7 @@
       margin: 0 0 0 auto;
       margin-bottom: px(60);
       width: px(259);
+      aspect-ratio: 259 / 389;
 
       @include media-tablet {
         transform: translate(-55%, -100%);
@@ -47,12 +49,13 @@
     }
 
     .image:nth-child(3) {
-      margin: 0 auto 20vw;
+      margin: 0 auto 0;
       width: px(352);
+      aspect-ratio: 349 / 197;
 
       @include media-tablet {
         transform: translate(-25%, -90%);
-        margin: 0 auto -10vw;
+        margin: 0 auto 0;
       }
 
       @include media-desktopSm {
