@@ -48,7 +48,6 @@ function Home({ className }: Props) {
       .fadeIn(titleRef.current, 0.2)
       .fadeIn(descriptionRef.current, 0.4)
       .fadeIn(listRef.current?.childNodes, { stagger: 0.1 }, 0.6);
-
     ScrollTrigger.refresh(true);
     return () => {
       timeline?.kill();

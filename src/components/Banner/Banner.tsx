@@ -22,13 +22,15 @@ export type Props = {
 };
 
 function Banner({ className, tags }: Props) {
-  let banner_img = useRef<HTMLDivElement>(null);
+  const bannerContainerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     //ScrollTrigger.refresh(true);
     //if (banner_img.current !== null) {
-    gsap.from(banner_img.current, {
+    gsap.from(imgRef.current, {
       scrollTrigger: {
-        trigger: banner_img.current,
+        trigger: bannerContainerRef.current,
         markers: true
         //invalidateOnRefresh: true
       },
@@ -44,8 +46,8 @@ function Banner({ className, tags }: Props) {
   }, []);
 
   return (
-    <div className={classnames(styles.Banner, className)}>
-      <div ref={banner_img} className={styles.imgWrapper}>
+    <div ref={bannerContainerRef} className={classnames(styles.Banner, className)}>
+      <div ref={imgRef} className={styles.imgWrapper}>
         <img src={BannerImage} alt="Mandalorian Billboard" />
       </div>
       <div className={styles.tags}>
