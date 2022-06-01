@@ -29,11 +29,6 @@ function Menu({ className, menuContent }: Props) {
   return (
     <div className={classnames(styles.Menu, className)}>
       <div className={styles.menuWrapper}>
-        <div className={styles.pagesWrapper}>
-          <p className={styles.pageTitle}>{menuContent.pageOne}</p>
-          <p className={styles.pageTitle}>{menuContent.pageTwo}</p>
-          <p className={styles.pageTitle}>{menuContent.pageThree}</p>
-        </div>
         <div className={styles.infoWrapper}>
           <div className={styles.infoSection}>
             <p className={styles.title}>{menuContent.contactDesc.title}</p>
@@ -48,6 +43,11 @@ function Menu({ className, menuContent }: Props) {
             <p className={styles.title}>{menuContent.followDesc.title}</p>
             <p className={styles.desc}>{menuContent.followDesc.description}</p>
           </div>
+        </div>
+        <div className={styles.pagesWrapper}>
+          <p className={styles.pageTitle}>{menuContent.pageOne}</p>
+          <p className={styles.pageTitle}>{menuContent.pageTwo}</p>
+          <p className={styles.pageTitle}>{menuContent.pageThree}</p>
         </div>
       </div>
     </div>
