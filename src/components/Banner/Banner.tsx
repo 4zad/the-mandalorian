@@ -29,8 +29,7 @@ function Banner({ className, tags }: Props) {
     gsap.from(imgRef.current, {
       scrollTrigger: {
         trigger: bannerContainerRef.current,
-        start: 'top 60%',
-        markers: true
+        start: 'top 60%'
       },
       duration: 1,
       y: 40,
