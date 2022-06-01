@@ -28,16 +28,5 @@
     @include media-desktopSm {
       padding: px(125) px(152) px(100);
     }
-
-    .subtitle {
-      color: $dark-gray;
-      @include typography-subtitle;
-    }
-
-    .tagsContent {
-      @include typography-caption;
-      color: $black;
-      padding-top: px(10);
-    }
   }
 }
