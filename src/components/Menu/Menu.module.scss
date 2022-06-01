@@ -1,0 +1,48 @@
+@import 'shared';
+
+.Menu {
+  background-color: white;
+  padding: px(100) 0 px(50);
+  text-align: left;
+  width: 100%;
+}
+
+.menuWrapper {
+  padding: px(10) px(13);
+  display: flex;
+
+  @include media-tablet {
+    padding: px(10) px(120);
+    flex-direction: row-reverse;
+  }
+  @include media-desktopSm {
+    padding: px(10) px(152);
+  }
+}
+
+.pagesWrapper {
+  @include typography-title;
+  flex-direction: column;
+  @include media-tablet {
+    flex-direction: row;
+  }
+}
+
+.infoWrapper {
+  flex-direction: column;
+  @include media-tablet {
+    flex-direction: row;
+  }
+}
+
+.title {
+  @include typography-subtitle;
+  padding-top: px(20);
+  padding-bottom: px(10);
+  color: $dark-gray;
+}
+
+.desc {
+  @include typography-subtitle;
+  color: $black;
+}
