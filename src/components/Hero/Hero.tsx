@@ -24,35 +24,16 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
 
-  gsap.registerEffect({
-    name: 'levitate',
-    effect: (targets: any /*RefObject<HTMLDivElement>*/, config: any) => {
-      return gsap
-        .timeline()
-        .to(targets, {
-          y: config.y,
-          duration: config.duration,
-          ease: easeInOut
-        })
-        .to(targets, {
-          y: config.y + 10,
-          duration: config.duration,
-          ease: easeInOut
-        });
-    },
-    defaults: { duration: 1 }
-  });
-
   useEffect(() => {
-    gsap
-      .timeline()
-      .to(titleRef.current, {
-        delay: 0.1,
-        y: 40,
-        skewY: 3,
-        duration: 0.3,
-        ease: easeInHero1
-      })
+    const tl = gsap.timeline();
+
+    tl.to(titleRef.current, {
+      delay: 0.1,
+      y: 40,
+      skewY: 3,
+      duration: 0.3,
+      ease: easeInHero1
+    })
       .to(titleRef.current, {
         y: 100,
         skewY: 0,
@@ -95,15 +76,14 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
           ease: easeInHero1
         },
         '<'
-      );
-    // .effects.levitate(
-    //   arrowRef.current,
-    //   {
-    //     duration: 1,
-    //     y: 115,
-    //     repeat: -1
-    //   }
-    // );
+      )
+      .to(arrowRef.current, {
+        duration: 1,
+        ease: easeInOut,
+        yoyo: true,
+        repeat: -1,
+        y: 110
+      });
   }, []);
 
   return (
