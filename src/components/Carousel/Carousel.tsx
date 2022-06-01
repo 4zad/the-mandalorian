@@ -1,4 +1,4 @@
-import { memo, useEffect, useState, useRef } from 'react';
+import { memo, useEffect, useState, useRef, useCallback } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import gsap from 'gsap';
@@ -41,7 +41,7 @@ function Carousel({ className, carouselItems }: Props) {
       dispatch(setInCarousel(false));
       dispatch(setSpecMouse(false));
     });
-  });
+  }, []);
 
   useEffect(() => {
     if (width < 768) {
@@ -51,7 +51,7 @@ function Carousel({ className, carouselItems }: Props) {
     }
   }, [width]);
 
-  function slideSkew() {
+  const slideSkew = useCallback(() => {
     if (slideIndex > prevSlideIdx) {
       gsap.from(carouselRef.current, { skewX: 4, duration: 0.8 });
       setPrevSlideIdx(slideIndex);
@@ -59,7 +59,7 @@ function Carousel({ className, carouselItems }: Props) {
       gsap.from(carouselRef.current, { skewX: -4, duration: 0.8 });
       setPrevSlideIdx(slideIndex);
     }
-  }
+  }, [slideIndex, prevSlideIdx]);
 
   return (
     <div ref={carouselRef} className={classnames(styles.Carousel, className)}>

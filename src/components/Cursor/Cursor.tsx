@@ -1,6 +1,6 @@
 import { memo, useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
-
+import { os } from '@jam3/detect';
 import styles from './Cursor.module.scss';
 import { gsap } from 'gsap';
 import useWindowSize from '@/hooks/use-windowsize';
@@ -10,13 +10,13 @@ export type Props = {
 };
 
 function Cursor({ className }: Props) {
-  // Random Offscreen for devices with no cursor
+  // NOTE: Places cursor offscreen for devices with no cursor
   const [mousePos, setMousePos] = useState({ x: -200, y: -200 });
   const specMouse = useAppSelector((state) => state.specMouse);
   const slideIndex = useAppSelector((state) => state.slideIndex);
   const inCarousel = useAppSelector((state) => state.inCarousel);
   const cursorRef = useRef<HTMLDivElement>(null);
-  // Allows for variable cursor dims when needed
+  // NOTE: Allows for variable cursor dims when needed
   let cursorDims = { x: 20, y: 20 };
 
   const width = useWindowSize();
@@ -66,6 +66,10 @@ function Cursor({ className }: Props) {
       gsap.to(cursorRef.current, { scaleX: 1, scaleY: 1, duration: 0.3 });
     }
   }, [specMouse]);
+
+  if (os.android || os.ios) {
+    return null;
+  }
 
   return (
     <div

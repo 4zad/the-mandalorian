@@ -27,7 +27,7 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
     vidGenRef.current?.addEventListener('mouseleave', () => {
       if (!inCarousel) dispatch(setSpecMouse(false));
     });
-  });
+  }, []);
 
   return (
     <div ref={vidGenRef} className={classnames(styles.VideoGeneral, className)}>
