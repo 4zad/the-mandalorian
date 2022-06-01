@@ -40,7 +40,7 @@ function Collage({ className, content }: Props) {
         {},
         {
           xPercent: window.innerWidth <= 768 ? -75 : -85,
-          yPercent: window.innerWidth <= 768 ? -15.27 : -19,
+          yPercent: window.innerWidth <= 768 ? -16.75 : -19,
           ease: linearEase
         }
       );
