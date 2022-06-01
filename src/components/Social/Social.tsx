@@ -28,7 +28,7 @@ function Social({ className, socialContent }: Props) {
     gsap.from(number.current, {
       scrollTrigger: {
         trigger: number.current,
-        markers: true
+        start: 'top bottom'
       },
       y: 40,
       opacity: 0,
