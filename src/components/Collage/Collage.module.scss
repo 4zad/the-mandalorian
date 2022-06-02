@@ -48,12 +48,12 @@
     }
 
     .image:nth-child(3) {
-      margin: 0 auto 0;
+      margin: 0 auto;
       width: px(352);
 
       @include media-tablet {
         transform: translate(-25%, -90%);
-        margin: 0 auto 0;
+        margin: 0 auto;
       }
 
       @include media-desktopSm {
