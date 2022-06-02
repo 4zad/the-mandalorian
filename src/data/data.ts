@@ -56,7 +56,9 @@ export const fullScreenContent = {
 
 export const tags = {
   title: 'Tags',
-  description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured'
+  description: 'Trailer.  Social Media Content.  Disney.  Disney+.  Series.  Drama.  SCI FI.  Featured',
+  titleAnimation: { delay: 0.75 },
+  descAnimation: { delay: 0.767 }
 };
 
 export const descContent = {
@@ -70,7 +72,7 @@ export const descContent = {
 export const servicesContent = {
   title: 'Services',
   description: 'Teaser, Trailer, Original Content',
-  titleAnimation: { delay: 1.034 },
+  titleAnimation: { delay: 1 },
   descAnimation: { delay: 1.136 }
 };
 
@@ -137,5 +139,6 @@ export const collageData = {
       src: 'collage-3.png',
       alt: 'Illustration of the Mandalorian entering a door'
     }
-  ]
+  ],
+  scrollingText: '#themandalorian'
 };

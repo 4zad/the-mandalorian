@@ -16,15 +16,6 @@
     border: none;
   }
 
-  .svgPlayIcon {
-    position: absolute;
-    top: calc(50% - px(11));
-    left: calc(50% - px(11));
-    width: px(22);
-    height: px(22);
-    @include z-index(playButton);
-  }
-
   .svgPlayCircle {
     position: absolute;
     top: calc(50% - px(36));
@@ -32,6 +23,8 @@
     width: px(72);
     height: px(72);
     @include z-index(playButton);
+    opacity: 1;
+    scale: 1;
   }
 
   img {
