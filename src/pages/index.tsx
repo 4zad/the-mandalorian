@@ -15,6 +15,7 @@ import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
 import Process from '@/components/Process/Process';
+import Cursor from '@/components/Cursor/Cursor';
 
 import {
   awardDropdownData,
@@ -53,6 +54,7 @@ function Home({ className }: Props) {
   return (
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
+      <Cursor />
       <VideoModal />
       <Hero className={className} data={heroData} />
       <Description content={descContent} />

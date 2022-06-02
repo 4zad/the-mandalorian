@@ -1,0 +1,39 @@
+@import 'shared';
+
+.Cursor {
+  position: fixed;
+  border-radius: 100%;
+  pointer-events: none;
+  @include z-index(cursor);
+  height: px(20);
+  width: px(20);
+}
+
+.normal {
+  background-color: $orange;
+}
+
+.special {
+  border: px(2) solid $orange;
+  background-color: $transluscent-orange;
+}
+
+.arrow {
+  position: absolute;
+  border: solid $orange;
+  border-width: 0 px(1) px(1) 0;
+  display: inline-block;
+  padding: px(3);
+}
+
+.left {
+  transform: rotate(135deg);
+  top: px(6);
+  right: px(30);
+}
+
+.right {
+  transform: rotate(-45deg);
+  top: px(6);
+  left: px(30);
+}
