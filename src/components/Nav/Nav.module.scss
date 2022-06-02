@@ -8,7 +8,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: $navbar-height-mobile;
 
   @include media-tablet {
@@ -52,6 +52,7 @@
     }
 
     .menuHamburger {
+      @include z-index(menu-nav);
       position: relative;
       fill: $white;
       width: px(40);
@@ -78,6 +79,81 @@
         height: 2px;
         border-radius: 100px;
         background-color: $white;
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+
+    .menuBg {
+      position: absolute;
+      background-color: $white;
+      transform: rotate(10.19deg);
+      width: 200vw;
+      height: 200vh;
+      top: -50vh;
+      left: -50vw;
+    }
+
+    .menuWrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      height: fit-content;
+      padding: px(120) 0 px(60);
+
+      @include media-tablet {
+        padding: px(150) px(80);
+        flex-direction: row;
+      }
+      @include media-desktopSm {
+        padding: px(150) px(200);
+      }
+
+      .pageTitle {
+        @include typography-menuPages;
+        flex-direction: column-reverse;
+        @include media-tablet {
+          flex-direction: row;
+          padding-left: px(100);
+        }
+      }
+
+      .infoWrapper {
+        flex-direction: column-reverse;
+        @include media-tablet {
+          flex-direction: row;
+        }
+      }
+
+      .pagesWrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .infoSection {
+        padding-top: px(20);
+        @include media-tablet {
+          padding-top: px(30);
+        }
+      }
+
+      .title {
+        @include typography-subtitle;
+        padding-bottom: px(10);
+        color: $dark-gray;
+      }
+
+      .desc {
+        @include typography-subtitle;
+        color: $black;
       }
     }
   }

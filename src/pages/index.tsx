@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
-import Menu from '@/components/Menu/Menu';
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
 import Hero from '@/components/Hero/Hero';
@@ -27,8 +26,7 @@ import {
   tags,
   socialContent,
   servicesContent,
-  processContent,
-  menuContent
+  processContent
 } from '@/data/data';
 
 type Props = {
@@ -56,7 +54,6 @@ function Home({ className }: Props) {
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
       <VideoModal />
-      <Menu menuContent={menuContent} />
       <Hero className={className} data={heroData} />
       <Description content={descContent} />
       <Description isSmallText={true} content={servicesContent} />
