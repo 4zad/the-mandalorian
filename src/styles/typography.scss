@@ -237,3 +237,30 @@ $generic-fonts: system-ui, Helvetica, Arial, sans-serif;
     @include font-size(145, 120);
   }
 }
+
+@mixin typography-beforeAfter {
+  @include font-family($main-font, 900);
+
+  @include media-tablet {
+    @include font-size(120);
+    line-height: 89%;
+  }
+
+  @include media-desktopSm {
+    @include font-size(180);
+    line-height: 83%;
+  }
+}
+
+@mixin typography-menuPages {
+  @include font-family($main-font, 700);
+  @include font-size(50, 63, -0.02);
+
+  @include media-tablet {
+    @include font-size(66, 79, -0.02);
+  }
+
+  @include media-desktopSm {
+    @include font-size(90, 108, -0.02);
+  }
+}

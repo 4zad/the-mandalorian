@@ -26,6 +26,7 @@ $light-gray: #f1f1f1;
 $med-gray: #dadada;
 $dark-gray: #999;
 $orange: #f8a15c;
+$transluscent-orange: #f8a25c5f;
 
 // ====================================================================
 // General
@@ -45,7 +46,7 @@ $navbar-height-desktop: px(80);
 // ====================================================================
 // List of z-index element
 // ====================================================================
-$elements: pages, main-nav, rotate, playButton, modal, video, close, dropdownCard;
+$elements: pages, main-nav, rotate, playButton, modal, video, close, dropdownCard, cursor;
 
 // ====================================================================
 // Font Names

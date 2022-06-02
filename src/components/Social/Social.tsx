@@ -1,9 +1,11 @@
-import { memo } from 'react';
+import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
+import { gsap } from 'gsap';
 
 import styles from './Social.module.scss';
 
 import Description from '../Description/Description';
+import { mainEase } from '@/data/eases';
 
 export type Props = {
   className?: string;
@@ -11,6 +13,8 @@ export type Props = {
     desc: {
       title: string;
       description: string;
+      titleAnimation: { delay: number };
+      descAnimation: { delay: number };
     };
     smallNum: string;
     num: string;
@@ -18,10 +22,26 @@ export type Props = {
 };
 
 function Social({ className, socialContent }: Props) {
+  const numberRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.from(numberRef.current, {
+      scrollTrigger: {
+        trigger: numberRef.current,
+        start: 'top bottom'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: mainEase
+    });
+  });
+
   return (
     <div className={classnames(styles.Social, className)}>
       <Description content={socialContent.desc} />
-      <div className={styles.textContainer}>
+      <div ref={numberRef} className={styles.textContainer}>
         <p className={styles.shortNum}>{socialContent.smallNum}</p>
         <p className={styles.num}>{socialContent.num}</p>
       </div>

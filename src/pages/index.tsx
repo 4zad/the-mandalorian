@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import styles from './index.module.scss';
 
 import Head from '@/components/Head/Head';
+import Menu from '@/components/Menu/Menu';
 import Carousel from '@/components/Carousel/Carousel';
 import VideoModal from '@/components/VideoModal/VideoModal';
 import Hero from '@/components/Hero/Hero';
@@ -14,6 +15,7 @@ import Social from '@/components/Social/Social';
 import Banner from '@/components/Banner/Banner';
 import AwardsDropdown from '@/components/AwardsDropdown/AwardsDropdown';
 import FullScreenVideo from '@/components/FullScreenVideo/FullScreenVideo';
+import Process from '@/components/Process/Process';
 
 import {
   awardDropdownData,
@@ -24,7 +26,9 @@ import {
   fullScreenContent,
   tags,
   socialContent,
-  servicesContent
+  servicesContent,
+  processContent,
+  menuContent
 } from '@/data/data';
 
 type Props = {
@@ -43,7 +47,6 @@ function Home({ className }: Props) {
       .fadeIn(titleRef.current, 0.2)
       .fadeIn(descriptionRef.current, 0.4)
       .fadeIn(listRef.current?.childNodes, { stagger: 0.1 }, 0.6);
-
     return () => {
       timeline?.kill();
     };
@@ -53,12 +56,14 @@ function Home({ className }: Props) {
     <main className={classnames(styles.home, className)} ref={containerRef}>
       <Head />
       <VideoModal />
+      <Menu menuContent={menuContent} />
       <Hero className={className} data={heroData} />
       <Description content={descContent} />
       <Description isSmallText={true} content={servicesContent} />
       <FullScreenVideo vidId={fullScreenContent.vidId} imLink={fullScreenContent.imLink} />
       <AwardsDropdown content={awardDropdownData} />
       <Carousel carouselItems={carouselItems} />
+      <Process processContent={processContent} />
       <Collage content={collageData} />
       <Social socialContent={socialContent} />
       <Banner tags={tags} />
