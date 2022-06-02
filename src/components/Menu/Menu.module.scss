@@ -13,16 +13,16 @@
   flex-direction: column-reverse;
 
   @include media-tablet {
-    padding: px(20) px(25);
+    padding: px(50) px(25);
     flex-direction: row;
   }
   @include media-desktopSm {
-    padding: px(20) px(152);
+    padding: px(50) px(152);
   }
 }
 
-.pagesWrapper {
-  @include typography-title;
+.pageTitle {
+  @include typography-menuPages;
   flex-direction: column-reverse;
   @include media-tablet {
     flex-direction: row;
@@ -37,9 +37,20 @@
   }
 }
 
+.pagesWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoSection {
+  padding-top: px(20);
+  @include media-tablet {
+    padding-top: px(30);
+  }
+}
+
 .title {
   @include typography-subtitle;
-  padding-top: px(20);
   padding-bottom: px(10);
   color: $dark-gray;
 }

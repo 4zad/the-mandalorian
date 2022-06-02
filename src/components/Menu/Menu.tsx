@@ -2,6 +2,7 @@ import { memo } from 'react';
 import classnames from 'classnames';
 
 import styles from './Menu.module.scss';
+import Link from 'next/Link';
 
 export type Props = {
   className?: string;
@@ -45,9 +46,15 @@ function Menu({ className, menuContent }: Props) {
           </div>
         </div>
         <div className={styles.pagesWrapper}>
-          <p className={styles.pageTitle}>{menuContent.pageOne}</p>
-          <p className={styles.pageTitle}>{menuContent.pageTwo}</p>
-          <p className={styles.pageTitle}>{menuContent.pageThree}</p>
+          <Link href="/">
+            <a className={styles.pageTitle}>{menuContent.pageOne}</a>
+          </Link>
+          <Link href="/404">
+            <a className={styles.pageTitle}>{menuContent.pageTwo}</a>
+          </Link>
+          <Link href="/404">
+            <a className={styles.pageTitle}>{menuContent.pageThree}</a>
+          </Link>
         </div>
       </div>
     </div>
