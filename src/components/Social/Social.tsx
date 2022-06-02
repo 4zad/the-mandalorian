@@ -22,17 +22,17 @@ export type Props = {
 };
 
 function Social({ className, socialContent }: Props) {
-  let number = useRef<HTMLDivElement>(null);
+  const numberRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: number.current,
+          trigger: numberRef.current,
           start: 'top bottom'
         }
       })
-      .from(number.current, {
+      .from(numberRef.current, {
         y: 40,
         opacity: 0,
         duration: 1,
@@ -44,7 +44,7 @@ function Social({ className, socialContent }: Props) {
   return (
     <div className={classnames(styles.Social, className)}>
       <Description content={socialContent.desc} />
-      <div ref={number} className={styles.textContainer}>
+      <div ref={numberRef} className={styles.textContainer}>
         <p className={styles.shortNum}>{socialContent.smallNum}</p>
         <p className={styles.num}>{socialContent.num}</p>
       </div>
