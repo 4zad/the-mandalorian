@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import classnames from 'classnames';
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from './Menu.module.scss';
 
 export type Props = {
