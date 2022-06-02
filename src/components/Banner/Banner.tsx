@@ -34,7 +34,7 @@ function Banner({ className, tags }: Props) {
       duration: 1,
       y: 40,
       opacity: 0,
-      skewY: 40,
+      skewY: 2,
       delay: 0.2,
       ease: mainEase
     });
