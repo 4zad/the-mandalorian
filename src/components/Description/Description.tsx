@@ -1,8 +1,8 @@
-import { memo, useRef, useEffect } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import classnames from 'classnames';
-import styles from './Description.module.scss';
 import { gsap } from 'gsap';
-import { mainEase } from '@/data/eases';
+
+import styles from './Description.module.scss';
 
 export type Props = {
   className?: string;
@@ -17,34 +17,42 @@ export type Props = {
 };
 
 function Description({ className, content, isSmallText = false, noPadding = false }: Props) {
-  let title = useRef<HTMLDivElement>(null);
-  let desc = useRef<HTMLDivElement>(null);
+  const title = useRef<HTMLDivElement>(null);
+  const desc = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { titleAnimation, descAnimation } = content;
 
   useEffect(() => {
-    gsap.from(title.current, {
-      scrollTrigger: {
-        trigger: title.current,
-        start: 'top 90%'
-      },
-      lazy: false,
-      duration: 1,
-      opacity: 0,
-      y: 40,
-      ease: mainEase,
-      delay: content.titleAnimation.delay
-    });
-    gsap.from(desc.current, {
-      scrollTrigger: { trigger: title.current },
-      duration: 1,
-      opacity: 0,
-      y: 40,
-      ease: mainEase,
-      delay: content.descAnimation.delay
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: window.innerWidth <= 735 ? 'top 90%' : 'start 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+      .from(
+        title.current,
+        {
+          duration: 1,
+          y: 40,
+          autoAlpha: 0
+        },
+        titleAnimation.delay
+      )
+      .from(
+        desc.current,
+        {
+          duration: 1,
+          y: 40,
+          autoAlpha: 0
+        },
+        descAnimation.delay
+      );
   }, []);
 
   return (
-    <div className={classnames(styles.Description, className)}>
+    <div className={classnames(styles.Description, className)} ref={containerRef}>
       <div className={classnames(styles.textContainerPadding, { [styles.textContainer]: noPadding })}>
         <p ref={title} className={styles.title}>
           {content.title}
