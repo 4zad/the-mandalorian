@@ -39,8 +39,8 @@ function Nav() {
     const menuHamburgerToggleHeight: number = 40;
     const menuHamburgerBarHeight: number = 2;
     const transformedColor: string = '#000';
-    const transitionOpenDuration: number = 0.8;
-    const transitionRampDelay: number = 0.2;
+    const transitionOpenDuration: number = 1;
+    const transitionRampDelay: number = 0.25;
 
     menuHamburgerTl.current = gsap
       .timeline({
@@ -122,7 +122,7 @@ function Nav() {
         [pageOneRef.current, pageTwoRef.current, pageThreeRef.current],
         {
           autoAlpha: 0,
-          y: 250,
+          y: 300,
           duration: 0.6,
           stagger: 0.1,
           skewY: 5
