@@ -77,7 +77,7 @@
     }
   }
 
-  .menu {
+  .menuFrame {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -101,88 +101,99 @@
       left: -25vw;
     }
 
-    .menuWrapper {
-      display: flex;
-      flex-direction: column-reverse;
-      width: fit-content;
+    .menu {
+      position: absolute;
+      background-color: transparent;
+      top: 0;
+      left: 0;
+      text-align: left;
+      width: 100%;
       height: fit-content;
-      padding: px(180) px(13) px(60);
+      overflow: hidden;
 
-      @include media-tablet {
-        padding: px(150) px(80);
-        flex-direction: row;
-      }
-
-      @include media-desktopSm {
-        padding: px(150) px(200);
-      }
-
-      .pageTitle {
-        @include typography-menuPages;
-        flex-direction: column-reverse;
-
-        @include media-tablet {
-          flex-direction: row;
-        }
-      }
-
-      .infoWrapper {
-        flex-direction: column-reverse;
-
-        @include media-tablet {
-          flex-direction: row;
-        }
-      }
-
-      .pagesWrapper {
+      .menuWrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        width: fit-content;
+        height: fit-content;
+        padding: px(180) px(13) px(60);
 
         @include media-tablet {
-          padding-left: px(100);
+          padding: px(150) px(80);
+          flex-direction: row;
         }
-      }
 
-      .infoSection {
-        padding-top: px(20);
-
-        @include media-tablet {
-          padding-top: px(30);
+        @include media-desktopSm {
+          padding: px(150) px(200);
         }
-      }
 
-      .title {
-        @include typography-subtitle;
-        padding-bottom: px(10);
-        color: $dark-gray;
-      }
+        .pageTitle {
+          @include typography-menuPages;
+          flex-direction: column-reverse;
 
-      .desc {
-        @include typography-subtitle;
-        color: $black;
-      }
-
-      .pagesWrapper > div {
-        @include media-tablet {
-          margin-bottom: px(10);
+          @include media-tablet {
+            flex-direction: row;
+          }
         }
-      }
 
-      .pagesWrapper > div a::after {
-        content: '';
-        position: absolute;
-        margin: auto;
-        background: $black;
-        height: px(3);
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        transition: 0.4s ease-in-out;
-      }
+        .infoWrapper {
+          flex-direction: column-reverse;
 
-      .pagesWrapper > div a:hover::after {
-        width: 100%;
-        // transition: 0.4s ease-in-out;
+          @include media-tablet {
+            flex-direction: row;
+          }
+        }
+
+        .pagesWrapper {
+          display: flex;
+          flex-direction: column;
+
+          @include media-tablet {
+            padding-left: px(100);
+          }
+        }
+
+        .infoSection {
+          padding-top: px(20);
+
+          @include media-tablet {
+            padding-top: px(30);
+          }
+        }
+
+        .title {
+          @include typography-subtitle;
+          padding-bottom: px(10);
+          color: $dark-gray;
+        }
+
+        .desc {
+          @include typography-subtitle;
+          color: $black;
+        }
+
+        .pagesWrapper > div {
+          @include media-tablet {
+            margin-bottom: px(10);
+          }
+        }
+
+        .pagesWrapper > div a::after {
+          content: '';
+          position: absolute;
+          margin: auto;
+          background: $black;
+          height: px(3);
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          transition: 0.4s ease-in-out;
+        }
+
+        .pagesWrapper > div a:hover::after {
+          width: 100%;
+          // transition: 0.4s ease-in-out;
+        }
       }
     }
   }

@@ -39,8 +39,8 @@ function Nav() {
     const menuHamburgerToggleHeight: number = 40;
     const menuHamburgerBarHeight: number = 2;
     const transformedColor: string = '#000';
-    const transitionOpenDuration: number = 1;
-    const transitionRampDelay: number = 0.25;
+    const transitionOpenDuration: number = 0.8;
+    const transitionRampDelay: number = 0.2;
 
     menuHamburgerTl.current = gsap
       .timeline({
@@ -174,39 +174,41 @@ function Nav() {
         </div>
       </div>
 
-      <div className={classnames(styles.menu)} ref={menuNavRef}>
+      <div className={classnames(styles.menuFrame)}>
         <div className={classnames(styles.menuBg)} ref={menuNavBgRef}></div>
-        <div className={styles.menuWrapper}>
-          <div className={styles.infoWrapper}>
-            <div ref={infoSetOneRef} className={styles.infoSection}>
-              <p className={styles.title}>{menuContent.contactDesc.title}</p>
-              <p className={styles.desc}>{menuContent.contactDesc.number}</p>
-              <p className={styles.desc}>{menuContent.contactDesc.email}</p>
+        <div className={classnames(styles.menu)} ref={menuNavRef}>
+          <div className={styles.menuWrapper}>
+            <div className={styles.infoWrapper}>
+              <div ref={infoSetOneRef} className={styles.infoSection}>
+                <p className={styles.title}>{menuContent.contactDesc.title}</p>
+                <p className={styles.desc}>{menuContent.contactDesc.number}</p>
+                <p className={styles.desc}>{menuContent.contactDesc.email}</p>
+              </div>
+              <div ref={infoSetTwoRef} className={styles.infoSection}>
+                <p className={styles.title}>{menuContent.addressDesc.title}</p>
+                <p className={styles.desc}>{menuContent.addressDesc.description}</p>
+              </div>
+              <div ref={infoSetThreeRef} className={styles.infoSection}>
+                <p className={styles.title}>{menuContent.followDesc.title}</p>
+                <p className={styles.desc}>{menuContent.followDesc.description}</p>
+              </div>
             </div>
-            <div ref={infoSetTwoRef} className={styles.infoSection}>
-              <p className={styles.title}>{menuContent.addressDesc.title}</p>
-              <p className={styles.desc}>{menuContent.addressDesc.description}</p>
-            </div>
-            <div ref={infoSetThreeRef} className={styles.infoSection}>
-              <p className={styles.title}>{menuContent.followDesc.title}</p>
-              <p className={styles.desc}>{menuContent.followDesc.description}</p>
-            </div>
-          </div>
-          <div className={styles.pagesWrapper}>
-            <div ref={pageOneRef}>
-              <Link href="/">
-                <a className={styles.pageTitle}>{menuContent.pageOne}</a>
-              </Link>
-            </div>
-            <div ref={pageTwoRef}>
-              <Link href="/404">
-                <a className={styles.pageTitle}>{menuContent.pageTwo}</a>
-              </Link>
-            </div>
-            <div ref={pageThreeRef}>
-              <Link href="/404">
-                <a className={styles.pageTitle}>{menuContent.pageThree}</a>
-              </Link>
+            <div className={styles.pagesWrapper}>
+              <div ref={pageOneRef}>
+                <Link href="/">
+                  <a className={styles.pageTitle}>{menuContent.pageOne}</a>
+                </Link>
+              </div>
+              <div ref={pageTwoRef}>
+                <Link href="/404">
+                  <a className={styles.pageTitle}>{menuContent.pageTwo}</a>
+                </Link>
+              </div>
+              <div ref={pageThreeRef}>
+                <Link href="/404">
+                  <a className={styles.pageTitle}>{menuContent.pageThree}</a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
