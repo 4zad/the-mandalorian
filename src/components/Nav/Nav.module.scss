@@ -162,7 +162,7 @@
         color: $black;
       }
 
-      .pagesWrapper > div a:after {
+      .pagesWrapper > div a::after {
         content: '';
         position: absolute;
         margin: auto;
@@ -174,7 +174,7 @@
         transition: 0.4s ease-in-out;
       }
 
-      .pagesWrapper > div a:hover:after {
+      .pagesWrapper > div a:hover::after {
         width: 100%;
         // transition: 0.4s ease-in-out;
       }
