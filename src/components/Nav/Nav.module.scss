@@ -88,7 +88,7 @@
     overflow: hidden;
 
     @include media-tablet {
-      height: calc(100vh - 250px);
+      height: calc(100vh - 300px);
     }
 
     .menuBg {
@@ -160,6 +160,12 @@
       .desc {
         @include typography-subtitle;
         color: $black;
+      }
+
+      .pagesWrapper > div {
+        @include media-tablet {
+          margin-bottom: px(10);
+        }
       }
 
       .pagesWrapper > div a::after {
