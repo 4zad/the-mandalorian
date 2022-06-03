@@ -5,9 +5,8 @@ import classnames from 'classnames';
 
 import styles from './Nav.module.scss';
 
-import Image from '@/components/Image/Image';
-// import Logo from '@/components/svgs/bu`ddha-logo.svg';
-import { easeSnap, menuSnap } from '@/data/eases';
+import Logo from '@/components/svgs/buddha-logo.svg';
+import { easeIn1, menuSnap } from '@/data/eases';
 
 import { navLinks, menuContent } from '@/data/data';
 
@@ -40,8 +39,8 @@ function Nav() {
     const menuHamburgerToggleHeight: number = 40;
     const menuHamburgerBarHeight: number = 2;
     const transformedColor: string = '#000';
-    const transitionOpenDuration: number = 0.85;
-    const transitionRampDelay: number = 0.15;
+    const transitionOpenDuration: number = 0.8;
+    const transitionRampDelay: number = 0.2;
 
     menuHamburgerTl.current = gsap
       .timeline({
@@ -50,7 +49,7 @@ function Nav() {
         defaults: {
           delay: transitionRampDelay,
           duration: transitionOpenDuration,
-          ease: easeSnap
+          ease: easeIn1
         }
       })
       .to(
@@ -84,31 +83,31 @@ function Nav() {
         reversed: true,
         defaults: {
           delay: transitionRampDelay,
-          ease: easeSnap
+          ease: easeIn1
         }
       })
-      .from(
-        menuNavRef.current,
-        {
-          height: 0,
-          duration: 0.5
-        },
-        'start'
-      )
       .from(
         menuNavBgRef.current,
         {
           height: 0,
-          duration: transitionOpenDuration
+          duration: transitionOpenDuration * 1.25
         },
         'start'
+      )
+      .from(
+        menuNavRef.current,
+        {
+          height: 0,
+          duration: 0
+        },
+        `start+=${transitionOpenDuration / 4}`
       );
 
     menuNavTl.current = gsap
       .timeline({
         paused: true,
         defaults: {
-          delay: transitionRampDelay,
+          delay: transitionRampDelay + (transitionOpenDuration / 5) * 2,
           ease: menuSnap
         }
       })
@@ -154,8 +153,7 @@ function Nav() {
           <li>
             <Link href={navLinks.home.href}>
               <a aria-label={navLinks.home.ariaLabel}>
-                <Image src={navLinks.home.src} alt={navLinks.home.alt} className={classnames(styles.buddha)} />
-                {/* <Logo className={classnames(styles.buddha)} /> */}
+                <Logo className={classnames(styles.buddha)} />
               </a>
             </Link>
           </li>
