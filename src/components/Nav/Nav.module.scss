@@ -33,13 +33,14 @@
     }
 
     > ul > li {
+      @include z-index(menu-nav);
       display: inline-block;
       position: relative;
       list-style: none;
       text-align: center;
 
       .buddha {
-        // fill: $white;
+        fill: $white;
         height: px(46);
       }
     }
