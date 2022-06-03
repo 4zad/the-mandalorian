@@ -122,7 +122,7 @@ function Nav() {
         [pageOneRef.current, pageTwoRef.current, pageThreeRef.current],
         {
           autoAlpha: 0,
-          y: 100,
+          y: 250,
           duration: 0.6,
           stagger: 0.1,
           skewY: 5
