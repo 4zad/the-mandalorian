@@ -41,7 +41,7 @@
 
       .buddha {
         fill: $white;
-        height: px(46);
+        height: px(48);
       }
     }
 
@@ -49,9 +49,9 @@
       @include z-index(menu-nav);
       position: relative;
       fill: $white;
+      top: px(-5);
       width: px(40);
       height: px(40);
-      top: px(-5);
 
       .topBar {
         position: absolute;
