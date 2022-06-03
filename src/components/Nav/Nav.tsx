@@ -75,6 +75,13 @@ function Nav() {
           xPercent: -12.5
         },
         'start'
+      )
+      .to(
+        '#buddhaLogo',
+        {
+          fill: '#000'
+        },
+        'start'
       );
 
     menuNavBgTl.current = gsap
@@ -153,7 +160,9 @@ function Nav() {
           <li>
             <Link href={navLinks.home.href}>
               <a aria-label={navLinks.home.ariaLabel}>
-                <Logo className={classnames(styles.buddha)} />
+                <div>
+                  <Logo id="buddhaLogo" className={classnames(styles.buddha)} />
+                </div>
               </a>
             </Link>
           </li>
