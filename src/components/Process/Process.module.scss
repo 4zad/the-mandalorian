@@ -1,9 +1,5 @@
 @import 'shared';
 
-.Process {
-  position: relative;
-}
-
 .processTextContainer {
   padding: px(50) 0;
 }
@@ -13,56 +9,47 @@
   text-align: left;
   padding: px(5) px(13);
   width: 100%;
-  position: relative;
+  height: fit-content;
+
   @include media-tablet {
     padding: px(10) px(30);
   }
+
   @include media-desktopSm {
     padding: px(10) px(25);
   }
 }
 
-.vid1Container {
-  .text1Container {
-    padding: px(20) 0;
-    width: 75%;
-    @include media-tablet {
-      width: 50%;
-    }
-    @include media-desktopSm {
-      width: 40%;
-    }
+.text1Container {
+  padding: px(20) 0;
+  width: 75%;
+
+  @include media-tablet {
+    width: 50%;
   }
-  .vid1PlaceholderContainer {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-  .vid1Placeholder {
-    width: 100%;
-    height: auto;
-    margin: auto;
+
+  @include media-desktopSm {
+    width: 40%;
   }
 }
 
 .vid2Container {
-  float: right;
+  margin: 0 0 0 auto;
   width: 75%;
+
   .text2Container {
     width: 100%;
     margin-left: auto;
     padding: px(20) 0 px(60);
   }
-  .vid2Placeholder {
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-  }
+
   @include media-tablet {
     width: 50%;
+
     .desc {
       width: 80%;
     }
+
     .text2Container {
       padding-bottom: px(100);
     }
@@ -78,9 +65,11 @@
   width: 100%;
   position: absolute;
   top: 80%;
+
   @include media-tablet {
     padding: px(10) px(30);
   }
+
   @include media-desktopSm {
     top: 81%;
     padding: px(10) px(25);
@@ -97,6 +86,7 @@
 
 .bgText {
   display: none;
+
   @include media-tablet {
     display: block;
     -webkit-text-stroke: 1px $med-gray;

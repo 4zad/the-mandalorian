@@ -25,17 +25,20 @@ function Social({ className, socialContent }: Props) {
   let number = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.from(number.current, {
-      scrollTrigger: {
-        trigger: number.current,
-        start: 'top bottom'
-      },
-      y: 40,
-      opacity: 0,
-      duration: 1,
-      delay: 0.2,
-      ease: mainEase
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: number.current,
+          start: 'top bottom'
+        }
+      })
+      .from(number.current, {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        delay: 0.2,
+        ease: mainEase
+      });
   });
 
   return (
