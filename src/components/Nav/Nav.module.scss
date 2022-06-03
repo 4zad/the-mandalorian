@@ -32,22 +32,15 @@
       padding: px(50) px(30);
     }
 
-    > ul {
-      // commented lines for when funstionality is added to open hamburger menu
-      // display: flex;
-      // flex-direction: row;
-      // justify-content: space-around;
+    > ul > li {
+      display: inline-block;
+      position: relative;
+      list-style: none;
+      text-align: center;
 
-      > li {
-        display: inline-block;
-        position: relative;
-        list-style: none;
-        text-align: center;
-
-        .buddha {
-          // fill: $white;
-          height: px(46);
-        }
+      .buddha {
+        // fill: $white;
+        height: px(46);
       }
     }
 
@@ -97,17 +90,18 @@
       position: absolute;
       background-color: $white;
       transform: rotate(10.19deg);
-      width: 200vw;
-      height: 200vh;
-      top: -50vh;
-      left: -50vw;
+      width: 150vw;
+      height: 150vh;
+      top: -25vh;
+      left: -25vw;
     }
 
     .menuWrapper {
       display: flex;
       flex-direction: column-reverse;
+      width: fit-content;
       height: fit-content;
-      padding: px(120) 0 px(60);
+      padding: px(120) px(13) px(60);
 
       @include media-tablet {
         padding: px(150) px(80);

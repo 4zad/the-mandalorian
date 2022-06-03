@@ -40,14 +40,16 @@ function Nav() {
     const menuHamburgerToggleHeight: number = 40;
     const menuHamburgerBarHeight: number = 2;
     const transformedColor: string = '#000';
+    const transitionOpenDuration: number = 0.85;
+    const transitionRampDelay: number = 0.15;
 
     menuHamburgerTl.current = gsap
       .timeline({
         paused: true,
         reversed: true,
         defaults: {
-          delay: 0.15,
-          duration: 0.6,
+          delay: transitionRampDelay,
+          duration: transitionOpenDuration,
           ease: easeSnap
         }
       })
@@ -79,19 +81,25 @@ function Nav() {
     menuNavBgTl.current = gsap
       .timeline({
         paused: true,
-        reversed: true
+        reversed: true,
+        defaults: {
+          delay: transitionRampDelay,
+          ease: easeSnap
+        }
       })
-      .from(menuNavRef.current, {
-        height: 0,
-        duration: 0.5,
-        ease: menuSnap
-      })
+      .from(
+        menuNavRef.current,
+        {
+          height: 0,
+          duration: 0.5
+        },
+        'start'
+      )
       .from(
         menuNavBgRef.current,
         {
           height: 0,
-          duration: 1,
-          ease: menuSnap
+          duration: transitionOpenDuration
         },
         'start'
       );
@@ -100,18 +108,31 @@ function Nav() {
       .timeline({
         paused: true,
         defaults: {
+          delay: transitionRampDelay,
           ease: menuSnap
         }
       })
       .from(
         [pageOneRef.current, pageTwoRef.current, pageThreeRef.current],
-        { autoAlpha: 0, y: 100, duration: 0.6, stagger: 0.2, skewY: 7 },
-        0
+        {
+          autoAlpha: 0,
+          y: 100,
+          duration: 0.6,
+          stagger: 0.1,
+          skewY: 5
+        },
+        'start'
       )
       .from(
         [infoSetOneRef.current, infoSetTwoRef.current, infoSetThreeRef.current],
-        { autoAlpha: 0, y: 100, duration: 0.3, stagger: 0.1, skewY: 6 },
-        '<+=0.5'
+        {
+          autoAlpha: 0,
+          y: 100,
+          duration: 0.4,
+          stagger: 0.1,
+          skewY: 5
+        },
+        'start+=0.2'
       );
   });
 
@@ -150,7 +171,7 @@ function Nav() {
         <div className={classnames(styles.menuBg)} ref={menuNavBgRef}></div>
         <div className={styles.menuWrapper}>
           <div className={styles.infoWrapper}>
-            <div ref={infoSetOneRef} className={styles.infoSection} id="infoSection">
+            <div ref={infoSetOneRef} className={styles.infoSection}>
               <p className={styles.title}>{menuContent.contactDesc.title}</p>
               <p className={styles.desc}>{menuContent.contactDesc.number}</p>
               <p className={styles.desc}>{menuContent.contactDesc.email}</p>
