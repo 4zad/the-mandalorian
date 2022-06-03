@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import styles from './Nav.module.scss';
 
 import Image from '@/components/Image/Image';
-// import Logo from '@/components/svgs/buddha-logo.svg';
+// import Logo from '@/components/svgs/bu`ddha-logo.svg';
 import { easeSnap, menuSnap } from '@/data/eases';
 
 import { navLinks, menuContent } from '@/data/data';
