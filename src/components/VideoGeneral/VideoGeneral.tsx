@@ -35,7 +35,6 @@ function VideoGeneral({ className, imLink, vidId, alt }: Props) {
       vidGenRef.current,
       {
         y: 40,
-        skewX: 2,
         skewY: 2,
         opacity: 0,
         duration: 1,
