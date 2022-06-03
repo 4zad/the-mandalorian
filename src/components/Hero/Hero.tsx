@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import styles from './Hero.module.scss';
 
 import Arrow from '@/components/svgs/arrow.svg';
-import { easeInOut, easeInHero1, easeInHero2 } from '@/data/eases';
+import { easeInOut, easeIn1, easeIn2 } from '@/data/eases';
 
 export type Props = {
   className?: string;
@@ -32,13 +32,13 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
       y: 40,
       skewY: 3,
       duration: 0.3,
-      ease: easeInHero1
+      ease: easeIn1
     })
       .to(titleRef.current, {
         y: 100,
         skewY: 0,
         duration: 0.5,
-        ease: easeInHero2
+        ease: easeIn2
       })
       .fromTo(
         subTitleRef.current,
@@ -50,7 +50,7 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
           opacity: 1,
           y: 100,
           duration: 0.5,
-          ease: easeInHero1
+          ease: easeIn1
         },
         '>-=100%'
       )
@@ -64,7 +64,7 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
           opacity: 1,
           y: 120,
           duration: 0.7,
-          ease: easeInHero1
+          ease: easeIn1
         },
         '<'
       )
@@ -73,7 +73,7 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
         {
           scrollTo: { y: 100 },
           duration: 0.5,
-          ease: easeInHero1
+          ease: easeIn1
         },
         '<'
       )

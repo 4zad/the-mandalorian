@@ -84,13 +84,17 @@
     left: 0;
     text-align: left;
     width: 100%;
-    height: calc(100vh - 100px);
+    height: fit-content;
     overflow: hidden;
+
+    @include media-tablet {
+      height: calc(100vh - 100px);
+    }
 
     .menuBg {
       position: absolute;
       background-color: $white;
-      transform: rotate(10.19deg);
+      transform: rotate(7.19deg);
       width: 150vw;
       height: 150vh;
       top: -25vh;
@@ -102,12 +106,13 @@
       flex-direction: column-reverse;
       width: fit-content;
       height: fit-content;
-      padding: px(120) px(13) px(60);
+      padding: px(180) px(13) px(60);
 
       @include media-tablet {
         padding: px(150) px(80);
         flex-direction: row;
       }
+
       @include media-desktopSm {
         padding: px(150) px(200);
       }
@@ -115,6 +120,7 @@
       .pageTitle {
         @include typography-menuPages;
         flex-direction: column-reverse;
+
         @include media-tablet {
           flex-direction: row;
           padding-left: px(100);
@@ -123,6 +129,7 @@
 
       .infoWrapper {
         flex-direction: column-reverse;
+
         @include media-tablet {
           flex-direction: row;
         }
@@ -135,6 +142,7 @@
 
       .infoSection {
         padding-top: px(20);
+
         @include media-tablet {
           padding-top: px(30);
         }
