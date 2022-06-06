@@ -54,6 +54,15 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
         },
         '>-=100%'
       )
+      .to(
+        window,
+        {
+          scrollTo: { y: 100 },
+          duration: 0.5,
+          ease: easeIn1
+        },
+        '<'
+      )
       .fromTo(
         arrowRef.current,
         {
@@ -63,19 +72,10 @@ const Hero: React.FC<Props> = ({ className, data }: Props) => {
         {
           opacity: 1,
           y: 120,
-          duration: 0.7,
-          ease: easeIn1
-        },
-        '<'
-      )
-      .to(
-        window,
-        {
-          scrollTo: { y: 100 },
           duration: 0.5,
           ease: easeIn1
         },
-        '<'
+        '<+=0.2'
       )
       .to(arrowRef.current, {
         duration: 1,
