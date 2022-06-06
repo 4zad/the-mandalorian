@@ -87,9 +87,6 @@
     min-height: 90vh;
     overflow: hidden;
 
-    @include media-tablet {
-    }
-
     .menuBg {
       position: absolute;
       background-color: $white;
