@@ -33,7 +33,7 @@ function Banner({ className, tags }: Props) {
           start: 'top 60%'
         }
       })
-      .to(bannerContainerRef.current, {
+      .from(bannerContainerRef.current, {
         duration: 1,
         y: 40,
         opacity: 0,
