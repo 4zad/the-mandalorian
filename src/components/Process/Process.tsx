@@ -72,7 +72,7 @@ function Process({ className, processContent }: Props) {
   }, []);
 
   return (
-    <div ref={containerRef} className={classnames(styles.Process, className, processContent)}>
+    <div ref={containerRef} className={classnames(className)}>
       <div className={styles.processTextContainer}>
         <Description content={processContent.descContent} />
       </div>
@@ -91,20 +91,12 @@ function Process({ className, processContent }: Props) {
       </div>
 
       <div className={styles.videoBlock}>
-        <div className={styles.vid1Container}>
-          <div className={styles.vid1PlaceholderContainer}>
-            <div className={styles.vid1Placeholder}>
-              <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
-            </div>
-          </div>
-          <div className={styles.text1Container}>
-            <Description isSmallText={true} noPadding={true} content={processContent.smallVid.desc} />
-          </div>
+        <VideoGeneral imLink={processContent.largeVid.vid.imLink} vidId={processContent.largeVid.vid.vidId} />
+        <div className={styles.text1Container}>
+          <Description isSmallText={true} noPadding={true} content={processContent.smallVid.desc} />
         </div>
         <div className={styles.vid2Container}>
-          <div className={styles.vid2Placeholder}>
-            <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
-          </div>
+          <VideoGeneral imLink={processContent.smallVid.vid.imLink} vidId={processContent.smallVid.vid.vidId} />
           <div className={styles.text2Container}>
             <Description isSmallText={true} noPadding={true} content={processContent.largeVid.desc} />
           </div>

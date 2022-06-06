@@ -2,7 +2,7 @@ import { memo, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import styles from './VideoGeneral.module.scss';
-import { setVideoId, useAppDispatch } from '@/redux';
+import { setSpecMouse, setVideoId, useAppDispatch, useAppSelector } from '@/redux';
 import gsap from 'gsap';
 import { mainEase } from '@/data/eases';
 
@@ -16,28 +16,44 @@ export type Props = {
 function VideoGeneral({ className, imLink, vidId, alt }: Props) {
   const dispatch = useAppDispatch();
   const vidGenRef = useRef<HTMLDivElement>(null);
+  const inCarousel = useAppSelector((state) => state.inCarousel);
+
+  useEffect(() => {
+    vidGenRef.current?.addEventListener('mouseenter', () => {
+      dispatch(setSpecMouse(true));
+    });
+    vidGenRef.current?.addEventListener('mouseleave', () => {
+      if (!inCarousel) dispatch(setSpecMouse(false));
+    });
+  }, []);
+
   const playCircleRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    gsap.from(vidGenRef.current, {
-      y: 40,
-      skewX: 2,
-      skewY: 2,
-      opacity: 0,
-      duration: 1,
-      delay: 0.067,
-      ease: mainEase,
-      scrollTrigger: { trigger: vidGenRef.current, start: 'center bottom' }
-    });
-
-    gsap.from(playCircleRef.current, {
-      scaleX: 0.8,
-      scaleY: 0.8,
-      opacity: 0,
-      ease: mainEase,
-      duration: 0.667,
-      scrollTrigger: { trigger: vidGenRef.current, start: 'center bottom' }
-    });
+    const t1 = gsap.timeline({ scrollTrigger: { trigger: vidGenRef.current, start: 'center bottom' } });
+    t1.from(
+      vidGenRef.current,
+      {
+        y: 40,
+        skewX: 2,
+        skewY: 2,
+        opacity: 0,
+        duration: 1,
+        delay: 0.067,
+        ease: mainEase
+      },
+      0
+    ).from(
+      playCircleRef.current,
+      {
+        scaleX: 0.8,
+        scaleY: 0.8,
+        opacity: 0,
+        ease: mainEase,
+        duration: 0.667
+      },
+      '<+=5%'
+    );
   }, []);
 
   return (
