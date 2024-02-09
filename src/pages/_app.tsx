@@ -27,9 +27,9 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (isBrowser) {
-      if (process.env.NODE_ENV !== 'production' && window.location.href.indexOf('?nostat') === -1) {
-        require('@jam3/stats')();
-      }
+      // if (process.env.NODE_ENV !== 'production' && window.location.href.indexOf('?nostat') === -1) {
+        // require('@jam3/stats')();
+      // }
 
       setBodyClasses();
     }
