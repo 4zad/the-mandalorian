@@ -41,7 +41,7 @@ function Layout({ children }: Props) {
 
       {children}
 
-      {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production' && <AppAdmin />}
+      {/* {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production' && <AppAdmin />} */}
     </>
   );
 }
