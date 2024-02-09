@@ -1,5 +1,5 @@
 import { memo, PropsWithChildren, useCallback, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 import Nav from '@/components/Nav/Nav';
@@ -8,7 +8,7 @@ import { checkWebpSupport } from '@/utils/basic-functions';
 
 import { setIsWebpSupported, setPrevRoute, useAppDispatch } from '@/redux';
 
-const AppAdmin = dynamic(() => import('@/components/AppAdmin/AppAdmin'), { ssr: false });
+// const AppAdmin = dynamic(() => import('@/components/AppAdmin/AppAdmin'), { ssr: false });
 
 export type Props = PropsWithChildren<{}>;
 
